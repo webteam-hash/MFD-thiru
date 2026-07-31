@@ -1,0 +1,57 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+/* Allow the fixed watercolor blobs to show through solid section backgrounds */
+body {
+  background: #ffffff;
+}
+
+/* Sections that had opaque bg — keep white but allow blob bleed-through at edges */
+section {
+  position: relative;
+}
+
+/* ── Watercolor blob float animation ── */
+@keyframes blobDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(12px, -18px) scale(1.02); }
+  66%       { transform: translate(-8px, 10px) scale(0.98); }
+}
+@keyframes blobDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-15px, 12px) scale(1.03); }
+  66%       { transform: translate(10px, -8px) scale(0.97); }
+}
+@keyframes blobDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(8px, 20px) scale(1.015); }
+}
+
+/* ── Range slider ── */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 4px;
+  background: #E6EEC9;
+  outline: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #35858E;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(53,133,142,0.35);
+  border: 2px solid #fff;
+  transition: transform 0.15s;
+}
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: #88BDA4; border-radius: 4px; }

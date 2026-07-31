@@ -1,0 +1,162 @@
+import { Link } from 'react-router'
+import { Instagram, Linkedin, Youtube, Send } from 'lucide-react'
+import { useState } from 'react'
+import logoImg from '../../imports/Untitled_design_1.png'
+
+const companyLinks = [
+  { label: 'About Us', path: '/about' },
+  { label: 'Our Services', path: '/services' },
+  { label: 'Contact Us', path: '/contact' },
+  { label: 'Blog', path: '/blog' },
+]
+
+const calcLinks = [
+  { label: 'Retirement Corpus', path: '/calculators/retirement' },
+  { label: 'Cash Flow Solution', path: '/calculators/cash-flow' },
+  { label: "Children's Education", path: '/calculators/education' },
+  { label: 'Goal-Based', path: '/calculators/goal-based' },
+  { label: 'SIP Investments', path: '/calculators/sip' },
+  { label: 'Lump-Sum', path: '/calculators/lump-sum' },
+  { label: 'Flexible Investments', path: '/calculators/flexible' },
+]
+
+const supportLinks = [
+  { label: 'Help Center', path: '#' },
+  { label: 'Terms of Use', path: '#' },
+  { label: 'Privacy Policy', path: '#' },
+  { label: 'Disclaimer', path: '#' },
+]
+
+export function Footer() {
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email) { setSubscribed(true); setEmail('') }
+  }
+
+  return (
+    <footer style={{ background: '#1e4a4f', color: '#e0f0f2', paddingTop: 64 }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, paddingBottom: 48 }}>
+          {/* Brand */}
+          <div style={{ gridColumn: 'span 1' }}>
+            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', marginBottom: 16 }}>
+              <img
+                src={logoImg}
+                alt="MFDThiru"
+                style={{ width: 40, height: 40, borderRadius: 10, objectFit: 'contain', display: 'block', boxShadow: '0 2px 10px rgba(0,0,0,0.30)' }}
+              />
+              <span style={{ fontSize: 22, fontWeight: 700, color: '#fff' }}>MFDThiru</span>
+            </Link>
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: '#a8c8cc', marginBottom: 20 }}>
+              Your trusted partner for goal-oriented mutual fund investments. We help families across India build a better financial future.
+            </p>
+            <div style={{ display: 'flex', gap: 12 }}>
+              {[
+                { icon: <Instagram size={18} />, href: '#', label: 'Instagram' },
+                { icon: <Linkedin size={18} />, href: '#', label: 'LinkedIn' },
+                { icon: <Youtube size={18} />, href: '#', label: 'YouTube' },
+              ].map(s => (
+                <a key={s.label} href={s.href} aria-label={s.label} style={{
+                  width: 38, height: 38, borderRadius: 10, background: 'rgba(255,255,255,0.1)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a8c8cc',
+                  textDecoration: 'none', transition: 'all 0.2s',
+                }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#35858E'; (e.currentTarget as HTMLElement).style.color = '#fff' }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.1)'; (e.currentTarget as HTMLElement).style.color = '#a8c8cc' }}
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Company</h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              {companyLinks.map(link => (
+                <li key={link.path} style={{ marginBottom: 10 }}>
+                  <Link to={link.path} style={{ color: '#a8c8cc', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
+                    onMouseEnter={e => (e.target as HTMLElement).style.color = '#88BDA4'}
+                    onMouseLeave={e => (e.target as HTMLElement).style.color = '#a8c8cc'}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Calculators */}
+          <div>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Calculators</h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              {calcLinks.map(link => (
+                <li key={link.path} style={{ marginBottom: 10 }}>
+                  <Link to={link.path} style={{ color: '#a8c8cc', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
+                    onMouseEnter={e => (e.target as HTMLElement).style.color = '#88BDA4'}
+                    onMouseLeave={e => (e.target as HTMLElement).style.color = '#a8c8cc'}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support + Newsletter */}
+          <div>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Support</h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: 28 }}>
+              {supportLinks.map(link => (
+                <li key={link.label} style={{ marginBottom: 10 }}>
+                  <Link to={link.path} style={{ color: '#a8c8cc', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
+                    onMouseEnter={e => (e.target as HTMLElement).style.color = '#88BDA4'}
+                    onMouseLeave={e => (e.target as HTMLElement).style.color = '#a8c8cc'}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Stay Updated</h3>
+            {subscribed ? (
+              <p style={{ color: '#88BDA4', fontSize: 14 }}>✓ Thank you for subscribing!</p>
+            ) : (
+              <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: 8 }}>
+                <input
+                  type="email" value={email} onChange={e => setEmail(e.target.value)}
+                  placeholder="Your email" required
+                  style={{
+                    flex: 1, padding: '10px 14px', borderRadius: 10, border: '1px solid rgba(136,189,164,0.3)',
+                    background: 'rgba(255,255,255,0.08)', color: '#fff', fontSize: 14, outline: 'none',
+                  }}
+                />
+                <button type="submit" style={{
+                  padding: '10px 14px', borderRadius: 10, background: '#35858E', border: 'none',
+                  cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center',
+                }}>
+                  <Send size={16} />
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 24, paddingBottom: 32 }}>
+          <p style={{ fontSize: 12, color: '#6a9499', lineHeight: 1.7, marginBottom: 12 }}>
+            <strong style={{ color: '#a8c8cc' }}>Disclaimer:</strong> Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results. The information provided on this website is for educational purposes only and should not be construed as investment advice.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+            <p style={{ fontSize: 13, color: '#6a9499' }}>© 2026 MFDThiru. All rights reserved.</p>
+            <p style={{ fontSize: 13, color: '#6a9499' }}>AMFI Registered Mutual Fund Distributor</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
