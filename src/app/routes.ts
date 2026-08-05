@@ -13,6 +13,11 @@ import { GoalBasedCalc } from './pages/calculators/GoalBasedCalc'
 import { SIPCalc } from './pages/calculators/SIPCalc'
 import { LumpSumCalc } from './pages/calculators/LumpSumCalc'
 import { FlexibleCalc } from './pages/calculators/FlexibleCalc'
+import { CalculatorPolicy } from './pages/legal/CalculatorPolicy'
+import { Disclaimer } from './pages/legal/Disclaimer'
+import { PrivacyPolicy } from './pages/legal/PrivacyPolicy'
+import { InvestorGrievance } from './pages/legal/InvestorGrievance'
+import { TermsOfUse } from './pages/legal/TermsOfUse'
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +37,11 @@ export const router = createBrowserRouter([
       { path: 'calculators/sip', Component: SIPCalc },
       { path: 'calculators/lump-sum', Component: LumpSumCalc },
       { path: 'calculators/flexible', Component: FlexibleCalc },
+      { path: 'calculator-policy', Component: CalculatorPolicy },
+      { path: 'disclaimer', Component: Disclaimer },
+      { path: 'privacy-policy', Component: PrivacyPolicy },
+      { path: 'investor-grievance', Component: InvestorGrievance },
+      { path: 'terms-of-use', Component: TermsOfUse },
     ],
   },
 ])

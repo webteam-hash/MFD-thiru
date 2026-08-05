@@ -20,11 +20,12 @@ const calcLinks = [
   { label: 'Flexible Investments', path: '/calculators/flexible' },
 ]
 
-const supportLinks = [
-  { label: 'Help Center', path: '#' },
-  { label: 'Terms of Use', path: '#' },
-  { label: 'Privacy Policy', path: '#' },
-  { label: 'Disclaimer', path: '#' },
+const legalLinks = [
+  { label: 'Disclaimer', path: '/disclaimer' },
+  { label: 'Privacy Policy', path: '/privacy-policy' },
+  { label: 'Terms of Use', path: '/terms-of-use' },
+  { label: 'Calculator Policy', path: '/calculator-policy' },
+  { label: 'Investor Grievance', path: '/investor-grievance' },
 ]
 
 export function Footer() {
@@ -50,8 +51,11 @@ export function Footer() {
               />
               <span style={{ fontSize: 22, fontWeight: 700, color: '#fff' }}>MFDThiru</span>
             </Link>
-            <p style={{ fontSize: 14, lineHeight: 1.7, color: '#a8c8cc', marginBottom: 20 }}>
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: '#a8c8cc', marginBottom: 12 }}>
               Your trusted partner for goal-oriented mutual fund investments. We help families across India build a better financial future.
+            </p>
+            <p style={{ fontSize: 12, lineHeight: 1.6, color: '#88BDA4', fontWeight: 600, marginBottom: 20 }}>
+              MFDThiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, AMFI Registered Mutual Fund Distributor (ARN – 26890).
             </p>
             <div style={{ display: 'flex', gap: 12 }}>
               {[
@@ -107,11 +111,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support + Newsletter */}
+          {/* Legal & Policies + Newsletter */}
           <div>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Support</h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: 28 }}>
-              {supportLinks.map(link => (
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Legal & Policies</h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: 24 }}>
+              {legalLinks.map(link => (
                 <li key={link.label} style={{ marginBottom: 10 }}>
                   <Link to={link.path} style={{ color: '#a8c8cc', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
                     onMouseEnter={e => (e.target as HTMLElement).style.color = '#88BDA4'}
@@ -146,14 +150,16 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
+        {/* Statutory Mutual Fund Risk Warning Banner */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 24, paddingBottom: 32 }}>
-          <p style={{ fontSize: 12, color: '#6a9499', lineHeight: 1.7, marginBottom: 12 }}>
-            <strong style={{ color: '#a8c8cc' }}>Disclaimer:</strong> Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results. The information provided on this website is for educational purposes only and should not be construed as investment advice.
-          </p>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '16px 20px', borderRadius: 12, borderLeft: '4px solid #88BDA4', marginBottom: 16 }}>
+            <p style={{ fontSize: 13, color: '#e0f0f2', lineHeight: 1.7, margin: 0, fontWeight: 600 }}>
+              Mutual Fund investments are subject to market risks. Read all scheme-related documents carefully before investing.
+            </p>
+          </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
             <p style={{ fontSize: 13, color: '#6a9499' }}>© 2026 MFDThiru. All rights reserved.</p>
-            <p style={{ fontSize: 13, color: '#6a9499' }}>AMFI Registered Mutual Fund Distributor</p>
+            <p style={{ fontSize: 13, color: '#6a9499' }}>AMFI Registered Mutual Fund Distributor | ARN – 26890</p>
           </div>
         </div>
       </div>

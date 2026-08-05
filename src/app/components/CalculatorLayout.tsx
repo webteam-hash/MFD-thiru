@@ -80,12 +80,15 @@ export function CalculatorLayout({ title, subtitle, ctaText, ctaLink = '/contact
         </div>
       </section>
 
-      {/* Disclaimer */}
-      <section style={{ padding: '24px', background: '#f8f8f8', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ fontSize: 12, color: '#7B827E', lineHeight: 1.7, textAlign: 'center' }}>
-            <strong>Disclaimer:</strong> {disclaimer || 'The calculations shown are for illustrative purposes only and are based on the assumptions provided. Actual returns may vary. Mutual fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Past performance is not indicative of future results.'}
+      {/* Calculator Disclaimer & Regulatory Link */}
+      <section style={{ padding: '28px 24px', background: '#f4fbf7', borderTop: '1px solid rgba(136,189,164,0.2)' }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontSize: 13, color: '#4A554F', lineHeight: 1.7, margin: '0 0 12px 0' }}>
+            <strong style={{ color: TEAL }}>Mandatory Disclaimer:</strong> {disclaimer || 'This calculator is an educational mathematical illustration based on user-selected inputs and assumptions. It does not constitute financial planning or investment advice, recommend any mutual fund scheme, or guarantee any return or achievement of a goal. Actual results may vary. Mutual Fund investments are subject to market risks, read all scheme related documents carefully.'}
           </p>
+          <Link to="/calculator-policy" style={{ fontSize: 13, fontWeight: 700, color: TEAL, textDecoration: 'underline' }}>
+            Read Regulatory Basis for Using Calculators (AMFI FAQ 4 & SEBI IA FAQ 19) →
+          </Link>
         </div>
       </section>
     </div>
