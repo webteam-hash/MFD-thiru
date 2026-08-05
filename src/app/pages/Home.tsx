@@ -166,7 +166,7 @@ export function Home() {
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
               style={{ display: 'flex', gap: 36, marginTop: 48, flexWrap: 'wrap' }}>
-              {[['500+', 'Happy Investors'], ['₹50Cr+', 'AUM Managed'], ['7+', 'Years Experience']].map(([num, label]) => (
+              {[['800+', 'Global Clients'], ['20+', 'Years Experience'], ['3 Gens', 'Family Trust']].map(([num, label]) => (
                 <div key={label}>
                   <div style={{ fontSize: 28, fontWeight: 800, color: TEAL }}>{num}</div>
                   <div style={{ fontSize: 13, color: '#7B827E', marginTop: 2 }}>{label}</div>
