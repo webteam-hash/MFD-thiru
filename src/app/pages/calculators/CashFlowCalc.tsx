@@ -26,7 +26,7 @@ function useAnimatedNumber(target: number) {
   return value
 }
 
-export function CashFlowCalc() {
+export function CashFlowCalc({ embedded }: { embedded?: boolean } = {}) {
   const [income, setIncome] = useState(100000)
   const [expenses, setExpenses] = useState(50000)
   const [existingInvestments, setExistingInvestments] = useState(500000)
@@ -57,6 +57,7 @@ export function CashFlowCalc() {
 
   return (
     <CalculatorLayout
+      embedded={embedded}
       title="Cash Flow Solution Calculator"
       subtitle="Understand your monthly cash flow and discover how much you can invest to build wealth over time."
       ctaText="Build My Investment Plan"

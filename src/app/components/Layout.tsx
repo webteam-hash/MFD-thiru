@@ -20,7 +20,7 @@ export function Layout() {
       {/* All content sits above the watercolor layer */}
       <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
-        <main style={{ flex: 1, paddingTop: 70 }}>
+        <main style={{ flex: 1, paddingTop: 120 }}>
           <Outlet />
         </main>
         <Footer />

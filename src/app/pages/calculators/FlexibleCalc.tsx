@@ -26,7 +26,7 @@ function useAnimatedNumber(target: number) {
   return value
 }
 
-export function FlexibleCalc() {
+export function FlexibleCalc({ embedded }: { embedded?: boolean } = {}) {
   const uid = useId().replace(/:/g, '')
   const [initial, setInitial] = useState(100000)
   const [monthly, setMonthly] = useState(10000)
@@ -59,14 +59,13 @@ export function FlexibleCalc() {
   totalContributions = runningContrib
   futureValue = runningValue
 
-  const estimatedGrowth = futureValue - totalContributions
-
   const aContrib = useAnimatedNumber(Math.round(totalContributions))
-  const aGrowth = useAnimatedNumber(Math.round(estimatedGrowth))
   const aFuture = useAnimatedNumber(Math.round(futureValue))
+  const aGrowth = useAnimatedNumber(Math.round(futureValue - totalContributions))
 
   return (
     <CalculatorLayout
+      embedded={embedded}
       title="Flexible Investment Calculator"
       subtitle="Combine a lump-sum with growing monthly contributions and see how your wealth compounds over time."
       ctaText="Build My Investment Strategy"

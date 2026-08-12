@@ -13,10 +13,19 @@ interface Props {
   ctaLink?: string
   howItWorks: string[]
   disclaimer?: string
+  embedded?: boolean
   children: React.ReactNode
 }
 
-export function CalculatorLayout({ title, subtitle, ctaText, ctaLink = '/contact', howItWorks, disclaimer, children }: Props) {
+export function CalculatorLayout({ title, subtitle, ctaText, ctaLink = '/contact', howItWorks, disclaimer, embedded = false, children }: Props) {
+  if (embedded) {
+    return (
+      <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 24, boxShadow: '0 8px 48px rgba(53,133,142,0.12)', border: '1px solid rgba(136,189,164,0.25)', overflow: 'hidden', backdropFilter: 'blur(8px)' }}>
+        {children}
+      </div>
+    )
+  }
+
   return (
     <div style={{ overflowX: 'hidden' }}>
       {/* Hero */}

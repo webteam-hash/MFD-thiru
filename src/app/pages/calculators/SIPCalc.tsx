@@ -25,7 +25,7 @@ function useAnimatedNumber(target: number) {
   return value
 }
 
-export function SIPCalc() {
+export function SIPCalc({ embedded }: { embedded?: boolean } = {}) {
   const [monthly, setMonthly] = useState(10000)
   const [years, setYears] = useState(10)
   const [rate, setRate] = useState(12)
@@ -47,6 +47,7 @@ export function SIPCalc() {
 
   return (
     <CalculatorLayout
+      embedded={embedded}
       title="SIP Investment Calculator"
       subtitle="Calculate how your monthly SIP investment can grow into substantial wealth over time with the power of compounding."
       ctaText="Start My SIP"

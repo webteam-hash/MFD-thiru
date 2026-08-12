@@ -1,23 +1,22 @@
 import { Link } from 'react-router'
 import { Instagram, Linkedin, Youtube, Send } from 'lucide-react'
 import { useState } from 'react'
-import logoImg from '../../imports/Untitled_design_1.png'
+import logoImg from '../../imports/mfd_thiru_logo.png'
 
 const companyLinks = [
   { label: 'About Us', path: '/about' },
-  { label: 'Our Services', path: '/services' },
   { label: 'Contact Us', path: '/contact' },
   { label: 'Blog', path: '/blog' },
 ]
 
-const calcLinks = [
+const serviceLinks = [
   { label: 'Retirement Corpus', path: '/calculators/retirement' },
-  { label: 'Cash Flow Solution', path: '/calculators/cash-flow' },
-  { label: "Children's Education", path: '/calculators/education' },
-  { label: 'Goal-Based', path: '/calculators/goal-based' },
-  { label: 'SIP Investments', path: '/calculators/sip' },
-  { label: 'Lump-Sum', path: '/calculators/lump-sum' },
-  { label: 'Flexible Investments', path: '/calculators/flexible' },
+  { label: 'Cash Flow', path: '/calculators/cash-flow' },
+  { label: "Children's Educational Planning", path: '/calculators/education' },
+  { label: 'Goal-Based Mutual Fund Planning', path: '/calculators/goal-based' },
+  { label: 'Systematic Investment Planning [SIP]', path: '/calculators/sip' },
+  { label: 'Lump Sums', path: '/calculators/lump-sum' },
+  { label: 'Personal Plans', path: '/calculators/flexible' },
 ]
 
 const legalLinks = [
@@ -43,13 +42,14 @@ export function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, paddingBottom: 48 }}>
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
-            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', marginBottom: 16 }}>
-              <img
-                src={logoImg}
-                alt="MFDThiru"
-                style={{ width: 40, height: 40, borderRadius: 10, objectFit: 'contain', display: 'block', boxShadow: '0 2px 10px rgba(0,0,0,0.30)' }}
-              />
-              <span style={{ fontSize: 22, fontWeight: 700, color: '#fff' }}>MFDThiru</span>
+            <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', marginBottom: 16 }}>
+              <div style={{ background: '#ffffff', padding: '14px 28px', borderRadius: 16, display: 'flex', alignItems: 'center', boxShadow: '0 6px 20px rgba(0,0,0,0.22)' }}>
+                <img
+                  src={logoImg}
+                  alt="MFD Thiru Logo"
+                  style={{ height: 110, width: 'auto', objectFit: 'contain', display: 'block', transform: 'scale(1.1)' }}
+                />
+              </div>
             </Link>
             <p style={{ fontSize: 14, lineHeight: 1.7, color: '#a8c8cc', marginBottom: 12 }}>
               Your trusted partner for goal-oriented mutual fund investments. We help families across India build a better financial future.
@@ -94,11 +94,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Calculators */}
+          {/* Our Services */}
           <div>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Calculators</h3>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Our Services</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {calcLinks.map(link => (
+              {serviceLinks.map(link => (
                 <li key={link.path} style={{ marginBottom: 10 }}>
                   <Link to={link.path} style={{ color: '#a8c8cc', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
                     onMouseEnter={e => (e.target as HTMLElement).style.color = '#88BDA4'}

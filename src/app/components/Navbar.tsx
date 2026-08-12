@@ -2,21 +2,21 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router'
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
-import logoImg from '../../imports/Untitled_design_1.png'
+import logoImg from '../../imports/mfd_thiru_logo.png'
 
-const calcLinks = [
+const serviceLinks = [
   { label: 'Retirement Corpus', path: '/calculators/retirement' },
-  { label: 'Cash Flow Solution', path: '/calculators/cash-flow' },
-  { label: "Children's Education Goal", path: '/calculators/education' },
-  { label: 'Goal-Based', path: '/calculators/goal-based' },
-  { label: 'SIP Investments', path: '/calculators/sip' },
-  { label: 'Lump-Sum', path: '/calculators/lump-sum' },
-  { label: 'Flexible Investments', path: '/calculators/flexible' },
+  { label: 'Cash Flow', path: '/calculators/cash-flow' },
+  { label: "Children's Educational Planning", path: '/calculators/education' },
+  { label: 'Goal-Based Mutual Fund Planning', path: '/calculators/goal-based' },
+  { label: 'Systematic Investment Planning [SIP]', path: '/calculators/sip' },
+  { label: 'Lump Sums', path: '/calculators/lump-sum' },
+  { label: 'Personal Plans', path: '/calculators/flexible' },
 ]
 
 const navLinks = [
+  { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
-  { label: 'Our Services', path: '/services' },
   { label: 'Blog', path: '/blog' },
   { label: 'FAQ', path: '/faq' },
   { label: 'Contact Us', path: '/contact' },
@@ -25,8 +25,8 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [calcOpen, setCalcOpen] = useState(false)
-  const [mobileCalcOpen, setMobileCalcOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
 
@@ -38,13 +38,13 @@ export function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false)
-    setCalcOpen(false)
+    setServicesOpen(false)
   }, [location])
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setCalcOpen(false)
+        setServicesOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClick)
@@ -52,7 +52,7 @@ export function Navbar() {
   }, [])
 
   const isActive = (path: string) => location.pathname === path
-  const isCalcActive = location.pathname.startsWith('/calculators')
+  const isServicesActive = serviceLinks.some(s => location.pathname === s.path)
 
   return (
     <>
@@ -66,16 +66,15 @@ export function Navbar() {
           borderBottom: scrolled ? '1px solid rgba(136,189,164,0.25)' : '1px solid rgba(0,0,0,0.06)',
         }}
       >
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 70 }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 120 }}>
           {/* Logo */}
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <img
               src={logoImg}
-              alt="MFDThiru"
-              style={{ width: 40, height: 40, borderRadius: 10, objectFit: 'contain', display: 'block', boxShadow: '0 2px 8px rgba(53,133,142,0.22)' }}
+              alt="MFD Thiru Logo"
+              style={{ height: 110, width: 'auto', objectFit: 'contain', display: 'block', transform: 'scale(1.15)', transformOrigin: 'left center' }}
             />
-            <span style={{ fontSize: 22, fontWeight: 700, color: '#303733', letterSpacing: '-0.3px' }}>MFDThiru</span>
-          </Link>
+          </div>
 
           {/* Desktop Nav */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }} className="hidden lg:flex">
@@ -93,41 +92,52 @@ export function Navbar() {
               </Link>
             ))}
 
-            {/* Calculators Dropdown */}
+            {/* Our Services Dropdown */}
             <div ref={dropdownRef} style={{ position: 'relative' }}>
               <button
-                onClick={() => setCalcOpen(!calcOpen)}
+                onClick={() => setServicesOpen(!servicesOpen)}
                 style={{
                   display: 'flex', alignItems: 'center', gap: 4, padding: '8px 16px', borderRadius: 8,
                   border: 'none', cursor: 'pointer', fontSize: 15, fontWeight: 500,
-                  color: isCalcActive ? '#35858E' : '#303733',
-                  background: isCalcActive ? '#E6F2DD' : 'transparent',
+                  color: isServicesActive ? '#35858E' : '#303733',
+                  background: isServicesActive ? '#E6F2DD' : 'transparent',
                   transition: 'all 0.2s',
                 }}
-                onMouseEnter={e => { if (!isCalcActive) (e.target as HTMLElement).style.background = '#f5faf5' }}
-                onMouseLeave={e => { if (!isCalcActive) (e.target as HTMLElement).style.background = isCalcActive ? '#E6F2DD' : 'transparent' }}
+                onMouseEnter={e => { if (!isServicesActive) (e.currentTarget as HTMLElement).style.background = '#f5faf5' }}
+                onMouseLeave={e => { if (!isServicesActive) (e.currentTarget as HTMLElement).style.background = 'transparent' }}
               >
-                Calculators
-                <ChevronDown size={16} style={{ transition: 'transform 0.2s', transform: calcOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
+                Our Services
+                <ChevronDown size={16} style={{ transition: 'transform 0.2s', transform: servicesOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
               </button>
 
               <AnimatePresence>
-                {calcOpen && (
+                {servicesOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: 8, scale: 0.96 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.96 }}
                     transition={{ duration: 0.18 }}
                     style={{
-                      position: 'absolute', top: 'calc(100% + 8px)', left: '50%', transform: 'translateX(-50%)',
-                      width: 280, background: '#fff', borderRadius: 16, padding: 8,
-                      boxShadow: '0 8px 40px rgba(53,133,142,0.15)', border: '1px solid rgba(136,189,164,0.3)',
+                      position: 'absolute', top: 'calc(100% + 4px)', left: '50%', transform: 'translateX(-50%)',
+                      width: 320, background: '#fff', borderRadius: 16, padding: 8,
+                      boxShadow: '0 12px 40px rgba(53,133,142,0.18)', border: '1px solid rgba(136,189,164,0.3)',
+                      zIndex: 110,
                     }}
                   >
-                    {calcLinks.map(link => (
-                      <Link key={link.path} to={link.path} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderRadius: 10, textDecoration: 'none', color: '#303733', fontSize: 14, fontWeight: 500, transition: 'all 0.15s' }}
+                    {serviceLinks.map(link => (
+                      <Link key={link.path} to={link.path} style={{
+                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                        padding: '10px 14px', borderRadius: 10, textDecoration: 'none',
+                        color: location.pathname === link.path ? '#35858E' : '#303733',
+                        background: location.pathname === link.path ? '#E6F2DD' : 'transparent',
+                        fontSize: 14, fontWeight: 500, transition: 'all 0.15s',
+                      }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#E6F2DD'; (e.currentTarget as HTMLElement).style.color = '#35858E' }}
-                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#303733' }}
+                        onMouseLeave={e => {
+                          const isCurrent = location.pathname === link.path
+                          ;(e.currentTarget as HTMLElement).style.background = isCurrent ? '#E6F2DD' : 'transparent'
+                          ;(e.currentTarget as HTMLElement).style.color = isCurrent ? '#35858E' : '#303733'
+                        }}
                       >
                         {link.label}
                         <ArrowRight size={14} style={{ color: '#88BDA4' }} />
@@ -184,7 +194,7 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
             style={{
-              position: 'fixed', top: 70, left: 0, right: 0, zIndex: 99,
+              position: 'fixed', top: 120, left: 0, right: 0, zIndex: 99,
               background: '#fff', borderBottom: '1px solid rgba(136,189,164,0.3)',
               overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
             }}
@@ -200,24 +210,25 @@ export function Navbar() {
                 </Link>
               ))}
 
-              {/* Mobile Calculators Accordion */}
+              {/* Mobile Our Services Accordion */}
               <div>
-                <button onClick={() => setMobileCalcOpen(!mobileCalcOpen)} style={{
+                <button onClick={() => setMobileServicesOpen(!mobileServicesOpen)} style={{
                   width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                   padding: '12px 0', background: 'none', border: 'none', cursor: 'pointer',
-                  fontSize: 16, fontWeight: 500, color: isCalcActive ? '#35858E' : '#303733',
+                  fontSize: 16, fontWeight: 500, color: isServicesActive ? '#35858E' : '#303733',
                   borderBottom: '1px solid #f0f0f0',
                 }}>
-                  Calculators
-                  <ChevronDown size={16} style={{ transition: 'transform 0.2s', transform: mobileCalcOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
+                  Our Services
+                  <ChevronDown size={16} style={{ transition: 'transform 0.2s', transform: mobileServicesOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
                 </button>
                 <AnimatePresence>
-                  {mobileCalcOpen && (
+                  {mobileServicesOpen && (
                     <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} style={{ overflow: 'hidden' }}>
-                      {calcLinks.map(link => (
+                      {serviceLinks.map(link => (
                         <Link key={link.path} to={link.path} style={{
                           display: 'block', padding: '10px 16px', textDecoration: 'none',
-                          fontSize: 14, color: '#555D58', borderBottom: '1px solid #f5f5f5',
+                          fontSize: 14, color: location.pathname === link.path ? '#35858E' : '#555D58',
+                          borderBottom: '1px solid #f5f5f5', fontWeight: location.pathname === link.path ? 600 : 400,
                         }}>
                           → {link.label}
                         </Link>

@@ -258,7 +258,7 @@ export function FAQ() {
               >
                 Contact Us <ArrowRight size={16} />
               </Link>
-              <Link to="/services" style={{
+              <Link to="/about" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 32px',
                 borderRadius: 12, background: 'rgba(255,255,255,0.88)', color: TEAL,
                 border: `2px solid ${MINT}`, textDecoration: 'none', fontSize: 15, fontWeight: 600,
@@ -267,7 +267,7 @@ export function FAQ() {
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = LIGHT}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.88)'}
               >
-                Our Services
+                About Us
               </Link>
             </div>
           </FadeUp>

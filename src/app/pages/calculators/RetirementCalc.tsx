@@ -25,7 +25,7 @@ function useAnimatedNumber(target: number) {
   return value
 }
 
-export function RetirementCalc() {
+export function RetirementCalc({ embedded }: { embedded?: boolean } = {}) {
   const uid = useId().replace(/:/g, '')
   const [currentAge, setCurrentAge] = useState(30)
   const [retirementAge, setRetirementAge] = useState(60)
@@ -58,6 +58,7 @@ export function RetirementCalc() {
 
   return (
     <CalculatorLayout
+      embedded={embedded}
       title="Retirement Corpus Calculator"
       subtitle="Estimate the corpus you may need to support a comfortable retirement and calculate how much to invest today."
       ctaText="Plan for Retirement"

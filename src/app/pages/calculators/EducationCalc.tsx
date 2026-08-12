@@ -26,7 +26,7 @@ function useAnimatedNumber(target: number) {
   return value
 }
 
-export function EducationCalc() {
+export function EducationCalc({ embedded }: { embedded?: boolean } = {}) {
   const [childAge, setChildAge] = useState(5)
   const [educationAge, setEducationAge] = useState(18)
   const [currentCost, setCurrentCost] = useState(500000)
@@ -56,6 +56,7 @@ export function EducationCalc() {
 
   return (
     <CalculatorLayout
+      embedded={embedded}
       title="Children's Education Goal Calculator"
       subtitle="Plan ahead for your child's education costs and calculate exactly how much you need to invest today."
       ctaText="Start Planning"

@@ -25,7 +25,7 @@ function useAnimatedNumber(target: number) {
   return value
 }
 
-export function LumpSumCalc() {
+export function LumpSumCalc({ embedded }: { embedded?: boolean } = {}) {
   const uid = useId().replace(/:/g, '')
   const [amount, setAmount] = useState(500000)
   const [years, setYears] = useState(10)
@@ -46,6 +46,7 @@ export function LumpSumCalc() {
 
   return (
     <CalculatorLayout
+      embedded={embedded}
       title="Lump-Sum Investment Calculator"
       subtitle="Calculate how a one-time lump-sum investment can grow over time with compounding returns."
       ctaText="Explore Lump-Sum Investment"

@@ -27,7 +27,7 @@ function useAnimatedNumber(target: number) {
   return value
 }
 
-export function GoalBasedCalc() {
+export function GoalBasedCalc({ embedded }: { embedded?: boolean } = {}) {
   const [goalName, setGoalName] = useState('Home')
   const [currentCost, setCurrentCost] = useState(5000000)
   const [timeline, setTimeline] = useState(10)
@@ -56,6 +56,7 @@ export function GoalBasedCalc() {
 
   return (
     <CalculatorLayout
+      embedded={embedded}
       title="Goal-Based Investment Calculator"
       subtitle="Set a specific financial goal and calculate exactly how much you need to invest each month to achieve it."
       ctaText="Plan My Goal"
