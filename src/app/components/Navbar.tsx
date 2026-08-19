@@ -272,7 +272,7 @@ export function Navbar() {
             style={{
               position: 'fixed', top: scrolled ? 76 : 84, left: 0, right: 0, zIndex: 99,
               background: '#fff', borderBottom: '1px solid rgba(136,189,164,0.3)',
-              overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+              maxHeight: 'calc(100vh - 84px)', overflowY: 'auto', boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
             }}
           >
             <div style={{ padding: '12px 24px 20px' }}>
