@@ -171,6 +171,7 @@ export function Home() {
 
               {/* Floating popup card 1 — We help to save */}
               <motion.div
+                className="hero-floating-card"
                 animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 3.4, ease: 'easeInOut' }}
                 style={{
                   position: 'absolute', top: 24, left: -24,
@@ -190,6 +191,7 @@ export function Home() {
 
               {/* Floating popup card 2 — Wealth creation process */}
               <motion.div
+                className="hero-floating-card"
                 animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 0.8 }}
                 style={{
                   position: 'absolute', bottom: 20, right: -20,
