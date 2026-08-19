@@ -51,7 +51,7 @@ export function LumpSumCalc({ embedded }: { embedded?: boolean } = {}) {
       subtitle="Calculate how a one-time lump-sum investment can grow over time with compounding returns."
       ctaText="Explore Lump-Sum Investment"
       howItWorks={[
-        'Enter your lump-sum investment amount — this could be a bonus, inheritance, property sale proceeds, or any one-time windfall.',
+        'Enter your lump-sum investment amount (such as a bonus, inheritance, property sale proceeds, or one-time windfall).',
         'Select the investment duration. The longer you stay invested, the more compounding works in your favour.',
         'Choose the expected annual return rate based on your fund category and risk tolerance.',
         'The calculator shows your investment growth year by year along with the total gain.',

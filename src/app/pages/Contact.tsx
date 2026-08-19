@@ -2,6 +2,9 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 import { Phone, Mail, MapPin, Instagram, Linkedin, Youtube, MessageCircle, ArrowRight, CheckCircle } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
+import { BackButton } from '../components/BackButton'
+import { SEO } from '../components/SEO'
+import { GoogleAdsEvents } from '../utils/gtag'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -41,7 +44,9 @@ export function Contact() {
     const errs = validate()
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setLoading(true)
-    setTimeout(() => { setLoading(false); setSubmitted(true) }, 1200)
+    // Fire Google Ads Lead Generation Event
+    GoogleAdsEvents.leadSubmitted(form.interest || 'contact_form')
+    setTimeout(() => { setLoading(false); setSubmitted(true) }, 1000)
   }
 
   const inputStyle = (field: string) => ({
@@ -52,20 +57,28 @@ export function Contact() {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <SEO
+        title="Contact Us | MFDThiru — Mutual Fund Distributor Chennai"
+        description="Get in touch with J. C. Thirumurugan (ARN 26890) for mutual fund consultations, SIP setup, retirement planning, and portfolio reviews in Chennai."
+        canonical="/contact"
+      />
       {/* Hero */}
-      <section style={{ background: 'rgba(230,242,221,0.44)', padding: '72px 24px 56px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'rgba(230,242,221,0.44)', padding: '48px 24px 56px', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-5%" y="-10%" w={420} h={320} color="#B1D3B9" op={0.42} blur={68} r="56% 44% 35% 65% / 50% 48% 52% 50%" />
         <SectionBlob x="82%" y="15%" w={320} h={270} color="#88BDA4" op={0.30} blur={60} r="40% 60% 58% 42% / 56% 40% 60% 40%" />
-        <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
-          <FadeUp>
-            <span style={{ display: 'inline-block', padding: '6px 16px', borderRadius: 20, background: LIGHT, color: TEAL, fontSize: 13, fontWeight: 600, marginBottom: 16 }}>Contact Us</span>
-            <h1 style={{ fontSize: 'clamp(30px, 5vw, 52px)', fontWeight: 800, color: '#303733', marginBottom: 16, lineHeight: 1.2 }}>
-              Let's Talk About Your<br /><span style={{ color: TEAL }}>Financial Goals</span>
-            </h1>
-            <p style={{ fontSize: 17, color: '#555D58', lineHeight: 1.8, maxWidth: 560, margin: '0 auto' }}>
-              Reach out to our team. We're here to help you understand your investment options and take the next step toward your financial goals.
-            </p>
-          </FadeUp>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <BackButton />
+          <div style={{ textAlign: 'center', maxWidth: 800, margin: '0 auto' }}>
+            <FadeUp>
+              <span style={{ display: 'inline-block', padding: '6px 16px', borderRadius: 20, background: LIGHT, color: TEAL, fontSize: 13, fontWeight: 600, marginBottom: 16 }}>Contact Us</span>
+              <h1 style={{ fontSize: 'clamp(30px, 5vw, 52px)', fontWeight: 800, color: '#303733', marginBottom: 16, lineHeight: 1.2 }}>
+                Let's Talk About Your<br /><span style={{ color: TEAL }}>Financial Goals</span>
+              </h1>
+              <p style={{ fontSize: 17, color: '#555D58', lineHeight: 1.8, maxWidth: 560, margin: '0 auto' }}>
+                Reach out to our team. We're here to help you understand your investment options and take the next step toward your financial goals.
+              </p>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
@@ -167,7 +180,7 @@ export function Contact() {
                 {
                   icon: <MapPin size={22} color={TEAL} />,
                   title: 'Office Address',
-                  content: 'No 8/1, 3rd Cross Street, Unique Sterling Apartment, Ground Floor, Sterling Road, Nungambakkam, Chennai – 600034',
+                  content: 'No 8/1, 3rd Cross Street, Unique Sterling Apartment, Ground Floor, Sterling Road, Nungambakkam, Chennai, Tamil Nadu 600034',
                   link: null,
                   bg: LIGHT,
                 },

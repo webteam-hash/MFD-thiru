@@ -61,7 +61,7 @@ export function GoalBasedCalc({ embedded }: { embedded?: boolean } = {}) {
       subtitle="Set a specific financial goal and calculate exactly how much you need to invest each month to achieve it."
       ctaText="Plan My Goal"
       howItWorks={[
-        'Select your financial goal — home, education, wedding, travel, retirement or any custom goal.',
+        'Select your financial goal (home, education, wedding, travel, retirement or custom goal).',
         'Enter the current estimated cost of your goal in today\'s value.',
         'Set your goal timeline (years) and expected inflation to calculate future cost.',
         'The calculator shows the future cost, funding gap, and monthly SIP needed to reach your goal.',

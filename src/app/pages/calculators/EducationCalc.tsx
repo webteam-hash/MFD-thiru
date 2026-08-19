@@ -63,7 +63,7 @@ export function EducationCalc({ embedded }: { embedded?: boolean } = {}) {
       howItWorks={[
         "Enter your child's current age and the age they will start higher education (typically 18).",
         'Input the current estimated cost of education in today\'s value.',
-        'Set the education inflation rate — this is typically 10-12% in India.',
+        'Set the education inflation rate, which is typically 10% to 12% in India.',
         'The calculator accounts for your existing savings growth and shows the monthly SIP needed to bridge the gap.',
       ]}
     >

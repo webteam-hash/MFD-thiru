@@ -38,7 +38,7 @@ export function InvestorGrievance() {
               At MFDThiru, we are committed to providing prompt, transparent and efficient service to our investors.
             </p>
             <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
-              J. C. Thirumurugan &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor (ARN – 26890)
+              J. C. Thirumurugan &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor (ARN 26890)
             </div>
           </FadeUp>
         </div>
@@ -67,7 +67,7 @@ export function InvestorGrievance() {
                   </div>
                   <div>
                     <div style={{ fontSize: 12, color: '#77827B', fontWeight: 700, letterSpacing: '0.5px' }}>AMFI REGISTRATION</div>
-                    <div style={{ fontSize: 17, fontWeight: 700, color: TEAL, marginTop: 4 }}>ARN – 26890</div>
+                    <div style={{ fontSize: 17, fontWeight: 700, color: TEAL, marginTop: 4 }}>ARN 26890</div>
                   </div>
                   <div>
                     <div style={{ fontSize: 12, color: '#77827B', fontWeight: 700, letterSpacing: '0.5px' }}>BRAND NAME</div>

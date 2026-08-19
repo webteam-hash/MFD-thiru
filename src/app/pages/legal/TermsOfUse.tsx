@@ -38,7 +38,7 @@ export function TermsOfUse() {
               Terms and conditions governing your access and usage of the MFDThiru website and services.
             </p>
             <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
-              MFDThiru &nbsp;|&nbsp; J. C. Thirumurugan (ARN – 26890)
+              MFDThiru &nbsp;|&nbsp; J. C. Thirumurugan (ARN 26890)
             </div>
           </FadeUp>
         </div>
@@ -60,7 +60,7 @@ export function TermsOfUse() {
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>1. Brand Registration & Distributor Scope</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  MFDThiru is the brand name under which mutual fund distribution services are offered by <strong>J. C. Thirumurugan</strong>, AMFI Registered Mutual Fund Distributor (ARN – 26890).
+                  MFDThiru is the brand name under which mutual fund distribution services are offered by <strong>J. C. Thirumurugan</strong>, AMFI Registered Mutual Fund Distributor (ARN 26890).
                 </p>
               </div>
             </FadeUp>

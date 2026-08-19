@@ -1,6 +1,8 @@
 import { Link } from 'react-router'
 import { ArrowRight, Info } from 'lucide-react'
 import { SectionBlob } from './WatercolorBg'
+import { BackButton } from './BackButton'
+import { SEO } from './SEO'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -28,14 +30,21 @@ export function CalculatorLayout({ title, subtitle, ctaText, ctaLink = '/contact
 
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <SEO
+        title={`${title} | MFDThiru Mutual Fund Calculators`}
+        description={`${subtitle} AMFI-registered Mutual Fund Distributor (ARN 26890) led by J. C. Thirumurugan.`}
+      />
       {/* Hero */}
-      <section style={{ background: 'rgba(230,242,221,0.42)', padding: '60px 24px 48px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'rgba(230,242,221,0.42)', padding: '40px 24px 48px', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-5%" y="-15%" w={380} h={300} color="#B1D3B9" op={0.42} blur={66} r="56% 44% 36% 64% / 50% 46% 54% 50%" />
         <SectionBlob x="82%" y="10%" w={320} h={260} color="#88BDA4" op={0.28} blur={58} r="40% 60% 56% 44% / 56% 40% 60% 40%" />
-        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
-          <span style={{ display: 'inline-block', padding: '5px 14px', borderRadius: 20, background: LIGHT, color: TEAL, fontSize: 13, fontWeight: 600, marginBottom: 14 }}>Calculator</span>
-          <h1 style={{ fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 800, color: '#303733', marginBottom: 14, lineHeight: 1.2 }}>{title}</h1>
-          <p style={{ fontSize: 17, color: '#555D58', lineHeight: 1.7, maxWidth: 600, margin: '0 auto' }}>{subtitle}</p>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <BackButton />
+          <div style={{ textAlign: 'center', marginTop: 8 }}>
+            <span style={{ display: 'inline-block', padding: '5px 14px', borderRadius: 20, background: LIGHT, color: TEAL, fontSize: 13, fontWeight: 600, marginBottom: 14 }}>Calculator</span>
+            <h1 style={{ fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 800, color: '#303733', marginBottom: 14, lineHeight: 1.2 }}>{title}</h1>
+            <p style={{ fontSize: 17, color: '#555D58', lineHeight: 1.7, maxWidth: 600, margin: '0 auto' }}>{subtitle}</p>
+          </div>
         </div>
       </section>
 

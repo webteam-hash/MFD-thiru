@@ -71,7 +71,7 @@ export function FlexibleCalc({ embedded }: { embedded?: boolean } = {}) {
       ctaText="Build My Investment Strategy"
       howItWorks={[
         'Start with an optional initial lump-sum investment to give your portfolio a head start.',
-        'Add your monthly SIP contribution — this is the amount you will invest every month.',
+        'Add your monthly SIP contribution, which is the amount you will invest every month.',
         'Set an annual increase in contribution (step-up SIP) to account for income growth over time.',
         'The calculator shows compounded growth combining both lump-sum and systematic contributions.',
       ]}

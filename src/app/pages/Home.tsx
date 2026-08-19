@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { motion, useInView } from 'motion/react'
 import { ArrowRight, TrendingUp, Shield, Users, Target, Star, ChevronLeft, ChevronRight, CheckCircle, Eye } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
+import { SEO, ORGANIZATION_SCHEMA } from '../components/SEO'
 import { SIPCalc } from './calculators/SIPCalc'
 import { LumpSumCalc } from './calculators/LumpSumCalc'
 import { RetirementCalc } from './calculators/RetirementCalc'
@@ -79,6 +80,12 @@ export function Home() {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <SEO
+        title="MFDThiru | AMFI Registered Mutual Fund Distributor (ARN 26890)"
+        description="MFDThiru — AMFI-registered Mutual Fund Distributor (ARN 26890) led by J. C. Thirumurugan with 20+ years experience. Goal-based Mutual Fund & Retirement Planning."
+        canonical="/"
+        schema={ORGANIZATION_SCHEMA}
+      />
 
       {/* ══════════════════════════════
           HERO
@@ -223,41 +230,153 @@ export function Home() {
               <p style={{ fontSize: 17, color: '#555D58', maxWidth: 540, margin: '0 auto' }}>Your investment needs evolve at every stage of life. We offer tailored guidance to match exactly where you are today.</p>
             </div>
           </FadeUp>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 28 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 28 }}>
             {[
-              { label: 'Wealth Accumulation', tag: 'Early & Mid-Career', img: 'https://images.unsplash.com/photo-1689799514696-b16af9b53753?w=600&q=80', desc: 'Harness the power of long-term compounding through disciplined equity SIPs designed for professionals building their financial foundation.' },
-              { label: 'Capital Growth & Goal Planning', tag: 'Prime Earning Years', img: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&q=80', desc: 'Balance active wealth expansion with core life goals like child education, asset purchase, and portfolio diversification.' },
-              { label: 'Wealth Preservation & Income', tag: 'Retirement & Cash Flow', img: 'https://images.unsplash.com/photo-1761839257647-df30867afd54?w=600&q=80', desc: 'Protect your accumulated wealth while generating dependable, tax-efficient cash flow for financial peace of mind.' },
-            ].map((card, i) => (
-              <FadeUp key={card.label} delay={i * 0.15}>
-                <div style={{ borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,0.88)', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', transition: 'all 0.3s', cursor: 'pointer', backdropFilter: 'blur(6px)', border: '1px solid rgba(136,189,164,0.2)' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 16px 48px rgba(53,133,142,0.18)' }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 24px rgba(0,0,0,0.07)' }}
-                >
-                  <div style={{ height: 220, overflow: 'hidden', position: 'relative' }}>
-                    <img src={card.img} alt={card.label} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s' }}
-                      onMouseEnter={e => (e.target as HTMLElement).style.transform = 'scale(1.05)'}
-                      onMouseLeave={e => (e.target as HTMLElement).style.transform = 'scale(1)'}
-                    />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.28), transparent)' }} />
-                  </div>
-                  <div style={{ padding: '24px' }}>
-                    <span style={{ fontSize: 12, fontWeight: 600, color: TEAL, background: 'rgba(230,242,221,0.9)', padding: '4px 12px', borderRadius: 20 }}>{card.tag}</span>
-                    <h3 style={{ fontSize: 20, fontWeight: 700, color: '#303733', margin: '12px 0 8px', lineHeight: 1.3 }}>{card.label}</h3>
-                    <p style={{ fontSize: 14, color: '#555D58', lineHeight: 1.6, marginBottom: 20 }}>{card.desc}</p>
-                    <Link to="/contact" style={{
-                      display: 'inline-flex', alignItems: 'center', gap: 6, padding: '10px 20px',
-                      borderRadius: 10, background: TEAL, color: '#fff', textDecoration: 'none', fontSize: 14, fontWeight: 600, transition: 'all 0.2s',
+              {
+                title: 'Start Your Wealth Journey',
+                stage: 'Indicative age: 18 to 30 | Early-stage investors',
+                highlight: 'Start early. Invest consistently. Give your money more time to grow.',
+                description: 'Begin with affordable SIPs and build disciplined investment habits for long-term wealth creation and important future goals. Mutual fund options are considered based on your investment horizon and risk profile.',
+                cta: 'Start Your SIP',
+                route: '/calculators/sip',
+                img: 'https://images.unsplash.com/photo-1689799514696-b16af9b53753?w=600&q=80',
+                IconComp: TrendingUp,
+              },
+              {
+                title: 'Build Your Goals & Retirement Corpus',
+                stage: 'Indicative age: 31 to 55 | Wealth-building stage',
+                highlight: 'Balance today’s responsibilities with tomorrow’s financial security.',
+                description: 'Build towards children’s education, major life goals, long-term wealth creation and the retirement corpus you may require. Invest through SIP, lump-sum or flexible mutual fund investments based on your goals, time horizon, liquidity needs and risk profile.',
+                cta: 'Build Your Retirement Corpus',
+                route: '/calculators/retirement',
+                img: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&q=80',
+                IconComp: Target,
+              },
+              {
+                title: 'Retirement Corpus to Inflation-Aware Cash Flow',
+                stage: 'Retired investors | Corpus-deployment stage',
+                highlight: 'Your retirement corpus is ready. Is your cash flow ready for inflation?',
+                description: 'Evaluate how your accumulated retirement corpus (including funds currently held in fixed deposits) may be appropriately deployed through suitable mutual fund schemes to support a structured cash flow that considers rising living expenses, liquidity needs, risk profile and long-term corpus sustainability.',
+                cta: 'Evaluate Your Retirement Cash Flow',
+                route: '/calculators/cash-flow',
+                img: 'https://images.unsplash.com/photo-1761839257647-df30867afd54?w=600&q=80',
+                IconComp: Shield,
+              },
+            ].map((card, i) => {
+              const Icon = card.IconComp
+              return (
+                <FadeUp key={card.title} delay={i * 0.15}>
+                  <div
+                    style={{
+                      borderRadius: 20,
+                      overflow: 'hidden',
+                      background: 'rgba(255,255,255,0.92)',
+                      boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
+                      transition: 'all 0.3s ease',
+                      border: '1px solid rgba(136,189,164,0.25)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: '100%',
+                      backdropFilter: 'blur(6px)',
                     }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#2a6e76'; (e.currentTarget as HTMLElement).style.gap = '10px' }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = TEAL; (e.currentTarget as HTMLElement).style.gap = '6px' }}
-                    >
-                      Invest Now <ArrowRight size={14} />
-                    </Link>
+                    onMouseEnter={e => {
+                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)'
+                      ;(e.currentTarget as HTMLElement).style.boxShadow = '0 16px 48px rgba(53,133,142,0.18)'
+                    }}
+                    onMouseLeave={e => {
+                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                      ;(e.currentTarget as HTMLElement).style.boxShadow = '0 4px 24px rgba(0,0,0,0.07)'
+                    }}
+                  >
+                    <div style={{ height: 210, overflow: 'hidden', position: 'relative' }}>
+                      <img
+                        src={card.img}
+                        alt={card.title}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                        onMouseEnter={e => ((e.target as HTMLElement).style.transform = 'scale(1.06)')}
+                        onMouseLeave={e => ((e.target as HTMLElement).style.transform = 'scale(1)')}
+                      />
+                    </div>
+
+                    <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                      <h3 style={{ fontSize: 20, fontWeight: 800, color: '#303733', marginBottom: 14, lineHeight: 1.35 }}>
+                        {card.title}
+                      </h3>
+
+                      <div style={{
+                        padding: '12px 14px',
+                        borderRadius: 10,
+                        background: 'rgba(230,242,221,0.6)',
+                        borderLeft: `4px solid ${TEAL}`,
+                        marginBottom: 16,
+                      }}>
+                        <p style={{ fontSize: 13.5, fontWeight: 600, color: TEAL, margin: 0, lineHeight: 1.5, fontStyle: 'italic' }}>
+                          "{card.highlight}"
+                        </p>
+                      </div>
+
+                      <p style={{ fontSize: 14, color: '#555D58', lineHeight: 1.65, marginBottom: 20 }}>
+                        {card.description}
+                      </p>
+
+                      <div style={{ marginTop: 'auto', paddingTop: 8 }}>
+                        <div style={{
+                          marginBottom: 12,
+                          fontSize: 12.5,
+                          fontWeight: 600,
+                          color: TEAL,
+                          background: 'rgba(230,242,221,0.85)',
+                          padding: '7px 14px',
+                          borderRadius: 8,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justify: 'center',
+                          gap: 6,
+                          border: '1px solid rgba(136,189,164,0.3)',
+                          textAlign: 'center',
+                        }}>
+                          <Icon size={14} style={{ flexShrink: 0 }} />
+                          <span>{card.stage}</span>
+                        </div>
+
+                        <Link
+                          to={card.route}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justify: 'center',
+                            gap: 8,
+                            width: '100%',
+                            padding: '12px 20px',
+                            borderRadius: 12,
+                            background: TEAL,
+                            color: '#fff',
+                            textDecoration: 'none',
+                            fontSize: 14.5,
+                            fontWeight: 700,
+                            transition: 'all 0.2s ease',
+                            boxShadow: '0 4px 14px rgba(53,133,142,0.25)',
+                          }}
+                          onMouseEnter={e => {
+                            ;(e.currentTarget as HTMLElement).style.background = '#2a6e76'
+                            ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'
+                            ;(e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(53,133,142,0.35)'
+                          }}
+                          onMouseLeave={e => {
+                            ;(e.currentTarget as HTMLElement).style.background = TEAL
+                            ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                            ;(e.currentTarget as HTMLElement).style.boxShadow = '0 4px 14px rgba(53,133,142,0.25)'
+                          }}
+                        >
+                          <span>{card.cta}</span>
+                          <ArrowRight size={16} />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </FadeUp>
-            ))}
+                </FadeUp>
+              )
+            })}
           </div>
         </div>
       </section>

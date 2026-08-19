@@ -52,7 +52,7 @@ export function SIPCalc({ embedded }: { embedded?: boolean } = {}) {
       subtitle="Calculate how your monthly SIP investment can grow into substantial wealth over time with the power of compounding."
       ctaText="Start My SIP"
       howItWorks={[
-        'Enter your desired monthly SIP amount — even ₹500 can make a significant difference over time.',
+        'Enter your desired monthly SIP amount, even ₹500 can make a significant difference over time.',
         'Set your investment duration. Longer duration dramatically increases the power of compounding.',
         'Adjust the expected annual return rate based on your chosen fund category (equity/debt/hybrid).',
         'The calculator shows your total invested amount, estimated returns, and projected future value.',

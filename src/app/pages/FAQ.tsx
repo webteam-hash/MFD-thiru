@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import { motion, useInView, AnimatePresence } from 'motion/react'
 import { ChevronDown, ArrowRight } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
+import { BackButton } from '../components/BackButton'
+import { SEO } from '../components/SEO'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -21,19 +23,11 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const faqs = [
   {
     q: 'What is MFDThiru?',
-    a: 'MFDThiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor – ARN 26890. We have been serving investors for more than two decades and currently support over 800 clients across India and overseas.',
+    a: 'MFDThiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor (ARN 26890). We have been serving investors for more than two decades and currently support over 800 clients across India and overseas.',
   },
   {
     q: 'Is MFDThiru a SEBI-registered Investment Adviser?',
     a: 'No. MFDThiru is an AMFI-registered Mutual Fund Distributor and not a SEBI-registered Investment Adviser. We provide mutual fund distribution services and incidental mutual fund guidance based on the investor\'s goals, investment horizon and risk profile. We do not provide comprehensive financial planning or holistic investment advice.',
-  },
-  {
-    q: 'How do you help investors select mutual fund schemes?',
-    a: 'We understand the investor\'s objective, investment horizon, liquidity requirements and risk profile before providing a curated list of suitable mutual fund schemes. The final investment decision remains with the investor.',
-  },
-  {
-    q: 'What is goal-based mutual fund investing?',
-    a: 'Goal-based mutual fund investing means aligning mutual fund investments with a specific objective, such as children\'s education, marriage, purchasing a home, building long-term wealth or creating a retirement corpus. Achievement of a goal or target corpus is not guaranteed.',
   },
   {
     q: 'How can you help with children\'s education?',
@@ -189,28 +183,36 @@ export function FAQ() {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <SEO
+        title="Frequently Asked Questions | MFDThiru"
+        description="Find answers to common questions about mutual fund distribution, ARN 26890 registration, online portfolio access, NRI investments, and goal-based planning."
+        canonical="/faq"
+      />
 
       {/* ── Hero ── */}
-      <section style={{ background: 'rgba(230,238,201,0.40)', padding: '80px 24px 72px', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
+      <section style={{ background: 'rgba(230,238,201,0.40)', padding: '48px 24px 72px', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-5%" y="-10%" w={400} h={320} color="#B1D3B9" op={0.40} blur={68} r="58% 42% 32% 68% / 50% 46% 54% 50%" />
         <SectionBlob x="82%" y="10%" w={340} h={280} color="#88BDA4" op={0.28} blur={58} r="40% 60% 58% 42% / 58% 40% 60% 40%" />
-        <div style={{ maxWidth: 680, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <FadeUp>
-            <span style={{
-              display: 'inline-block', padding: '5px 16px', borderRadius: 20,
-              background: 'rgba(255,255,255,0.85)', color: TEAL, fontSize: 12,
-              fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase',
-              marginBottom: 20, border: '1px solid rgba(136,189,164,0.4)',
-            }}>
-              FAQ
-            </span>
-            <h1 style={{ fontSize: 'clamp(30px, 5vw, 52px)', fontWeight: 800, color: '#1a2c2e', lineHeight: 1.15, marginBottom: 18 }}>
-              Answers to common<br />questions
-            </h1>
-            <p style={{ fontSize: 18, color: '#555D58', lineHeight: 1.7, maxWidth: 520, margin: '0 auto' }}>
-              Everything you need to know about mutual fund investing with MFDThiru.
-            </p>
-          </FadeUp>
+        <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <BackButton />
+          <div style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto' }}>
+            <FadeUp>
+              <span style={{
+                display: 'inline-block', padding: '5px 16px', borderRadius: 20,
+                background: 'rgba(255,255,255,0.85)', color: TEAL, fontSize: 12,
+                fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase',
+                marginBottom: 20, border: '1px solid rgba(136,189,164,0.4)',
+              }}>
+                FAQ
+              </span>
+              <h1 style={{ fontSize: 'clamp(30px, 5vw, 52px)', fontWeight: 800, color: '#1a2c2e', lineHeight: 1.15, marginBottom: 18 }}>
+                Answers to common<br />questions
+              </h1>
+              <p style={{ fontSize: 18, color: '#555D58', lineHeight: 1.7, maxWidth: 520, margin: '0 auto' }}>
+                Everything you need to know about mutual fund investing with MFDThiru.
+              </p>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
@@ -244,7 +246,7 @@ export function FAQ() {
               Still have questions?
             </h2>
             <p style={{ fontSize: 16, color: '#555D58', marginBottom: 32, lineHeight: 1.75 }}>
-              Reach out directly — we're happy to answer any questions about your investment journey.
+              Reach out directly, we are happy to answer any questions about your investment journey.
             </p>
             <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/contact" style={{

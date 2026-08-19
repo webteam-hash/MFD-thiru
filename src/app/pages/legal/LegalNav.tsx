@@ -1,5 +1,7 @@
 import { Link, useLocation } from 'react-router'
 import { ShieldAlert, Lock, FileCheck, Scale, Headphones } from 'lucide-react'
+import { BackButton } from '../../components/BackButton'
+import { SEO } from '../../components/SEO'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -15,14 +17,22 @@ const navItems = [
 
 export function LegalNav() {
   const location = useLocation()
+  const currentItem = navItems.find(item => item.path === location.pathname)
 
   return (
-    <div style={{
-      maxWidth: 1040, margin: '0 auto 40px', padding: '8px',
-      background: 'rgba(255,255,255,0.85)', borderRadius: 18,
-      border: '1px solid rgba(136,189,164,0.25)', boxShadow: '0 4px 20px rgba(53,133,142,0.06)',
-      backdropFilter: 'blur(10px)', display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'center'
-    }}>
+    <div style={{ maxWidth: 1040, margin: '0 auto 30px' }}>
+      <SEO
+        title={`${currentItem ? currentItem.label : 'Legal Information'} | MFDThiru (ARN 26890)`}
+        description={`Statutory disclosures, regulatory policies and regulatory compliance guidelines for MFDThiru — AMFI Registered Mutual Fund Distributor (ARN 26890).`}
+        canonical={location.pathname}
+      />
+      <BackButton />
+      <div style={{
+        padding: '8px',
+        background: 'rgba(255,255,255,0.85)', borderRadius: 18,
+        border: '1px solid rgba(136,189,164,0.25)', boxShadow: '0 4px 20px rgba(53,133,142,0.06)',
+        backdropFilter: 'blur(10px)', display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'center'
+      }}>
       {navItems.map(item => {
         const isActive = location.pathname === item.path
         const Icon = item.icon
@@ -45,6 +55,7 @@ export function LegalNav() {
           </Link>
         )
       })}
+      </div>
     </div>
   )
 }

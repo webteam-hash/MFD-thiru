@@ -38,7 +38,7 @@ export function Disclaimer() {
               Important disclosures regarding website content, distribution services, and market risks.
             </p>
             <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
-              J. C. Thirumurugan &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor (ARN – 26890)
+              J. C. Thirumurugan &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor (ARN 26890)
             </div>
           </FadeUp>
         </div>
@@ -69,7 +69,7 @@ export function Disclaimer() {
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>2. Distributor Registration & AMC Partnerships</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  MFDThiru is an AMFI Registered Mutual Fund Distributor (ARN – 26890) and facilitates the distribution of mutual fund products offered by various Asset Management Companies (AMCs). The information, illustrations and opinions presented on this website are based on sources believed to be reliable; however, no representation or warranty, express or implied, is made regarding their accuracy, completeness or suitability.
+                  MFDThiru is an AMFI Registered Mutual Fund Distributor (ARN 26890) and facilitates the distribution of mutual fund products offered by various Asset Management Companies (AMCs). The information, illustrations and opinions presented on this website are based on sources believed to be reliable; however, no representation or warranty, express or implied, is made regarding their accuracy, completeness or suitability.
                 </p>
               </div>
             </FadeUp>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { Instagram, Linkedin, Youtube, Send } from 'lucide-react'
 import { useState } from 'react'
-import logoImg from '../../imports/mfd_thiru_logo.png'
+import logoDarkImg from '../../imports/mfd_logo_dark.png'
 
 const companyLinks = [
   { label: 'About Us', path: '/about' },
@@ -42,20 +42,18 @@ export function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, paddingBottom: 48 }}>
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
-            <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', marginBottom: 16 }}>
-              <div style={{ background: '#ffffff', padding: '14px 28px', borderRadius: 16, display: 'flex', alignItems: 'center', boxShadow: '0 6px 20px rgba(0,0,0,0.22)' }}>
-                <img
-                  src={logoImg}
-                  alt="MFD Thiru Logo"
-                  style={{ height: 110, width: 'auto', objectFit: 'contain', display: 'block', transform: 'scale(1.1)' }}
-                />
-              </div>
+            <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', marginBottom: 20 }}>
+              <img
+                src={logoDarkImg}
+                alt="MFD Thiru Logo"
+                style={{ height: 48, width: 'auto', objectFit: 'contain', display: 'block' }}
+              />
             </Link>
             <p style={{ fontSize: 14, lineHeight: 1.7, color: '#a8c8cc', marginBottom: 12 }}>
               Your trusted partner for goal-oriented mutual fund investments. We help families across India build a better financial future.
             </p>
             <p style={{ fontSize: 12, lineHeight: 1.6, color: '#88BDA4', fontWeight: 600, marginBottom: 20 }}>
-              MFDThiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, AMFI Registered Mutual Fund Distributor (ARN – 26890).
+              MFDThiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, AMFI Registered Mutual Fund Distributor (ARN 26890).
             </p>
             <div style={{ display: 'flex', gap: 12 }}>
               {[
@@ -94,9 +92,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Our Services */}
+          {/* Calculators & Services */}
           <div>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Our Services</h3>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Calculators & Services</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {serviceLinks.map(link => (
                 <li key={link.path} style={{ marginBottom: 10 }}>
@@ -159,7 +157,7 @@ export function Footer() {
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
             <p style={{ fontSize: 13, color: '#6a9499' }}>© 2026 MFDThiru. All rights reserved.</p>
-            <p style={{ fontSize: 13, color: '#6a9499' }}>AMFI Registered Mutual Fund Distributor | ARN – 26890</p>
+            <p style={{ fontSize: 13, color: '#6a9499' }}>AMFI Registered Mutual Fund Distributor | ARN 26890</p>
           </div>
         </div>
       </div>

@@ -39,7 +39,7 @@ export function CalculatorPolicy() {
             </p>
             <div style={{ display: 'inline-flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', fontSize: 13, color: TEAL, fontWeight: 700 }}>
               <span style={{ padding: '6px 16px', background: '#ffffff', borderRadius: 12, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-                ARN Holder: J. C. Thirumurugan – ARN 26890
+                ARN Holder: J. C. Thirumurugan | ARN 26890
               </span>
               <span style={{ padding: '6px 16px', background: '#ffffff', borderRadius: 12, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
                 Updated: 22 July 2026
@@ -104,7 +104,7 @@ export function CalculatorPolicy() {
               <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
                 <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span style={{ width: 34, height: 34, borderRadius: '50%', background: `linear-gradient(135deg, ${TEAL}, ${MINT})`, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 800 }}>2</span>
-                  Regulatory Conclusion — Calculators Are Permitted With Boundaries
+                  Regulatory Conclusion: Calculators Are Permitted With Boundaries
                 </h2>
                 <p style={{ fontSize: 16, lineHeight: 1.8, color: '#4E5652', marginBottom: 24 }}>
                   SEBI and AMFI do not prohibit an MFD from using educational calculators or helping a client make a goal-based mutual fund investment. The controlling question is whether the activity remains basic, mutual-fund-only and incidental to distribution, or becomes detailed financial planning and holistic investment advice.
@@ -143,7 +143,7 @@ export function CalculatorPolicy() {
                   </div>
 
                   <div style={{ background: '#F7FAF7', padding: '28px', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.2)' }}>
-                    <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 12 }}>What AMFI Permits (AMFI MFD FAQs 1–5, 8–10 & Master Circular)</h3>
+                    <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 12 }}>What AMFI Permits (AMFI MFD FAQs 1 to 5, 8 to 10 & Master Circular)</h3>
                     <p style={{ fontSize: 15, lineHeight: 1.8, color: '#444C47', marginBottom: 14 }}>
                       AMFI expressly permits recommending a curated list of mutual fund schemes based on risk profile and product suitability, providing basic incidental guidance, assisting with goal-based SIP or lump-sum investments (education, home, retirement), and conducting periodic portfolio reviews within the MFD scope.
                     </p>
@@ -283,10 +283,10 @@ export function CalculatorPolicy() {
                 </h2>
                 
                 <div style={{ fontSize: 14, lineHeight: 1.8, color: '#4E5652', display: 'grid', gap: 10, marginBottom: 20 }}>
-                  <div>1. <strong>SEBI, FAQs – Registered Investment Advisers (August 2025)</strong> — FAQs 16 & 19 on MFD exemption and incidental activity.</div>
-                  <div>2. <strong>AMFI, FAQs on Do’s & Don’ts for MFDs</strong> — FAQs 1–5 & 8–10 on incidental guidance, goal-based MF investments, risk profiling and advertising.</div>
-                  <div>3. <strong>AMFI, Guidance on MFD Nomenclature</strong> — on avoiding unregistered advisory terminology.</div>
-                  <div>4. <strong>AMFI, Master Circular for Mutual Fund Distributors (14 January 2026)</strong> — consolidated MFD conduct guidelines.</div>
+                  <div>1. <strong>SEBI, FAQs: Registered Investment Advisers (August 2025)</strong>: FAQs 16 & 19 on MFD exemption and incidental activity.</div>
+                  <div>2. <strong>AMFI, FAQs on Do’s & Don’ts for MFDs</strong>: FAQs 1 to 5 & 8 to 10 on incidental guidance, goal-based MF investments, risk profiling and advertising.</div>
+                  <div>3. <strong>AMFI, Guidance on MFD Nomenclature</strong>: on avoiding unregistered advisory terminology.</div>
+                  <div>4. <strong>AMFI, Master Circular for Mutual Fund Distributors (14 January 2026)</strong>: consolidated MFD conduct guidelines.</div>
                 </div>
 
                 <div style={{ background: `linear-gradient(135deg, ${TEAL}, #1e4a4f)`, color: '#ffffff', borderRadius: 16, padding: '24px 28px', textAlign: 'center', fontSize: 14, lineHeight: 1.7, fontWeight: 600 }}>

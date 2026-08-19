@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { ArrowUp, MessageCircle, PhoneCall } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
+import { GoogleAdsEvents } from '../utils/gtag'
+import { BUSINESS_INFO } from '../constants/theme'
 
 export function FloatingButtons() {
   const [showTop, setShowTop] = useState(false)
@@ -17,10 +19,12 @@ export function FloatingButtons() {
     <div style={{ position: 'fixed', bottom: 28, right: 24, zIndex: 200, display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-end' }}>
       {/* WhatsApp */}
       <motion.a
-        href="https://wa.me/919940574602"
+        href={`https://wa.me/${BUSINESS_INFO.phoneRaw.replace(/[^0-9]/g, '')}?text=${BUSINESS_INFO.whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         title="Chat on WhatsApp"
+        aria-label="Chat on WhatsApp"
+        onClick={() => GoogleAdsEvents.whatsappClicked('floating_widget')}
         animate={{ y: [0, -4, 0] }}
         transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
         whileHover={{ scale: 1.1 }}
@@ -36,8 +40,10 @@ export function FloatingButtons() {
 
       {/* Contact */}
       <motion.a
-        href="tel:+919940574602"
-        title="Call Us"
+        href={`tel:${BUSINESS_INFO.phoneRaw}`}
+        title="Call Us Directly"
+        aria-label="Call Us Directly"
+        onClick={() => GoogleAdsEvents.phoneClicked('floating_widget')}
         whileHover={{ scale: 1.1 }}
         style={{
           width: 52, height: 52, borderRadius: '50%', background: '#35858E',
@@ -59,6 +65,7 @@ export function FloatingButtons() {
             whileHover={{ scale: 1.1 }}
             onClick={scrollToTop}
             title="Back to top"
+            aria-label="Back to top"
             style={{
               width: 44, height: 44, borderRadius: '50%', background: '#fff',
               border: '2px solid #88BDA4', display: 'flex', alignItems: 'center',

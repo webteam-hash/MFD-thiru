@@ -64,7 +64,7 @@ export function RetirementCalc({ embedded }: { embedded?: boolean } = {}) {
       ctaText="Plan for Retirement"
       howItWorks={[
         'Enter your current age and target retirement age to determine your investment horizon.',
-        'Input your current monthly expenses — this helps estimate your future lifestyle cost.',
+        'Input your current monthly expenses to help estimate your future lifestyle cost.',
         'Set expected inflation rate (typically 5-7% for India) to calculate future expense values.',
         'The calculator estimates your required corpus and the monthly SIP needed to achieve it.',
       ]}

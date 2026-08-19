@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import { motion, useInView } from 'motion/react'
 import { Search, ArrowRight, Calendar, ChevronLeft, ChevronRight } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
+import { BackButton } from '../components/BackButton'
+import { SEO } from '../components/SEO'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -24,10 +26,10 @@ const articles = [
   { id: 1, title: 'How to Start Your Investment Journey in Your 20s', category: 'Investment Basics', date: 'July 15, 2026', img: 'https://images.unsplash.com/photo-1689799514696-b16af9b53753?w=600&q=80', excerpt: 'Starting early is the most powerful thing you can do for your financial future. Here is a complete guide for young investors in India.', featured: true },
   { id: 2, title: 'SIP vs Lump Sum: Which is Right for You?', category: 'SIP', date: 'July 10, 2026', img: 'https://images.unsplash.com/photo-1642052502780-8ee67e3bf930?w=600&q=80', excerpt: 'Understanding the difference between SIP and lump sum investments and when to use each strategy for your financial goals.' },
   { id: 3, title: 'Planning for Retirement at Every Age', category: 'Retirement', date: 'July 5, 2026', img: 'https://images.unsplash.com/photo-1761839257647-df30867afd54?w=600&q=80', excerpt: 'Retirement planning looks different at 30, 40, and 50. Learn what steps to take at each stage to ensure a comfortable retirement.' },
-  { id: 4, title: 'Understanding Mutual Fund Categories in India', category: 'Mutual Funds', date: 'June 28, 2026', img: 'https://images.unsplash.com/photo-1653378972336-103e1ea62721?w=600&q=80', excerpt: "From equity to debt to hybrid — India's mutual fund landscape explained in simple language for first-time investors." },
-  { id: 5, title: 'How to Build an Emergency Fund While Investing', category: 'Financial Goals', date: 'June 20, 2026', img: 'https://images.unsplash.com/photo-1647510283846-ed174cc84a78?w=600&q=80', excerpt: 'An emergency fund and an investment portfolio are both essential. Here is how to build both simultaneously without stress.' },
-  { id: 6, title: "Children's Education Planning: Start Now", category: 'Financial Goals', date: 'June 12, 2026', img: 'https://images.unsplash.com/photo-1559067096-49ebca3406aa?w=600&q=80', excerpt: "Education inflation in India is running at 10-12% per year. Here's how to stay ahead of the curve and fund your child's dreams." },
-  { id: 7, title: 'The Power of Compounding: Explained Simply', category: 'Investment Basics', date: 'June 5, 2026', img: 'https://images.unsplash.com/photo-1622610607501-32ac9c927216?w=600&q=80', excerpt: "Albert Einstein called it the eighth wonder of the world. Compounding is the core of every long-term investment strategy — here's how it works." },
+  { id: 4, title: 'Understanding Mutual Fund Categories in India', category: 'Mutual Funds', date: 'July 28, 2026', img: 'https://images.unsplash.com/photo-1653378972336-103e1ea62721?w=600&q=80', excerpt: "From equity to debt to hybrid, India's mutual fund landscape explained in simple language for first-time investors." },
+  { id: 5, title: 'How to Build an Emergency Fund While Investing', category: 'Financial Goals', date: 'July 20, 2026', img: 'https://images.unsplash.com/photo-1647510283846-ed174cc84a78?w=600&q=80', excerpt: 'An emergency fund and an investment portfolio are both essential. Here is how to build both simultaneously without stress.' },
+  { id: 6, title: "Children's Education Planning: Start Now", category: 'Financial Goals', date: 'July 12, 2026', img: 'https://images.unsplash.com/photo-1559067096-49ebca3406aa?w=600&q=80', excerpt: "Education inflation in India is running at 10-12% per year. Here's how to stay ahead of the curve and fund your child's dreams." },
+  { id: 7, title: 'The Power of Compounding: Explained Simply', category: 'Investment Basics', date: 'July 5, 2026', img: 'https://images.unsplash.com/photo-1622610607501-32ac9c927216?w=600&q=80', excerpt: "Albert Einstein called it the eighth wonder of the world. Compounding is the core of every long-term investment strategy and here is how it works." },
 ]
 
 const ITEMS_PER_PAGE = 4
@@ -51,11 +53,18 @@ export function Blog() {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <SEO
+        title="Investor Knowledge & Insights | MFDThiru Blog"
+        description="Educational articles and mutual fund insights by MFDThiru. Learn about SIPs, lump-sum investments, retirement planning, and goal-oriented wealth creation."
+        canonical="/blog"
+      />
       {/* Hero */}
-      <section style={{ background: 'rgba(230,242,221,0.42)', padding: '80px 24px 64px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'rgba(230,242,221,0.42)', padding: '48px 24px 64px', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-5%" y="-15%" w={400} h={320} color="#B1D3B9" op={0.42} blur={68} r="56% 44% 35% 65% / 48% 54% 46% 52%" />
         <SectionBlob x="82%" y="10%" w={340} h={270} color="#88BDA4" op={0.30} blur={58} r="40% 60% 58% 42% / 56% 40% 60% 40%" />
-        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <BackButton />
+          <div style={{ textAlign: 'center', marginTop: 8 }}>
           <FadeUp>
             <span style={{ display: 'inline-block', padding: '6px 16px', borderRadius: 20, background: LIGHT, color: TEAL, fontSize: 13, fontWeight: 600, marginBottom: 16 }}>Blog</span>
             <h1 style={{ fontSize: 'clamp(32px, 5vw, 54px)', fontWeight: 800, color: '#303733', marginBottom: 20 }}>
@@ -77,6 +86,7 @@ export function Blog() {
               />
             </div>
           </FadeUp>
+          </div>
         </div>
       </section>
 

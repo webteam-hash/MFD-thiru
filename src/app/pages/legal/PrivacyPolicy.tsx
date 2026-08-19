@@ -38,7 +38,7 @@ export function PrivacyPolicy() {
               At MFDThiru, we value your privacy and are committed to protecting the confidentiality of your personal information.
             </p>
             <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
-              MFDThiru &nbsp;|&nbsp; J. C. Thirumurugan (ARN – 26890)
+              MFDThiru &nbsp;|&nbsp; J. C. Thirumurugan (ARN 26890)
             </div>
           </FadeUp>
         </div>
@@ -60,7 +60,7 @@ export function PrivacyPolicy() {
             <FadeUp delay={0.1}>
               <div style={{ borderBottom: '1px solid rgba(136,189,164,0.2)', paddingBottom: 28 }}>
                 <p style={{ fontSize: 17, lineHeight: 1.85, color: '#333D37', margin: 0 }}>
-                  MFDThiru is the brand under which mutual fund distribution services are offered by <strong>J. C. Thirumurugan</strong>, an AMFI Registered Mutual Fund Distributor (ARN – 26890).
+                  MFDThiru is the brand under which mutual fund distribution services are offered by <strong>J. C. Thirumurugan</strong>, an AMFI Registered Mutual Fund Distributor (ARN 26890).
                 </p>
                 <p style={{ fontSize: 16, lineHeight: 1.8, color: '#555D58', marginTop: 14, marginBottom: 0 }}>
                   This Privacy Policy explains how we collect, use, store and protect the information you provide while accessing our website or availing our services.
@@ -169,14 +169,13 @@ export function PrivacyPolicy() {
                 <h2 style={{ fontSize: 22, fontWeight: 800, color: TEAL, marginBottom: 18, marginTop: 0 }}>Contact Information & Regulatory Details</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, fontSize: 15, color: '#333D37', marginBottom: 24 }}>
                   <div><strong>Distributor:</strong> J. C. Thirumurugan</div>
-                  <div><strong>AMFI Registration:</strong> ARN – 26890</div>
-                  <div><strong>Brand:</strong> MFDThiru</div>
-                  <div><strong>Email:</strong> info@mfdthiru.in</div>
-                  <div><strong>Website:</strong> www.mfdthiru.in</div>
+                  <div><strong>AMFI Registration:</strong> ARN 26890</div>
+                  <div><strong>Registered Business Name:</strong> MFDThiru / J. C. Thirumurugan</div>
+                  <div><strong>Email:</strong> <a href="mailto:enquiry@wcms.in" style={{ color: TEAL, textDecoration: 'none', fontWeight: 600 }}>enquiry@wcms.in</a></div>
                 </div>
 
-                <div style={{ borderTop: '1px solid rgba(53,133,142,0.2)', paddingTop: 20, fontSize: 14, color: '#555D58', lineHeight: 1.75 }}>
-                  <strong>Regulatory Disclosure:</strong> MFDThiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, an AMFI Registered Mutual Fund Distributor (ARN – 26890). This website is intended solely to facilitate mutual fund distribution services and provide investor education. Nothing contained on this website shall be construed as investment advice, legal advice or a guarantee of returns. This Privacy Policy should be read together with our Disclaimer and Terms of Use.
+                <div style={{ marginTop: 24, padding: '16px 20px', borderRadius: 12, background: 'rgba(230,242,221,0.5)', border: '1px solid rgba(136,189,164,0.3)', fontSize: 13.5, color: '#4E5652', lineHeight: 1.7 }}>
+                  <strong>Regulatory Disclosure:</strong> MFDThiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, an AMFI Registered Mutual Fund Distributor (ARN 26890). This website is intended solely to facilitate mutual fund distribution services and provide investor education. Nothing contained on this website shall be construed as investment advice, legal advice or a guarantee of returns. This Privacy Policy should be read together with our Disclaimer and Terms of Use.
                 </div>
               </div>
             </FadeUp>
