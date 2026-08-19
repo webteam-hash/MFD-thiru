@@ -56,6 +56,24 @@ input[type='range']::-webkit-slider-thumb:hover {
 ::-webkit-scrollbar-track { background: #f5f5f5; }
 ::-webkit-scrollbar-thumb { background: #88BDA4; border-radius: 4px; }
 
+/* ── Navbar Responsiveness ── */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-hamburger {
+    display: flex !important;
+  }
+}
+@media (min-width: 1025px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  .mobile-hamburger {
+    display: none !important;
+  }
+}
+
 /* ── Mobile Responsiveness & Layout Overrides ── */
 html, body {
   overflow-x: hidden !important;

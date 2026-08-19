@@ -97,7 +97,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }} className="hidden lg:flex">
+          <div style={{ alignItems: 'center', gap: 4 }} className="desktop-nav">
             {navLinks.slice(0, 2).map(link => (
               <Link key={link.path} to={link.path} style={{
                 padding: '8px 16px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 500,
@@ -252,9 +252,9 @@ export function Navbar() {
 
           {/* Mobile Hamburger */}
           <button
-            className="lg:hidden"
+            className="mobile-hamburger"
             onClick={() => setMobileOpen(!mobileOpen)}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, borderRadius: 8, color: '#303733' }}
+            style={{ alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none', cursor: 'pointer', padding: 8, borderRadius: 8, color: '#303733' }}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
