@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router'
 import { motion, useInView } from 'motion/react'
-import { ArrowRight, TrendingUp, Shield, Users, Target, Star, ChevronLeft, ChevronRight, CheckCircle, Eye } from 'lucide-react'
+import { ArrowRight, TrendingUp, Shield, Users, Target, Star, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
 import { SEO, ORGANIZATION_SCHEMA } from '../components/SEO'
 import { SIPCalc } from './calculators/SIPCalc'
@@ -35,22 +35,6 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
       {children}
     </motion.div>
   )
-}
-
-function useAnimatedNumber(target: number, trigger: boolean) {
-  const [value, setValue] = useState(0)
-  useEffect(() => {
-    if (!trigger) return
-    const start = Date.now(); const duration = 1200
-    const step = () => {
-      const elapsed = Date.now() - start; const progress = Math.min(elapsed / duration, 1)
-      const eased = 1 - Math.pow(1 - progress, 3)
-      setValue(Math.round(target * eased))
-      if (progress < 1) requestAnimationFrame(step)
-    }
-    requestAnimationFrame(step)
-  }, [target, trigger])
-  return value
 }
 
 const testimonials = [
@@ -332,7 +316,7 @@ export function Home() {
                           borderRadius: 8,
                           display: 'flex',
                           alignItems: 'center',
-                          justify: 'center',
+                          justifyContent: 'center',
                           gap: 6,
                           border: '1px solid rgba(136,189,164,0.3)',
                           textAlign: 'center',
@@ -346,7 +330,7 @@ export function Home() {
                           style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            justify: 'center',
+                            justifyContent: 'center',
                             gap: 8,
                             width: '100%',
                             padding: '12px 20px',

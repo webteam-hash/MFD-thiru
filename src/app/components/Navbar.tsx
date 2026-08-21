@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router'
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import logoImg from '../../imports/mfd_logo_light.png'
-import logoDarkImg from '../../imports/mfd_logo_dark.png'
 
 const serviceLinks = [
   { label: 'Retirement Planning', path: '/services/retirement-planning' },

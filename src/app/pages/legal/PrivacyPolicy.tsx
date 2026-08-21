@@ -3,6 +3,7 @@ import { motion, useInView } from 'motion/react'
 import { Lock, Shield, Mail, Globe, User, CheckCircle2 } from 'lucide-react'
 import { SectionBlob } from '../../components/WatercolorBg'
 import { LegalNav } from './LegalNav'
+import { SEO } from '../../components/SEO'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -21,6 +22,11 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 export function PrivacyPolicy() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
+      <SEO
+        title="Privacy Policy | MFDThiru — J. C. Thirumurugan (ARN 26890)"
+        description="Privacy Policy and Data Protection guidelines for MFDThiru — AMFI Registered Mutual Fund Distributor ARN 26890."
+        canonical="/privacy-policy"
+      />
       {/* Hero Header */}
       <section style={{ background: 'rgba(230,242,221,0.45)', padding: '72px 24px 56px', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-5%" y="-15%" w={400} h={320} color="#B1D3B9" op={0.45} blur={68} r="56% 44% 36% 64% / 50% 46% 54% 50%" />

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router'
 import { lazy } from 'react'
 import { Layout } from './components/Layout'
+import { ErrorBoundary } from './components/ErrorBoundary'
 
 // Lazy-loaded page components for route-level code splitting & fast page load
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })))
@@ -8,6 +9,7 @@ const About = lazy(() => import('./pages/About').then(m => ({ default: m.About }
 const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })))
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })))
 const FAQ = lazy(() => import('./pages/FAQ').then(m => ({ default: m.FAQ })))
+const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })))
 
 // Calculators
 const RetirementCalc = lazy(() => import('./pages/calculators/RetirementCalc').then(m => ({ default: m.RetirementCalc })))
@@ -32,10 +34,13 @@ export const router = createBrowserRouter([
   {
     path: '/',
     Component: Layout,
+    errorElement: <ErrorBoundary />,
     children: [
       { index: true, Component: Home },
+      { path: 'index.html', Component: Home },
       { path: 'about', Component: About },
       { path: 'blog', Component: Blog },
+      { path: 'blog/:id', Component: Blog },
       { path: 'faq', Component: FAQ },
       { path: 'contact', Component: Contact },
       
@@ -64,6 +69,10 @@ export const router = createBrowserRouter([
       { path: 'privacy-policy', Component: PrivacyPolicy },
       { path: 'investor-grievance', Component: InvestorGrievance },
       { path: 'terms-of-use', Component: TermsOfUse },
+
+      // Catch-all 404 route
+      { path: '*', Component: NotFound },
     ],
   },
 ])
+

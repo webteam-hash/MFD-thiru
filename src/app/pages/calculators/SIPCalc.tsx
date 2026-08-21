@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 import { CalculatorLayout, InputField, ResultCard } from '../../components/CalculatorLayout'
 
@@ -13,15 +13,32 @@ function fmt(n: number) {
 
 function useAnimatedNumber(target: number) {
   const [value, setValue] = useState(target)
+  const animRef = useRef<number | null>(null)
+  const valueRef = useRef(value)
+  valueRef.current = value
+
   useEffect(() => {
-    const start = Date.now(); const from = value; const duration = 600
+    const start = Date.now()
+    const from = valueRef.current
+    const duration = 500
+
+    if (animRef.current) cancelAnimationFrame(animRef.current)
+
     const step = () => {
       const p = Math.min((Date.now() - start) / duration, 1)
-      setValue(Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3))))
-      if (p < 1) requestAnimationFrame(step)
+      const current = Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3)))
+      setValue(current)
+      if (p < 1) {
+        animRef.current = requestAnimationFrame(step)
+      }
     }
-    requestAnimationFrame(step)
+    animRef.current = requestAnimationFrame(step)
+
+    return () => {
+      if (animRef.current) cancelAnimationFrame(animRef.current)
+    }
   }, [target])
+
   return value
 }
 

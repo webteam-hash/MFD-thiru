@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight, Info } from 'lucide-react'
 import { SectionBlob } from './WatercolorBg'
@@ -118,13 +119,45 @@ export function InputField({ label, value, onChange, min, max, step, format, inp
   min: number; max: number; step: number; format: (v: number) => string;
   inputMin?: number; inputMax?: number;
 }) {
+  const [localVal, setLocalVal] = useState<string>(String(value))
+
+  useEffect(() => {
+    setLocalVal(String(value))
+  }, [value])
+
+  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const raw = e.target.value
+    setLocalVal(raw)
+    const parsed = Number(raw)
+    if (!isNaN(parsed) && raw !== '') {
+      const clamped = Math.min(Math.max(parsed, inputMin ?? min), inputMax ?? max)
+      onChange(clamped)
+    }
+  }
+
+  const handleBlur = () => {
+    const parsed = Number(localVal)
+    if (isNaN(parsed) || localVal.trim() === '') {
+      setLocalVal(String(value))
+    } else {
+      const clamped = Math.min(Math.max(parsed, inputMin ?? min), inputMax ?? max)
+      onChange(clamped)
+      setLocalVal(String(clamped))
+    }
+  }
+
   return (
     <div style={{ marginBottom: 28 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10, alignItems: 'center' }}>
         <label style={{ fontSize: 15, fontWeight: 600, color: '#303733' }}>{label}</label>
         <input
-          type="number" value={value}
-          onChange={e => { const v = Number(e.target.value); if (v >= (inputMin ?? min) && v <= (inputMax ?? max)) onChange(v) }}
+          type="number"
+          value={localVal}
+          onChange={handleTextChange}
+          onBlur={handleBlur}
+          min={inputMin ?? min}
+          max={inputMax ?? max}
+          step={step}
           style={{ width: 110, padding: '4px 10px', borderRadius: 8, border: '1px solid rgba(136,189,164,0.4)', fontSize: 14, fontWeight: 700, color: TEAL, textAlign: 'right', outline: 'none', background: '#f9fdf9' }}
         />
       </div>

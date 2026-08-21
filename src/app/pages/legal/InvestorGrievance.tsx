@@ -3,6 +3,7 @@ import { motion, useInView } from 'motion/react'
 import { Headphones, Mail, Globe, Shield, AlertCircle, CheckCircle2 } from 'lucide-react'
 import { SectionBlob } from '../../components/WatercolorBg'
 import { LegalNav } from './LegalNav'
+import { SEO } from '../../components/SEO'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -21,6 +22,11 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 export function InvestorGrievance() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
+      <SEO
+        title="Investor Grievance Redressal | MFDThiru — J. C. Thirumurugan (ARN 26890)"
+        description="Grievance Redressal Mechanism and Investor Support for MFDThiru — AMFI Registered Mutual Fund Distributor ARN 26890."
+        canonical="/investor-grievance"
+      />
       {/* Hero Header */}
       <section style={{ background: 'rgba(230,242,221,0.45)', padding: '72px 24px 56px', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-5%" y="-15%" w={400} h={320} color="#B1D3B9" op={0.45} blur={68} r="56% 44% 36% 64% / 50% 46% 54% 50%" />
@@ -75,7 +81,7 @@ export function InvestorGrievance() {
                   </div>
                   <div>
                     <div style={{ fontSize: 12, color: '#77827B', fontWeight: 700, letterSpacing: '0.5px' }}>EMAIL ADDRESS</div>
-                    <div style={{ fontSize: 17, fontWeight: 700, color: TEAL, marginTop: 4 }}>info@mfdthiru.in</div>
+                    <div style={{ fontSize: 17, fontWeight: 700, color: TEAL, marginTop: 4 }}>enquiry@wcms.in</div>
                   </div>
                   <div>
                     <div style={{ fontSize: 12, color: '#77827B', fontWeight: 700, letterSpacing: '0.5px' }}>WEBSITE</div>
@@ -91,7 +97,7 @@ export function InvestorGrievance() {
                 <h2 style={{ fontSize: 24, fontWeight: 800, color: '#303733', marginBottom: 24 }}>Grievance Redressal Process</h2>
                 <div style={{ display: 'grid', gap: 18 }}>
                   {[
-                    { step: 1, text: 'Submit your query or grievance by email (info@mfdthiru.in) or through the Contact Us page.' },
+                    { step: 1, text: 'Submit your query or grievance by email (enquiry@wcms.in) or through the Contact Us page.' },
                     { step: 2, text: 'We will acknowledge receipt of your communication as soon as reasonably practicable.' },
                     { step: 3, text: 'We will make every reasonable effort to resolve your query or coordinate with the relevant Asset Management Company (AMC), Registrar & Transfer Agent (RTA) or other service provider, wherever applicable.' },
                     { step: 4, text: 'If the matter requires intervention by the AMC or RTA, we will assist you in coordinating the resolution process.' }

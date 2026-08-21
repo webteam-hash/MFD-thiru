@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 import { CalculatorLayout, InputField, ResultCard } from '../../components/CalculatorLayout'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
-const PASTEL = '#C2D099'
 
 function fmt(n: number) {
   if (n >= 10000000) return `₹${(n / 10000000).toFixed(2)} Cr`
@@ -14,15 +13,32 @@ function fmt(n: number) {
 
 function useAnimatedNumber(target: number) {
   const [value, setValue] = useState(target)
+  const animRef = useRef<number | null>(null)
+  const valueRef = useRef(value)
+  valueRef.current = value
+
   useEffect(() => {
-    const start = Date.now(); const from = value; const duration = 600
+    const start = Date.now()
+    const from = valueRef.current
+    const duration = 500
+
+    if (animRef.current) cancelAnimationFrame(animRef.current)
+
     const step = () => {
       const p = Math.min((Date.now() - start) / duration, 1)
-      setValue(Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3))))
-      if (p < 1) requestAnimationFrame(step)
+      const current = Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3)))
+      setValue(current)
+      if (p < 1) {
+        animRef.current = requestAnimationFrame(step)
+      }
     }
-    requestAnimationFrame(step)
+    animRef.current = requestAnimationFrame(step)
+
+    return () => {
+      if (animRef.current) cancelAnimationFrame(animRef.current)
+    }
   }, [target])
+
   return value
 }
 
@@ -34,7 +50,7 @@ export function EducationCalc({ embedded }: { embedded?: boolean } = {}) {
   const [existingSavings, setExistingSavings] = useState(50000)
   const [expectedReturn, setExpectedReturn] = useState(12)
 
-  const years = educationAge - childAge
+  const years = Math.max(0, educationAge - childAge)
   const futureCost = currentCost * Math.pow(1 + eduInflation / 100, years)
   const savingsGrowth = existingSavings * Math.pow(1 + expectedReturn / 100, years)
   const fundingGap = Math.max(0, futureCost - savingsGrowth)
@@ -42,7 +58,7 @@ export function EducationCalc({ embedded }: { embedded?: boolean } = {}) {
   const r = expectedReturn / 1200
   const monthlyRequired = years > 0 && r > 0
     ? fundingGap * r / ((Math.pow(1 + r, years * 12) - 1) * (1 + r))
-    : fundingGap / (years * 12)
+    : years > 0 ? fundingGap / (years * 12) : 0
 
   const aFutureCost = useAnimatedNumber(Math.round(futureCost))
   const aMonthly = useAnimatedNumber(Math.round(monthlyRequired))

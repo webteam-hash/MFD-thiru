@@ -64,17 +64,19 @@ export function SEO({
     canonicalEl.setAttribute('href', currentUrl)
 
     // 4. Inject Schema.org JSON-LD
+    const scriptEl = document.querySelector('script[type="application/ld+json"]#seo-schema')
     if (schema) {
-      let scriptEl = document.querySelector('script[type="application/ld+json"]#seo-schema')
+      const el = scriptEl || document.createElement('script')
+      el.setAttribute('type', 'application/ld+json')
+      el.setAttribute('id', 'seo-schema')
+      el.textContent = JSON.stringify(schema)
       if (!scriptEl) {
-        scriptEl = document.createElement('script')
-        scriptEl.setAttribute('type', 'application/ld+json')
-        scriptEl.setAttribute('id', 'seo-schema')
-        document.head.appendChild(scriptEl)
+        document.head.appendChild(el)
       }
-      scriptEl.textContent = JSON.stringify(schema)
+    } else if (scriptEl) {
+      scriptEl.remove()
     }
-  }, [title, description, currentUrl, type, schema])
+  }, [title, description, currentUrl, type, JSON.stringify(schema)])
 
   return null
 }

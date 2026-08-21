@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
-import { Link } from 'react-router'
+import { Link, useParams } from 'react-router'
 import { motion, useInView } from 'motion/react'
-import { Search, ArrowRight, Calendar, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Search, ArrowRight, Calendar, ChevronLeft, ChevronRight, User, Tag } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
 import { BackButton } from '../components/BackButton'
 import { SEO } from '../components/SEO'
@@ -23,21 +23,182 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const categories = ['All', 'Investment Basics', 'SIP', 'Retirement', 'Financial Goals', 'Mutual Funds', 'Market Education']
 
 const articles = [
-  { id: 1, title: 'How to Start Your Investment Journey in Your 20s', category: 'Investment Basics', date: 'July 15, 2026', img: 'https://images.unsplash.com/photo-1689799514696-b16af9b53753?w=600&q=80', excerpt: 'Starting early is the most powerful thing you can do for your financial future. Here is a complete guide for young investors in India.', featured: true },
-  { id: 2, title: 'SIP vs Lump Sum: Which is Right for You?', category: 'SIP', date: 'July 10, 2026', img: 'https://images.unsplash.com/photo-1642052502780-8ee67e3bf930?w=600&q=80', excerpt: 'Understanding the difference between SIP and lump sum investments and when to use each strategy for your financial goals.' },
-  { id: 3, title: 'Planning for Retirement at Every Age', category: 'Retirement', date: 'July 5, 2026', img: 'https://images.unsplash.com/photo-1761839257647-df30867afd54?w=600&q=80', excerpt: 'Retirement planning looks different at 30, 40, and 50. Learn what steps to take at each stage to ensure a comfortable retirement.' },
-  { id: 4, title: 'Understanding Mutual Fund Categories in India', category: 'Mutual Funds', date: 'July 28, 2026', img: 'https://images.unsplash.com/photo-1653378972336-103e1ea62721?w=600&q=80', excerpt: "From equity to debt to hybrid, India's mutual fund landscape explained in simple language for first-time investors." },
-  { id: 5, title: 'How to Build an Emergency Fund While Investing', category: 'Financial Goals', date: 'July 20, 2026', img: 'https://images.unsplash.com/photo-1647510283846-ed174cc84a78?w=600&q=80', excerpt: 'An emergency fund and an investment portfolio are both essential. Here is how to build both simultaneously without stress.' },
-  { id: 6, title: "Children's Education Planning: Start Now", category: 'Financial Goals', date: 'July 12, 2026', img: 'https://images.unsplash.com/photo-1559067096-49ebca3406aa?w=600&q=80', excerpt: "Education inflation in India is running at 10-12% per year. Here's how to stay ahead of the curve and fund your child's dreams." },
-  { id: 7, title: 'The Power of Compounding: Explained Simply', category: 'Investment Basics', date: 'July 5, 2026', img: 'https://images.unsplash.com/photo-1622610607501-32ac9c927216?w=600&q=80', excerpt: "Albert Einstein called it the eighth wonder of the world. Compounding is the core of every long-term investment strategy and here is how it works." },
+  {
+    id: 1,
+    title: 'How to Start Your Investment Journey in Your 20s',
+    category: 'Investment Basics',
+    date: 'July 15, 2026',
+    img: 'https://images.unsplash.com/photo-1689799514696-b16af9b53753?w=600&q=80',
+    excerpt: 'Starting early is the most powerful thing you can do for your financial future. Here is a complete guide for young investors in India.',
+    featured: true,
+    content: [
+      'Starting your investment journey in your 20s provides you with the most valuable asset in financial planning: time. The power of compounding works best over long time horizons, allowing even small, consistent monthly contributions to grow into substantial wealth.',
+      'Begin by building an emergency fund covering 3 to 6 months of basic living expenses. Once your safety net is established, start a Systematic Investment Plan (SIP) in mutual funds aligned with your risk tolerance and financial goals.',
+      'Focus on discipline rather than market timing. Increasing your SIP contribution by 10% each year as your income grows will compound your wealth significantly over the long term.',
+    ]
+  },
+  {
+    id: 2,
+    title: 'SIP vs Lump Sum: Which is Right for You?',
+    category: 'SIP',
+    date: 'July 10, 2026',
+    img: 'https://images.unsplash.com/photo-1642052502780-8ee67e3bf930?w=600&q=80',
+    excerpt: 'Understanding the difference between SIP and lump sum investments and when to use each strategy for your financial goals.',
+    content: [
+      'A Systematic Investment Plan (SIP) allows you to invest a fixed amount regularly (monthly or quarterly) into mutual funds. It brings financial discipline and averages your purchase cost over market cycles (Rupee Cost Averaging).',
+      'Lump-sum investing involves deploying a significant one-time sum into mutual funds. It is often suitable when receiving a bonus, property sale proceeds, or windfall gains, especially when you have a long time horizon.',
+      'For most salaried individuals, a combination works best: regular SIPs from monthly income, supplemented by lump-sum investments during market corrections or bonus season.',
+    ]
+  },
+  {
+    id: 3,
+    title: 'Planning for Retirement at Every Age',
+    category: 'Retirement',
+    date: 'July 5, 2026',
+    img: 'https://images.unsplash.com/photo-1761839257647-df30867afd54?w=600&q=80',
+    excerpt: 'Retirement planning looks different at 30, 40, and 50. Learn what steps to take at each stage to ensure a comfortable retirement.',
+    content: [
+      'In your 30s: Focus on aggressive growth. Allocate a major portion of your investments to equity mutual funds for maximum inflation-beating long-term growth.',
+      'In your 40s: Consolidate and accelerate. Review your required retirement corpus, step up contributions, and start balancing with conservative hybrid funds.',
+      'In your 50s: Transition and capital protection. Gradually shift towards capital preservation and structure your post-retirement cash flow plan using Systematic Withdrawal Plans (SWP).',
+    ]
+  },
+  {
+    id: 4,
+    title: 'Understanding Mutual Fund Categories in India',
+    category: 'Mutual Funds',
+    date: 'July 28, 2026',
+    img: 'https://images.unsplash.com/photo-1653378972336-103e1ea62721?w=600&q=80',
+    excerpt: "From equity to debt to hybrid, India's mutual fund landscape explained in simple language for first-time investors.",
+    content: [
+      'Equity Funds invest primarily in stocks. They offer higher growth potential over long horizons (5+ years) but experience short-term market volatility.',
+      'Debt Funds invest in fixed-income instruments like government bonds and corporate securities, offering relative stability for short-to-medium term goals.',
+      'Hybrid Funds combine equity and debt instruments in varying proportions to balance growth with risk mitigation.',
+    ]
+  },
+  {
+    id: 5,
+    title: 'How to Build an Emergency Fund While Investing',
+    category: 'Financial Goals',
+    date: 'July 20, 2026',
+    img: 'https://images.unsplash.com/photo-1647510283846-ed174cc84a78?w=600&q=80',
+    excerpt: 'An emergency fund and an investment portfolio are both essential. Here is how to build both simultaneously without stress.',
+    content: [
+      'An emergency fund protects your investments from being liquidated prematurely during unforeseen events like job loss or medical emergencies.',
+      'Park liquid emergency funds in high-grade liquid mutual funds or savings deposits for instant accessibility.',
+      'Split monthly savings: allocate 30% to emergency fund buildup until complete, and 70% to long-term SIP goals.',
+    ]
+  },
+  {
+    id: 6,
+    title: "Children's Education Planning: Start Now",
+    category: 'Financial Goals',
+    date: 'July 12, 2026',
+    img: 'https://images.unsplash.com/photo-1559067096-49ebca3406aa?w=600&q=80',
+    excerpt: "Education inflation in India is running at 10-12% per year. Here's how to stay ahead of the curve and fund your child's dreams.",
+    content: [
+      'Higher education costs in India and abroad double approximately every 6 to 7 years due to inflation.',
+      'Estimate the future cost by factoring in inflation, then calculate the required monthly SIP from your child’s early years.',
+      'As higher education approaches (within 2-3 years), systematically de-risk by moving funds from equity to stable liquid/debt funds.',
+    ]
+  },
+  {
+    id: 7,
+    title: 'The Power of Compounding: Explained Simply',
+    category: 'Investment Basics',
+    date: 'July 5, 2026',
+    img: 'https://images.unsplash.com/photo-1622610607501-32ac9c927216?w=600&q=80',
+    excerpt: "Albert Einstein called it the eighth wonder of the world. Compounding is the core of every long-term investment strategy and here is how it works.",
+    content: [
+      'Compounding happens when the returns generated by your investments start earning returns themselves.',
+      'The key ingredient in compounding is time. Doubling your investment horizon can increase final wealth exponentially.',
+      'Stay committed during market cycles. Reinvesting earnings consistently creates exponential growth over decades.',
+    ]
+  },
 ]
 
 const ITEMS_PER_PAGE = 4
 
 export function Blog() {
+  const { id } = useParams<{ id?: string }>()
   const [activeCategory, setActiveCategory] = useState('All')
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
+
+  // Single Article Detail View
+  if (id) {
+    const article = articles.find(a => String(a.id) === id) || articles[0]
+    const related = articles.filter(a => a.id !== article.id).slice(0, 3)
+
+    return (
+      <div style={{ overflowX: 'hidden' }}>
+        <SEO
+          title={`${article.title} | MFDThiru Blog`}
+          description={article.excerpt}
+          canonical={`/blog/${article.id}`}
+        />
+        <section style={{ background: 'rgba(230,242,221,0.45)', padding: '48px 24px 56px', position: 'relative', overflow: 'hidden' }}>
+          <SectionBlob x="-5%" y="-15%" w={400} h={320} color="#B1D3B9" op={0.42} blur={68} r="56% 44% 35% 65% / 48% 54% 46% 52%" />
+          <SectionBlob x="82%" y="10%" w={340} h={270} color="#88BDA4" op={0.30} blur={58} r="40% 60% 58% 42% / 56% 40% 60% 40%" />
+          <div style={{ maxWidth: 960, margin: '0 auto', position: 'relative', zIndex: 2 }}>
+            <BackButton />
+            <div style={{ marginTop: 16 }}>
+              <span style={{ display: 'inline-block', padding: '6px 16px', borderRadius: 20, background: LIGHT, color: TEAL, fontSize: 13, fontWeight: 700, marginBottom: 16 }}>
+                {article.category}
+              </span>
+              <h1 style={{ fontSize: 'clamp(28px, 4.5vw, 48px)', fontWeight: 800, color: '#303733', lineHeight: 1.25, marginBottom: 18 }}>
+                {article.title}
+              </h1>
+              <div style={{ display: 'flex', gap: 20, fontSize: 14, color: '#555D58', alignItems: 'center', flexWrap: 'wrap' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}><Calendar size={16} color={TEAL} /> {article.date}</span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}><User size={16} color={TEAL} /> J. C. Thirumurugan (ARN 26890)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ padding: '48px 24px 80px', maxWidth: 960, margin: '0 auto' }}>
+          <div style={{ borderRadius: 24, overflow: 'hidden', marginBottom: 40, boxShadow: '0 12px 40px rgba(53,133,142,0.12)', border: '1px solid rgba(136,189,164,0.3)' }}>
+            <img src={article.img} alt={article.title} style={{ width: '100%', maxHeight: 440, objectFit: 'cover', display: 'block' }} />
+          </div>
+
+          <div style={{ background: '#fff', borderRadius: 24, padding: '44px 40px', border: '1px solid rgba(136,189,164,0.22)', boxShadow: '0 6px 24px rgba(0,0,0,0.02)', display: 'grid', gap: 24, fontSize: 17, color: '#3A4440', lineHeight: 1.85 }}>
+            <p style={{ fontSize: 19, fontWeight: 600, color: TEAL, lineHeight: 1.7, margin: 0, paddingBottom: 16, borderBottom: '1px solid rgba(136,189,164,0.2)' }}>
+              {article.excerpt}
+            </p>
+
+            {article.content?.map((paragraph, idx) => (
+              <p key={idx} style={{ margin: 0 }}>{paragraph}</p>
+            ))}
+
+            <div style={{ marginTop: 24, padding: '28px 32px', background: 'rgba(230,242,221,0.5)', borderRadius: 20, border: `1px solid ${MINT}`, borderLeft: `6px solid ${TEAL}` }}>
+              <h3 style={{ fontSize: 18, fontWeight: 800, color: TEAL, marginTop: 0, marginBottom: 8 }}>Ready to Start Your Mutual Fund Plan?</h3>
+              <p style={{ fontSize: 15, color: '#555D58', marginBottom: 18, lineHeight: 1.6 }}>Talk to J. C. Thirumurugan — AMFI-registered Mutual Fund Distributor (ARN 26890) for goal-aligned guidance.</p>
+              <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 12, background: TEAL, color: '#fff', textDecoration: 'none', fontWeight: 700, fontSize: 15 }}>
+                Get In Touch <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Related Articles */}
+          <div style={{ marginTop: 64 }}>
+            <h2 style={{ fontSize: 24, fontWeight: 800, color: '#303733', marginBottom: 24 }}>Related Articles</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
+              {related.map(rel => (
+                <Link key={rel.id} to={`/blog/${rel.id}`} style={{ textDecoration: 'none', background: '#fff', borderRadius: 18, overflow: 'hidden', border: '1px solid rgba(136,189,164,0.22)', boxShadow: '0 4px 16px rgba(0,0,0,0.03)', display: 'flex', flexDirection: 'column' }}>
+                  <img src={rel.img} alt={rel.title} style={{ height: 160, width: '100%', objectFit: 'cover' }} />
+                  <div style={{ padding: '18px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: TEAL, textTransform: 'uppercase', marginBottom: 6 }}>{rel.category}</span>
+                    <h3 style={{ fontSize: 15, fontWeight: 700, color: '#303733', lineHeight: 1.4, margin: 0 }}>{rel.title}</h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    )
+  }
 
   const featured = articles.find(a => a.featured)
   const rest = articles.filter(a => !a.featured)

@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router'
 import { motion, useInView } from 'motion/react'
-import { ArrowRight, Users, Target, TrendingUp, Shield, Heart, Award, CheckCircle, Smartphone, Laptop, Clock, ShieldCheck, UserCheck, RefreshCw, Sparkles, Building2, Globe2 } from 'lucide-react'
+import { Users, Award, CheckCircle, ShieldCheck, Sparkles } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
 import { BackButton } from '../components/BackButton'
 import { SEO } from '../components/SEO'
@@ -357,7 +357,7 @@ export function About() {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  justify: 'space-between',
+                  justifyContent: 'space-between',
                   transition: 'all 0.25s'
                 }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)'; (e.currentTarget as HTMLElement).style.borderColor = TEAL; (e.currentTarget as HTMLElement).style.boxShadow = '0 10px 28px rgba(53,133,142,0.09)' }}
