@@ -5,14 +5,10 @@ import { motion, AnimatePresence } from 'motion/react'
 import logoImg from '../../imports/mfd_logo_light.png'
 
 const serviceLinks = [
-  { label: 'Retirement Planning', path: '/services/retirement-planning' },
-  { label: 'Cash Flow & SWP Solutions', path: '/services/cash-flow-solutions' },
-  { label: "Children's Educational Planning", path: '/services/education-planning' },
-  { label: 'Goal-Based Mutual Fund Planning', path: '/services/goal-based-planning' },
-  { label: 'Systematic Investment Planning [SIP]', path: '/services/sip-planning' },
-  { label: 'Lump Sum Investment Advice', path: '/services/lump-sum-investment' },
-  { label: 'Personalized Financial Plans', path: '/services/personalized-financial-plans' },
-  { label: 'Portfolio Health Review', path: '/services/portfolio-health-review' },
+  { label: 'Build Wealth', path: '/services/build-wealth' },
+  { label: 'Achieve Life Goals', path: '/services/achieve-life-goals' },
+  { label: 'Prepare for Retirement', path: '/services/prepare-for-retirement' },
+  { label: 'Organize Existing Investments', path: '/services/organize-existing-investments' },
 ]
 
 const calcLinks = [
@@ -162,6 +158,18 @@ export function Navbar() {
                         <ArrowRight size={14} style={{ color: '#88BDA4' }} />
                       </Link>
                     ))}
+                    <div style={{
+                      marginTop: 8,
+                      padding: '10px 12px',
+                      borderRadius: 10,
+                      background: '#f7faf8',
+                      borderTop: '1px solid rgba(136,189,164,0.25)',
+                      fontSize: 11,
+                      lineHeight: 1.45,
+                      color: '#555D58',
+                    }}>
+                      MFDThiru provides these services as part of its mutual fund distribution activities. MFDThiru is the brand name of J. C. Thirumurugan, AMFI-Registered Mutual Fund Distributor (ARN-26890), and is not a SEBI-registered Investment Adviser.
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -308,6 +316,18 @@ export function Navbar() {
                           → {link.label}
                         </Link>
                       ))}
+                      <div style={{
+                        margin: '10px 12px',
+                        padding: '10px 12px',
+                        borderRadius: 8,
+                        background: '#f8faf9',
+                        border: '1px solid rgba(136,189,164,0.25)',
+                        fontSize: 11.5,
+                        lineHeight: 1.45,
+                        color: '#555D58',
+                      }}>
+                        MFDThiru provides these services as part of its mutual fund distribution activities. MFDThiru is the brand name of J. C. Thirumurugan, AMFI-Registered Mutual Fund Distributor (ARN-26890), and is not a SEBI-registered Investment Adviser.
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

@@ -11,6 +11,7 @@ import { EducationCalc } from './calculators/EducationCalc'
 import { GoalBasedCalc } from './calculators/GoalBasedCalc'
 import { FlexibleCalc } from './calculators/FlexibleCalc'
 import { CashFlowCalc } from './calculators/CashFlowCalc'
+import alreadyRetiredUserImg from '../../imports/already_retired_user.png'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -91,7 +92,7 @@ export function Home() {
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }}
               style={{ fontSize: 17, color: '#555D58', lineHeight: 1.75, marginBottom: 36, maxWidth: 480 }}>
-              We help investors across India make goal-oriented investment decisions through carefully selected mutual funds, personalised planning and ongoing support.
+              Helping individuals and family’s structure mutual fund investments around long-term goals, retirement corpus creation and inflation-adjusted retirement income.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
@@ -153,7 +154,7 @@ export function Home() {
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(101,146,135,0.08) 0%, transparent 50%, rgba(230,242,221,0.18) 100%)', pointerEvents: 'none' }} />
               </div>
 
-              {/* Floating popup card 1 — We help to save */}
+              {/* Floating popup card 1 — Smart Savings */}
               <motion.div
                 className="hero-floating-card"
                 animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 3.4, ease: 'easeInOut' }}
@@ -161,19 +162,19 @@ export function Home() {
                   position: 'absolute', top: 24, left: -24,
                   background: 'rgba(255,255,255,0.95)', borderRadius: 18, padding: '14px 20px',
                   boxShadow: '0 8px 36px rgba(53,133,142,0.20)', border: '1px solid rgba(136,189,164,0.38)',
-                  backdropFilter: 'blur(10px)', maxWidth: 220, zIndex: 2,
+                  backdropFilter: 'blur(10px)', maxWidth: 260, zIndex: 2,
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
                   <div style={{ width: 8, height: 8, borderRadius: '50%', background: TEAL }} />
                   <span style={{ fontSize: 11, color: '#7B827E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.4px' }}>Smart Savings</span>
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#303733', lineHeight: 1.4 }}>
-                  We help to save, not to spend
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#303733', lineHeight: 1.4 }}>
+                  “We Help You Save, Not Spend Without Purpose. Start Saving Today!”
                 </div>
               </motion.div>
 
-              {/* Floating popup card 2 — Wealth creation process */}
+              {/* Floating popup card 2 — Goal Planning */}
               <motion.div
                 className="hero-floating-card"
                 animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 0.8 }}
@@ -181,22 +182,22 @@ export function Home() {
                   position: 'absolute', bottom: 20, right: -20,
                   background: 'rgba(255,255,255,0.95)', borderRadius: 18, padding: '14px 20px',
                   boxShadow: '0 8px 36px rgba(53,133,142,0.20)', border: '1px solid rgba(136,189,164,0.38)',
-                  backdropFilter: 'blur(10px)', maxWidth: 220, zIndex: 2,
+                  backdropFilter: 'blur(10px)', maxWidth: 260, zIndex: 2,
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
                   <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#22C55E' }} />
-                  <span style={{ fontSize: 11, color: '#7B827E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.4px' }}>Growth Mindset</span>
+                  <span style={{ fontSize: 11, color: '#7B827E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.4px' }}>Goal Planning</span>
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: TEAL, lineHeight: 1.4 }}>
-                  Wealth creation is a process
+                <div style={{ fontSize: 13, fontWeight: 700, color: TEAL, lineHeight: 1.4 }}>
+                  “Your Investment Today Makes Tomorrow’s Goals Achievable. Start Today.”
                 </div>
               </motion.div>
             </div>
             
-            {/* AMFI Registered Mutual Fund Distributor — placed further below */}
+            {/* AMFI Registered Mutual Fund Distributor note under image */}
             <p style={{ fontSize: 14, color: '#555D58', marginTop: 32, textAlign: 'center', fontWeight: 500 }}>
-              AMFI Registered Mutual Fund Distributor
+              MFDThiru is a brand of J. C. Thirumurugan | AMFI-Registered Mutual Fund Distributor | ARN-26890
             </p>
           </motion.div>
         </div>
@@ -213,46 +214,41 @@ export function Home() {
           <FadeUp>
             <div style={{ textAlign: 'center', marginBottom: 52 }}>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: '#303733', marginBottom: 12 }}>Investment Options for You</h2>
-              <p style={{ fontSize: 17, color: '#555D58', maxWidth: 540, margin: '0 auto' }}>Your investment needs evolve at every stage of life. We offer tailored guidance to match exactly where you are today.</p>
+              <p style={{ fontSize: 17, color: '#555D58', maxWidth: 640, margin: '0 auto' }}>Tailored mutual fund distribution solutions structured to help you build wealth, achieve key milestones, and secure your retirement.</p>
             </div>
           </FadeUp>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 28 }}>
             {[
               {
-                title: 'Start Your Wealth Journey',
-                stage: 'Indicative age: 18 to 30 | Early-stage investors',
-                highlight: 'Start early. Invest consistently. Give your money more time to grow.',
-                description: 'Begin with affordable SIPs and build disciplined investment habits for long-term wealth creation and important future goals. Mutual fund options are considered based on your investment horizon and risk profile.',
-                cta: 'Start Your SIP',
-                route: '/calculators/sip',
-                img: 'https://images.unsplash.com/photo-1689799514696-b16af9b53753?w=600&q=80',
+                title: 'Building Wealth',
+                description: 'SIP, lump sum, goal-based investing and long-term compounding',
+                cta: 'Schedule an Investment Discussion',
+                route: '/get-started?option=Building Wealth',
+                img: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80',
                 IconComp: TrendingUp,
               },
               {
-                title: 'Build Your Goals & Retirement Corpus',
-                stage: 'Indicative age: 31 to 55 | Wealth-building stage',
-                highlight: 'Balance today’s responsibilities with tomorrow’s financial security.',
-                description: 'Build towards children’s education, major life goals, long-term wealth creation and the retirement corpus you may require. Invest through SIP, lump-sum or flexible mutual fund investments based on your goals, time horizon, liquidity needs and risk profile.',
-                cta: 'Build Your Retirement Corpus',
-                route: '/calculators/retirement',
-                img: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&q=80',
+                title: 'Preparing for Retirement',
+                description: 'Building the required retirement corpus before retirement',
+                cta: 'Review My Existing Portfolio',
+                route: '/get-started?option=Preparing for Retirement',
+                img: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80',
                 IconComp: Target,
               },
               {
-                title: 'Retirement Corpus to Inflation-Aware Cash Flow',
-                stage: 'Retired investors | Corpus-deployment stage',
-                highlight: 'Your retirement corpus is ready. Is your cash flow ready for inflation?',
-                description: 'Evaluate how your accumulated retirement corpus (including funds currently held in fixed deposits) may be appropriately deployed through suitable mutual fund schemes to support a structured cash flow that considers rising living expenses, liquidity needs, risk profile and long-term corpus sustainability.',
-                cta: 'Evaluate Your Retirement Cash Flow',
-                route: '/calculators/cash-flow',
-                img: 'https://images.unsplash.com/photo-1761839257647-df30867afd54?w=600&q=80',
+                title: 'Already Retired',
+                description: 'Structuring existing corpus to create inflation-adjusted cash flow',
+                cta: 'Plan My Retirement Cash Flow',
+                route: '/get-started?option=Already Retired',
+                img: alreadyRetiredUserImg,
                 IconComp: Shield,
               },
             ].map((card, i) => {
               const Icon = card.IconComp
               return (
                 <FadeUp key={card.title} delay={i * 0.15}>
-                  <div
+                  <Link
+                    to={card.route}
                     style={{
                       borderRadius: 20,
                       overflow: 'hidden',
@@ -264,6 +260,9 @@ export function Home() {
                       flexDirection: 'column',
                       height: '100%',
                       backdropFilter: 'blur(6px)',
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      cursor: 'pointer',
                     }}
                     onMouseEnter={e => {
                       ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)'
@@ -279,87 +278,57 @@ export function Home() {
                         src={card.img}
                         alt={card.title}
                         style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                        onError={e => {
+                          ;(e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&auto=format&fit=crop&q=80'
+                        }}
                         onMouseEnter={e => ((e.target as HTMLElement).style.transform = 'scale(1.06)')}
                         onMouseLeave={e => ((e.target as HTMLElement).style.transform = 'scale(1)')}
                       />
                     </div>
 
-                    <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                      <h3 style={{ fontSize: 20, fontWeight: 800, color: '#303733', marginBottom: 14, lineHeight: 1.35 }}>
-                        {card.title}
-                      </h3>
-
-                      <div style={{
-                        padding: '12px 14px',
-                        borderRadius: 10,
-                        background: 'rgba(230,242,221,0.6)',
-                        borderLeft: `4px solid ${TEAL}`,
-                        marginBottom: 16,
-                      }}>
-                        <p style={{ fontSize: 13.5, fontWeight: 600, color: TEAL, margin: 0, lineHeight: 1.5, fontStyle: 'italic' }}>
-                          "{card.highlight}"
-                        </p>
+                    <div style={{ padding: '28px 24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+                        <div style={{
+                          width: 36, height: 36, borderRadius: 10, background: 'rgba(230,242,221,0.85)',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center', color: TEAL, flexShrink: 0,
+                          border: '1px solid rgba(136,189,164,0.3)',
+                        }}>
+                          <Icon size={20} />
+                        </div>
+                        <h3 style={{ fontSize: 22, fontWeight: 800, color: '#303733', margin: 0, lineHeight: 1.3 }}>
+                          {card.title}
+                        </h3>
                       </div>
 
-                      <p style={{ fontSize: 14, color: '#555D58', lineHeight: 1.65, marginBottom: 20 }}>
+                      <p style={{ fontSize: 15, color: '#555D58', lineHeight: 1.65, marginBottom: 28, flexGrow: 1 }}>
                         {card.description}
                       </p>
 
-                      <div style={{ marginTop: 'auto', paddingTop: 8 }}>
-                        <div style={{
-                          marginBottom: 12,
-                          fontSize: 12.5,
-                          fontWeight: 600,
-                          color: TEAL,
-                          background: 'rgba(230,242,221,0.85)',
-                          padding: '7px 14px',
-                          borderRadius: 8,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: 6,
-                          border: '1px solid rgba(136,189,164,0.3)',
-                          textAlign: 'center',
-                        }}>
-                          <Icon size={14} style={{ flexShrink: 0 }} />
-                          <span>{card.stage}</span>
-                        </div>
-
-                        <Link
-                          to={card.route}
+                      <div style={{ marginTop: 'auto' }}>
+                        <div
                           style={{
                             display: 'inline-flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             gap: 8,
                             width: '100%',
-                            padding: '12px 20px',
+                            padding: '13px 20px',
                             borderRadius: 12,
                             background: TEAL,
                             color: '#fff',
-                            textDecoration: 'none',
                             fontSize: 14.5,
                             fontWeight: 700,
                             transition: 'all 0.2s ease',
                             boxShadow: '0 4px 14px rgba(53,133,142,0.25)',
-                          }}
-                          onMouseEnter={e => {
-                            ;(e.currentTarget as HTMLElement).style.background = '#2a6e76'
-                            ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'
-                            ;(e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(53,133,142,0.35)'
-                          }}
-                          onMouseLeave={e => {
-                            ;(e.currentTarget as HTMLElement).style.background = TEAL
-                            ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
-                            ;(e.currentTarget as HTMLElement).style.boxShadow = '0 4px 14px rgba(53,133,142,0.25)'
+                            boxSizing: 'border-box',
                           }}
                         >
                           <span>{card.cta}</span>
                           <ArrowRight size={16} />
-                        </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </FadeUp>
               )
             })}

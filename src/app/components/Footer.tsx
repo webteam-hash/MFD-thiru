@@ -10,13 +10,10 @@ const companyLinks = [
 ]
 
 const serviceLinks = [
-  { label: 'Retirement Corpus', path: '/calculators/retirement' },
-  { label: 'Cash Flow', path: '/calculators/cash-flow' },
-  { label: "Children's Educational Planning", path: '/calculators/education' },
-  { label: 'Goal-Based Mutual Fund Planning', path: '/calculators/goal-based' },
-  { label: 'Systematic Investment Planning [SIP]', path: '/calculators/sip' },
-  { label: 'Lump Sums', path: '/calculators/lump-sum' },
-  { label: 'Personal Plans', path: '/calculators/flexible' },
+  { label: 'Build Wealth', path: '/services/build-wealth' },
+  { label: 'Achieve Life Goals', path: '/services/achieve-life-goals' },
+  { label: 'Prepare for Retirement', path: '/services/prepare-for-retirement' },
+  { label: 'Organize Existing Investments', path: '/services/organize-existing-investments' },
 ]
 
 const legalLinks = [

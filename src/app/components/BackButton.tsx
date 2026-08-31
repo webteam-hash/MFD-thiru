@@ -23,7 +23,7 @@ export function BackButton({ fallback = '/', style }: BackButtonProps) {
   }
 
   return (
-    <div style={{ marginBottom: 16, display: 'inline-block', ...style }}>
+    <div style={{ marginBottom: 0, display: 'inline-block', ...style }}>
       <button
         onClick={handleBack}
         aria-label="Go Back"

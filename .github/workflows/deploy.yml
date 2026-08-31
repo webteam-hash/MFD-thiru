@@ -35,4 +35,4 @@ jobs:
           security: loose
           log-level: verbose
           local-dir: ./dist/
-          server-dir: ./
+          server-dir: ./public_html/

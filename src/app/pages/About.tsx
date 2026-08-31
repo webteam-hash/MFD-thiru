@@ -82,10 +82,13 @@ export function About() {
                   </div>
 
                   {/* Info Box Below Picture */}
-                  <div style={{ padding: '16px 20px', textAlign: 'center', background: 'linear-gradient(180deg, #ffffff 0%, #f8fdf9 100%)' }}>
-                    <h3 style={{ fontSize: 20, fontWeight: 800, color: '#232926', margin: 0 }}>
+                  <div style={{ padding: '18px 20px', textAlign: 'center', background: 'linear-gradient(180deg, #ffffff 0%, #f8fdf9 100%)' }}>
+                    <h3 style={{ fontSize: 20, fontWeight: 800, color: '#232926', margin: '0 0 10px 0' }}>
                       J. C. Thirumurugan
                     </h3>
+                    <p style={{ fontSize: 13, fontWeight: 600, color: TEAL, margin: 0, lineHeight: 1.55 }}>
+                      Serving Investors Since 2004 | 20+ Years of Experience | Families Across Generations | Digital Investment Support
+                    </p>
                   </div>
                 </div>
               </div>
@@ -94,15 +97,7 @@ export function About() {
             {/* Headline Content Next to Pic */}
             <FadeUp delay={0.2}>
               <div>
-                <h2 style={{ fontSize: 'clamp(30px, 4.2vw, 46px)', fontWeight: 800, color: '#232926', lineHeight: 1.25, marginBottom: 24, letterSpacing: '-0.5px' }}>
-                  Personal Relationships.<br />
-                  Generational Trust.<br />
-                  <span style={{ background: `linear-gradient(120deg, ${TEAL}, #255F66)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                    Digital Convenience.
-                  </span>
-                </h2>
-                
-                <p style={{ fontSize: 'clamp(18px, 2.2vw, 21px)', color: '#3A4440', lineHeight: 1.85, margin: 0, fontWeight: 450 }}>
+                <p style={{ fontSize: 'clamp(22px, 2.8vw, 28px)', color: '#262D2A', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
                   MFDThiru is the mutual fund distribution brand of <strong>J. C. Thirumurugan</strong>, AMFI-registered Mutual Fund Distributor (ARN 26890), serving investors with personal care for over two decades.
                 </p>
 
@@ -319,7 +314,7 @@ export function About() {
       </section>
 
       {/* ══════════════════════════════
-          HOW WE WORK — 8-Step Process
+          HOW WE WORK — 4-Step Process
       ══════════════════════════════ */}
       <section style={{ padding: '88px 24px', background: '#ffffff', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-5%" y="30%" w={320} h={260} color="#B1D3B9" op={0.38} blur={65} r="55% 45% 60% 40% / 42% 60% 40% 60%" />
@@ -327,50 +322,62 @@ export function About() {
         
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <FadeUp>
-            <div style={{ textAlign: 'center', marginBottom: 56 }}>
+            <div style={{ textAlign: 'center', marginBottom: 48 }}>
               <span style={{ fontSize: 13, fontWeight: 800, color: TEAL, textTransform: 'uppercase', letterSpacing: '1.5px' }}>STRUCTURED PROCESS</span>
-              <h2 style={{ fontSize: 'clamp(32px, 4.5vw, 44px)', fontWeight: 800, color: '#232926', marginTop: 6, marginBottom: 12 }}>How We Work</h2>
-              <p style={{ fontSize: 18, color: '#555D58', maxWidth: 620, margin: '0 auto' }}>
-                A simple 8-step process built around personal guidance and digital ease.
-              </p>
+              <h2 style={{ fontSize: 'clamp(32px, 4.5vw, 44px)', fontWeight: 800, color: '#232926', marginTop: 6, marginBottom: 16 }}>How We Work</h2>
+              
+              {/* Process Flow Headline Badge */}
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 12,
+                flexWrap: 'wrap',
+                padding: '14px 28px',
+                borderRadius: 40,
+                background: 'linear-gradient(135deg, rgba(230,242,221,0.85), rgba(210,235,220,0.7))',
+                border: '1px solid rgba(136,189,164,0.45)',
+                boxShadow: '0 4px 18px rgba(53,133,142,0.08)',
+                margin: '8px auto 0'
+              }}>
+                {['Understand', 'Plan', 'Invest', 'Review'].map((step, idx, arr) => (
+                  <div key={step} style={{ display: 'inline-flex', alignItems: 'center', gap: 12 }}>
+                    <span style={{ fontSize: 18, fontWeight: 800, color: TEAL }}>{step}</span>
+                    {idx < arr.length - 1 && <span style={{ fontSize: 18, fontWeight: 700, color: MINT }}>→</span>}
+                  </div>
+                ))}
+              </div>
             </div>
           </FadeUp>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {[
-              { num: 1, title: 'Understand Requirements', desc: 'Discuss your goals, current portfolio, time horizon & commitments.' },
-              { num: 2, title: 'Identify Specific Goals', desc: 'Define targets like retirement, education, or wealth creation.' },
-              { num: 3, title: 'Assess Risk Profile', desc: 'Evaluate risk tolerance and cash flow needs.' },
-              { num: 4, title: 'Present Options', desc: 'Share suitable fund categories with full clarity on risk & horizon.' },
-              { num: 5, title: 'Investor Choice', desc: 'You make the final scheme selections with complete transparency.' },
-              { num: 6, title: 'Paperless Execution', desc: 'Complete KYC and online onboarding quickly & securely.' },
-              { num: 7, title: '24/7 Digital Access', desc: 'Monitor investments online anytime with ongoing support.' },
-              { num: 8, title: 'Periodic Reviews', desc: 'Regular review to ensure investments stay aligned with goals.' }
+              { num: 1, title: 'Understand', desc: 'Goals, financial position, investment horizon and risk profile.' },
+              { num: 2, title: 'Plan', desc: 'Structure investment requirements around the identified goals.' },
+              { num: 3, title: 'Invest', desc: 'Facilitate suitable mutual fund investments through the distribution platform.' },
+              { num: 4, title: 'Review', desc: 'Periodic review as goals, markets and personal circumstances evolve.' },
             ].map((step, i) => (
-              <FadeUp key={step.num} delay={i * 0.05}>
+              <FadeUp key={step.num} delay={i * 0.08}>
                 <div style={{
                   background: 'linear-gradient(145deg, #F8FDF9, #FFFFFF)',
-                  borderRadius: 20,
-                  padding: '26px 22px',
-                  border: '1px solid rgba(136,189,164,0.28)',
+                  borderRadius: 22,
+                  padding: '30px 26px',
+                  border: '1px solid rgba(136,189,164,0.32)',
                   boxShadow: '0 4px 18px rgba(0,0,0,0.02)',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
                   transition: 'all 0.25s'
                 }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)'; (e.currentTarget as HTMLElement).style.borderColor = TEAL; (e.currentTarget as HTMLElement).style.boxShadow = '0 10px 28px rgba(53,133,142,0.09)' }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(136,189,164,0.28)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 18px rgba(0,0,0,0.02)' }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(136,189,164,0.32)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 18px rgba(0,0,0,0.02)' }}
                 >
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-                      <span style={{ width: 34, height: 34, borderRadius: '50%', background: TEAL, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 900, boxShadow: '0 4px 10px rgba(53,133,142,0.25)' }}>{step.num}</span>
-                      <span style={{ fontSize: 12, fontWeight: 800, color: MINT, textTransform: 'uppercase', letterSpacing: '0.5px' }}>STEP 0{step.num}</span>
-                    </div>
-                    <h3 style={{ fontSize: 17, fontWeight: 800, color: '#232926', marginBottom: 8 }}>{step.title}</h3>
-                    <p style={{ fontSize: 14, color: '#555D58', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                    <span style={{ width: 38, height: 38, borderRadius: '50%', background: TEAL, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 900, boxShadow: '0 4px 10px rgba(53,133,142,0.25)' }}>{step.num}</span>
+                    <span style={{ fontSize: 12, fontWeight: 800, color: MINT, textTransform: 'uppercase', letterSpacing: '0.8px' }}>STEP 0{step.num}</span>
                   </div>
+                  <h3 style={{ fontSize: 20, fontWeight: 800, color: '#232926', marginBottom: 10 }}>{step.title}</h3>
+                  <p style={{ fontSize: 15, color: '#555D58', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
                 </div>
               </FadeUp>
             ))}
@@ -402,7 +409,6 @@ export function About() {
               { icon: '🎓', title: 'Parents', desc: 'Plan and build dedicated corpuses for children’s education.' },
               { icon: '🏖️', title: 'Retirement Builders', desc: 'Accumulate retirement wealth based on target timelines.' },
               { icon: '👴', title: 'Retirees (FD to MF)', desc: 'Deploy corpuses for inflation-aware, regular cash flow via SWP.' },
-              { icon: '👨‍👩‍👧‍👦', title: '3-Generation Families', desc: 'Life-stage mutual fund guidance for the whole family.' },
               { icon: '📈', title: 'Wealth Builders', desc: 'Diversified portfolios tailored for long-term growth.' },
               { icon: '🌍', title: 'NRIs & Overseas Clients', desc: 'Hassle-free India mutual fund investing with compliant KYC support.' },
             ].map((item, i) => (
