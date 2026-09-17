@@ -10,6 +10,8 @@ const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })))
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })))
 const FAQ = lazy(() => import('./pages/FAQ').then(m => ({ default: m.FAQ })))
 const InvestorDetails = lazy(() => import('./pages/InvestorDetails').then(m => ({ default: m.InvestorDetails })))
+const WhyMFD = lazy(() => import('./pages/WhyMFD').then(m => ({ default: m.WhyMFD })))
+const FounderNoteViewer = lazy(() => import('./pages/FounderNoteViewer').then(m => ({ default: m.FounderNoteViewer })))
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })))
 
 // Calculators
@@ -45,8 +47,11 @@ export const router = createBrowserRouter([
       { path: 'faq', Component: FAQ },
       { path: 'contact', Component: Contact },
       { path: 'get-started', Component: InvestorDetails },
+      { path: 'why-mfd', Component: WhyMFD },
+      { path: 'founders-note', Component: FounderNoteViewer },
       
       // Services
+      { path: 'services', element: <ServicePage title="Our Services" path="/services" /> },
       { path: 'services/build-wealth', element: <ServicePage title="Build Wealth" path="/services/build-wealth" /> },
       { path: 'services/achieve-life-goals', element: <ServicePage title="Achieve Life Goals" path="/services/achieve-life-goals" /> },
       { path: 'services/prepare-for-retirement', element: <ServicePage title="Prepare for Retirement" path="/services/prepare-for-retirement" /> },

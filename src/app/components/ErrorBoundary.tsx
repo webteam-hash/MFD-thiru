@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('[MFDThiru App Error]:', error, errorInfo)
+    console.error('[MFDthiru App Error]:', error, errorInfo)
   }
 
   private handleReload = () => {

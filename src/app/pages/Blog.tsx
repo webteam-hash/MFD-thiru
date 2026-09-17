@@ -22,7 +22,195 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 const categories = ['All', 'Investment Basics', 'SIP', 'Retirement', 'Financial Goals', 'Mutual Funds', 'Market Education']
 
+function RiseAfterFallArticle() {
+  const chartData = [
+    { period: '2000-01', fall: -50, growth: 247 },
+    { period: '2008', fall: -64, growth: 45 },
+    { period: '2010-11', fall: -28, growth: 44 },
+    { period: '2015-16', fall: -24, growth: 38 },
+    { period: '2020', fall: -40, growth: 112 },
+  ]
+
+  const tableData = [
+    { event: '2000-01', desc: 'Technology bubble', fall: '-50%', time: '4 years', peak: '1,818 to 6,300', growth: '+247%' },
+    { event: '2008', desc: 'Global financial crisis', fall: '-64%', time: '2.8 years', peak: '6,287 to 9,100', growth: '+45%' },
+    { event: '2010-11', desc: 'Global and domestic uncertainty', fall: '-28%', time: '3 years', peak: '6,338 to 9,100', growth: '+44%' },
+    { event: '2015-16', desc: 'Economic and global correction', fall: '-24%', time: '2 years', peak: '8,996 to 12,400', growth: '+38%' },
+    { event: '2020', desc: 'COVID-19 crash', fall: '-40%', time: '0.8 years', peak: '12,430 to 26,300', growth: '+112%' },
+  ]
+
+  return (
+    <div style={{ display: 'grid', gap: 32 }}>
+      {/* Intro */}
+      <p style={{ fontSize: 18, lineHeight: 1.85, color: '#303733', margin: 0 }}>
+        <strong>Wars and geopolitical tensions can unsettle markets, disrupt trade and energy prices, and make investors uncomfortable.</strong> The duration and impact of any conflict cannot be predicted. History, however, shows that equity markets have lived through wars, financial crises, recessions and pandemics, and have subsequently recovered as businesses and economies adapted.
+      </p>
+
+      <p style={{ fontSize: 17, lineHeight: 1.8, color: '#3A4440', margin: 0 }}>
+        The right response is not blind confidence. It is disciplined investing: align investments with goals, maintain an adequate time horizon, diversify, and avoid turning a temporary market decline into a permanent loss through panic-driven redemption.
+      </p>
+
+      {/* Highlight Quote Box */}
+      <div style={{
+        padding: '24px 32px', borderRadius: 16,
+        background: 'linear-gradient(135deg, rgba(230,242,221,0.65) 0%, rgba(136,189,164,0.20) 100%)',
+        borderLeft: `6px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.3)',
+        textAlign: 'center', margin: '8px 0',
+      }}>
+        <p style={{ fontSize: 20, fontWeight: 700, fontStyle: 'italic', color: TEAL, margin: 0, lineHeight: 1.5 }}>
+          A fall tests patience. Recovery rewards it. The growth that follows creates wealth.
+        </p>
+      </div>
+
+      {/* Major Market Falls and Recoveries */}
+      <div>
+        <h2 style={{ fontSize: 24, fontWeight: 800, color: '#303733', marginBottom: 12, marginTop: 0 }}>Major Market Falls and Recoveries</h2>
+        <p style={{ fontSize: 16, color: '#555D58', lineHeight: 1.7, margin: 0 }}>
+          The Nifty 50 examples below are rounded historical illustrations. They show not only the fall and the time taken to regain the earlier peak, but also the next significant level reached after recovery.
+        </p>
+      </div>
+
+      {/* Chart Section */}
+      <div style={{ background: '#F9FBF8', padding: '28px 24px', borderRadius: 20, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
+        <h3 style={{ fontSize: 18, fontWeight: 700, textAlign: 'center', color: '#303733', marginBottom: 24, marginTop: 0 }}>
+          What patient investors experienced after major market falls
+        </h3>
+
+        {/* Legend */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 24, marginBottom: 24, flexWrap: 'wrap', fontSize: 13, fontWeight: 600 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div style={{ width: 14, height: 14, background: '#E57373', borderRadius: 3 }} />
+            <span style={{ color: '#555D58' }}>Fall from previous peak</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div style={{ width: 14, height: 14, background: '#2E7D32', borderRadius: 3 }} />
+            <span style={{ color: '#555D58' }}>Growth after recovery to next significant peak</span>
+          </div>
+        </div>
+
+        {/* Chart Rows */}
+        <div style={{ display: 'grid', gap: 16, maxWidth: 760, margin: '0 auto' }}>
+          {chartData.map(item => (
+            <div key={item.period} style={{ display: 'grid', gridTemplateColumns: '70px 1fr 1fr', alignItems: 'center', gap: 12 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#303733', textAlign: 'right' }}>{item.period}</div>
+              
+              {/* Fall bar */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#D32F2F', marginRight: 8 }}>{item.fall}%</span>
+                <div style={{
+                  height: 28,
+                  width: `${Math.min(100, (Math.abs(item.fall) / 70) * 100)}%`,
+                  background: '#E57373', borderRadius: '4px 0 0 4px',
+                }} />
+              </div>
+
+              {/* Growth bar */}
+              <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+                <div style={{
+                  height: 28,
+                  width: `${Math.min(100, (item.growth / 250) * 100)}%`,
+                  background: '#2E7D32', borderRadius: '0 4px 4px 0',
+                }} />
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#2E7D32', marginLeft: 8 }}>+{item.growth}%</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p style={{ fontSize: 13, fontStyle: 'italic', color: '#77827B', textAlign: 'center', marginTop: 24, margin: 0 }}>
+          Figure 1 Approximate Nifty 50 price index experience across selected completed market cycles
+        </p>
+      </div>
+
+      {/* Table Section */}
+      <div>
+        <h2 style={{ fontSize: 24, fontWeight: 800, color: '#303733', marginBottom: 16, marginTop: 0 }}>The Evidence in Numbers</h2>
+        
+        <div style={{ overflowX: 'auto', borderRadius: 16, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14.5, textAlign: 'left' }}>
+            <thead>
+              <tr style={{ background: '#1A3C40', color: '#fff' }}>
+                <th style={{ padding: '14px 18px', fontWeight: 700 }}>Market event</th>
+                <th style={{ padding: '14px 18px', fontWeight: 700, textAlign: 'center' }}>Approx. fall</th>
+                <th style={{ padding: '14px 18px', fontWeight: 700, textAlign: 'center' }}>Time to regain</th>
+                <th style={{ padding: '14px 18px', fontWeight: 700, textAlign: 'center' }}>Next significant peak</th>
+                <th style={{ padding: '14px 18px', fontWeight: 700, textAlign: 'center' }}>Growth after recovery</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableData.map((row, i) => (
+                <tr key={row.event} style={{ background: i % 2 === 0 ? '#fff' : '#F5F9F6', borderBottom: '1px solid rgba(136,189,164,0.18)' }}>
+                  <td style={{ padding: '14px 18px' }}>
+                    <div style={{ fontWeight: 700, color: '#303733' }}>{row.event}</div>
+                    <div style={{ fontSize: 13, color: '#66706B' }}>{row.desc}</div>
+                  </td>
+                  <td style={{ padding: '14px 18px', textAlign: 'center', color: '#D32F2F', fontWeight: 700 }}>{row.fall}</td>
+                  <td style={{ padding: '14px 18px', textAlign: 'center', color: '#303733', fontWeight: 500 }}>{row.time}</td>
+                  <td style={{ padding: '14px 18px', textAlign: 'center', color: '#303733', fontWeight: 500 }}>{row.peak}</td>
+                  <td style={{ padding: '14px 18px', textAlign: 'center', color: '#2E7D32', fontWeight: 800 }}>{row.growth}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p style={{ fontSize: 14.5, lineHeight: 1.7, color: '#4E5652', marginTop: 16, margin: '16px 0 0' }}>
+          <strong>How to read the table</strong> During the 2008 crisis, for example, the Nifty fell about 64%. It took roughly 2.8 years to regain its previous peak near 6,287. Investors who remained invested then participated in the later rise toward 9,100 - approximately 45% beyond the recovered level.
+        </p>
+      </div>
+
+      {/* What History Teaches Investors */}
+      <div>
+        <h2 style={{ fontSize: 24, fontWeight: 800, color: '#303733', marginBottom: 16, marginTop: 0 }}>What History Teaches Investors</h2>
+        <ul style={{ paddingLeft: 20, margin: 0, display: 'grid', gap: 14, fontSize: 16, lineHeight: 1.75, color: '#3A4440' }}>
+          <li>
+            <strong>Recovery begins before confidence returns.</strong> Waiting for complete certainty may mean returning after a substantial part of the recovery has passed.
+          </li>
+          <li>
+            <strong>A decline is not automatically a permanent loss.</strong> Panic redemption makes the decline permanent and removes the opportunity to participate in recovery.
+          </li>
+          <li>
+            <strong>SIPs support discipline through volatility.</strong> At lower prices, the same instalment purchases more units; this supports accumulation but does not eliminate risk.
+          </li>
+          <li>
+            <strong>Goals matter more than headlines.</strong> Review the time horizon, asset allocation and risk profile before changing a long-term investment.
+          </li>
+        </ul>
+      </div>
+
+      {/* Before You Make a Decision */}
+      <div>
+        <h2 style={{ fontSize: 24, fontWeight: 800, color: '#303733', marginBottom: 14, marginTop: 0 }}>Before You Make a Decision</h2>
+        <p style={{ fontSize: 16, lineHeight: 1.8, color: '#3A4440', margin: 0 }}>
+          Do not redeem, stop an SIP, or make a fresh lump-sum investment only because of current news. First review when the money is required, portfolio diversification, emergency reserves, risk capacity and whether the investment still serves its original goal. <strong style={{ color: TEAL }}>When uncertainty rises, speak to your Mutual Fund Distributor before changing a long-term plan.</strong>
+        </p>
+      </div>
+
+      {/* Investor Note and Disclaimer */}
+      <div style={{
+        marginTop: 8, padding: '20px 24px', borderRadius: 16,
+        background: '#F7FAF8', border: '1px solid rgba(136,189,164,0.3)',
+        fontSize: 13, lineHeight: 1.7, color: '#606864',
+      }}>
+        <h4 style={{ fontSize: 14, fontWeight: 800, color: '#303733', marginTop: 0, marginBottom: 8 }}>Investor Note and Disclaimer</h4>
+        Figures are approximate, rounded Nifty 50 Price Index illustrations from selected completed cycles. They do not represent a mutual fund scheme and exclude dividends, expenses and taxation. Results vary by measurement method; future declines may be deeper or take longer to recover. For investor education only - not investment advice, a return projection, or an assurance or guarantee. Mutual Fund investments are subject to market risks. Read all scheme-related documents carefully and invest according to goals, horizon and risk profile.
+      </div>
+    </div>
+  )
+}
+
 const articles = [
+  {
+    id: 8,
+    title: 'Rise After a Fall: A Historical Perspective for Investors During Global Uncertainty',
+    category: 'Market Education',
+    date: 'September 11, 2026',
+    img: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=85',
+    excerpt: 'Wars and geopolitical tensions can unsettle markets, disrupt trade and energy prices, and make investors uncomfortable. History shows that equity markets have lived through wars, financial crises, recessions and pandemics, and have subsequently recovered.',
+    featured: true,
+    isRiseAfterFall: true,
+    content: []
+  },
   {
     id: 1,
     title: 'How to Start Your Investment Journey in Your 20s',
@@ -30,7 +218,6 @@ const articles = [
     date: 'July 15, 2026',
     img: 'https://images.unsplash.com/photo-1689799514696-b16af9b53753?w=600&q=80',
     excerpt: 'Starting early is the most powerful thing you can do for your financial future. Here is a complete guide for young investors in India.',
-    featured: true,
     content: [
       'Starting your investment journey in your 20s provides you with the most valuable asset in financial planning: time. The power of compounding works best over long time horizons, allowing even small, consistent monthly contributions to grow into substantial wealth.',
       'Begin by building an emergency fund covering 3 to 6 months of basic living expenses. Once your safety net is established, start a Systematic Investment Plan (SIP) in mutual funds aligned with your risk tolerance and financial goals.',
@@ -117,13 +304,10 @@ const articles = [
   },
 ]
 
-const ITEMS_PER_PAGE = 4
-
 export function Blog() {
   const { id } = useParams<{ id?: string }>()
   const [activeCategory, setActiveCategory] = useState('All')
   const [search, setSearch] = useState('')
-  const [page, setPage] = useState(1)
 
   // Single Article Detail View
   if (id) {
@@ -133,7 +317,7 @@ export function Blog() {
     return (
       <div style={{ overflowX: 'hidden' }}>
         <SEO
-          title={`${article.title} | MFDThiru Blog`}
+          title={`${article.title} | MFDthiru Blog`}
           description={article.excerpt}
           canonical={`/blog/${article.id}`}
         />
@@ -163,13 +347,19 @@ export function Blog() {
           </div>
 
           <div style={{ background: '#fff', borderRadius: 24, padding: '44px 40px', border: '1px solid rgba(136,189,164,0.22)', boxShadow: '0 6px 24px rgba(0,0,0,0.02)', display: 'grid', gap: 24, fontSize: 17, color: '#3A4440', lineHeight: 1.85 }}>
-            <p style={{ fontSize: 19, fontWeight: 600, color: TEAL, lineHeight: 1.7, margin: 0, paddingBottom: 16, borderBottom: '1px solid rgba(136,189,164,0.2)' }}>
-              {article.excerpt}
-            </p>
+            {article.isRiseAfterFall ? (
+              <RiseAfterFallArticle />
+            ) : (
+              <>
+                <p style={{ fontSize: 19, fontWeight: 600, color: TEAL, lineHeight: 1.7, margin: 0, paddingBottom: 16, borderBottom: '1px solid rgba(136,189,164,0.2)' }}>
+                  {article.excerpt}
+                </p>
 
-            {article.content?.map((paragraph, idx) => (
-              <p key={idx} style={{ margin: 0 }}>{paragraph}</p>
-            ))}
+                {article.content?.map((paragraph, idx) => (
+                  <p key={idx} style={{ margin: 0 }}>{paragraph}</p>
+                ))}
+              </>
+            )}
 
             <div style={{ marginTop: 24, padding: '28px 32px', background: 'rgba(230,242,221,0.5)', borderRadius: 20, border: `1px solid ${MINT}`, borderLeft: `6px solid ${TEAL}` }}>
               <h3 style={{ fontSize: 18, fontWeight: 800, color: TEAL, marginTop: 0, marginBottom: 8 }}>Ready to Start Your Mutual Fund Plan?</h3>
@@ -209,14 +399,13 @@ export function Blog() {
     return matchCat && matchSearch
   })
 
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
-  const paged = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
+  const paged = filtered
 
   return (
     <div style={{ overflowX: 'hidden' }}>
       <SEO
-        title="Investor Knowledge & Insights | MFDThiru Blog"
-        description="Educational articles and mutual fund insights by MFDThiru. Learn about SIPs, lump-sum investments, retirement planning, and goal-oriented wealth creation."
+        title="Investor Knowledge & Insights | MFDthiru Blog"
+        description="Educational articles and mutual fund insights by MFDthiru. Learn about SIPs, lump-sum investments, retirement planning, and goal-oriented wealth creation."
         canonical="/blog"
       />
       {/* Hero */}
@@ -238,7 +427,7 @@ export function Blog() {
               <Search size={18} style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)', color: '#7B827E' }} />
               <input
                 type="text" placeholder="Search articles..." value={search}
-                onChange={e => { setSearch(e.target.value); setPage(1) }}
+                onChange={e => setSearch(e.target.value)}
                 style={{
                   width: '100%', padding: '14px 16px 14px 48px', borderRadius: 12, border: '1px solid rgba(136,189,164,0.4)',
                   fontSize: 15, color: '#303733', outline: 'none', background: '#fff', boxSizing: 'border-box',
@@ -255,7 +444,7 @@ export function Blog() {
       <section style={{ padding: '24px', borderBottom: '1px solid rgba(136,189,164,0.2)', background: '#fff', position: 'sticky', top: 70, zIndex: 10, backdropFilter: 'blur(8px)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', gap: 8, overflowX: 'auto', padding: '4px 0', scrollbarWidth: 'none' }}>
           {categories.map(cat => (
-            <button key={cat} onClick={() => { setActiveCategory(cat); setPage(1) }} style={{
+            <button key={cat} onClick={() => setActiveCategory(cat)} style={{
               padding: '8px 18px', borderRadius: 20, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap',
               fontSize: 14, fontWeight: 600, transition: 'all 0.2s',
               background: activeCategory === cat ? TEAL : '#f5f5f5',
@@ -334,26 +523,6 @@ export function Blog() {
                   </div>
                 </FadeUp>
               ))}
-            </div>
-          )}
-
-          {/* Pagination */}
-          {totalPages > 1 && (
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 48, alignItems: 'center' }}>
-              <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
-                style={{ width: 40, height: 40, borderRadius: '50%', border: `1px solid ${MINT}`, background: '#fff', cursor: page === 1 ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: page === 1 ? 0.5 : 1, color: TEAL }}>
-                <ChevronLeft size={18} />
-              </button>
-              {[...Array(totalPages)].map((_, i) => (
-                <button key={i} onClick={() => setPage(i + 1)} style={{
-                  width: 40, height: 40, borderRadius: '50%', border: `1px solid ${MINT}`, cursor: 'pointer',
-                  background: page === i + 1 ? TEAL : '#fff', color: page === i + 1 ? '#fff' : TEAL, fontWeight: 600, fontSize: 14,
-                }}>{i + 1}</button>
-              ))}
-              <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}
-                style={{ width: 40, height: 40, borderRadius: '50%', border: `1px solid ${MINT}`, background: '#fff', cursor: page === totalPages ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: page === totalPages ? 0.5 : 1, color: TEAL }}>
-                <ChevronRight size={18} />
-              </button>
             </div>
           )}
         </div>

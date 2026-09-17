@@ -16,7 +16,7 @@ export function NotFound() {
       overflow: 'hidden',
       padding: '40px 24px',
     }}>
-      <SEO title="Page Not Found | MFDThiru" description="The requested page could not be found." />
+      <SEO title="Page Not Found | MFDthiru" description="The requested page could not be found." />
       <SectionBlob x="-5%" y="-10%" w={380} h={300} color="#B1D3B9" op={0.4} blur={60} r="50%" />
       <SectionBlob x="85%" y="20%" w={320} h={260} color="#88BDA4" op={0.25} blur={50} r="50%" />
 

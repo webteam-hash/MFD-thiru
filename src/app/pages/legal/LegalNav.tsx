@@ -22,8 +22,8 @@ export function LegalNav() {
   return (
     <div style={{ maxWidth: 1040, margin: '0 auto 30px' }}>
       <SEO
-        title={`${currentItem ? currentItem.label : 'Legal Information'} | MFDThiru (ARN 26890)`}
-        description={`Statutory disclosures, regulatory policies and regulatory compliance guidelines for MFDThiru — AMFI Registered Mutual Fund Distributor (ARN 26890).`}
+        title={`${currentItem ? currentItem.label : 'Legal Information'} | MFDthiru (ARN 26890)`}
+        description={`Statutory disclosures, regulatory policies and regulatory compliance guidelines for MFDthiru — AMFI Registered Mutual Fund Distributor (ARN 26890).`}
         canonical={location.pathname}
       />
       <BackButton />

@@ -23,8 +23,8 @@ export function Disclaimer() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
       <SEO
-        title="Disclaimer | MFDThiru — J. C. Thirumurugan (ARN 26890)"
-        description="Statutory disclaimer and disclosure note for MFDThiru — AMFI Registered Mutual Fund Distributor ARN 26890."
+        title="Disclaimer | MFDthiru — J. C. Thirumurugan (ARN 26890)"
+        description="Statutory disclaimer and disclosure note for MFDthiru — AMFI Registered Mutual Fund Distributor ARN 26890."
         canonical="/disclaimer"
       />
       {/* Hero Header */}
@@ -75,7 +75,7 @@ export function Disclaimer() {
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>2. Distributor Registration & AMC Partnerships</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  MFDThiru is an AMFI Registered Mutual Fund Distributor (ARN 26890) and facilitates the distribution of mutual fund products offered by various Asset Management Companies (AMCs). The information, illustrations and opinions presented on this website are based on sources believed to be reliable; however, no representation or warranty, express or implied, is made regarding their accuracy, completeness or suitability.
+                  MFDthiru is an AMFI Registered Mutual Fund Distributor (ARN 26890) and facilitates the distribution of mutual fund products offered by various Asset Management Companies (AMCs). The information, illustrations and opinions presented on this website are based on sources believed to be reliable; however, no representation or warranty, express or implied, is made regarding their accuracy, completeness or suitability.
                 </p>
               </div>
             </FadeUp>
@@ -102,7 +102,7 @@ export function Disclaimer() {
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>5. Limitation of Liability</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  While every reasonable effort is made to keep the information on this website accurate and up to date, MFDThiru shall not be liable for any loss or damage arising directly or indirectly from the use of, or reliance on, the information, tools, calculators or materials available on this website.
+                  While every reasonable effort is made to keep the information on this website accurate and up to date, MFDthiru shall not be liable for any loss or damage arising directly or indirectly from the use of, or reliance on, the information, tools, calculators or materials available on this website.
                 </p>
               </div>
             </FadeUp>

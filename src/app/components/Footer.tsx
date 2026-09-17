@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
-import { Instagram, Linkedin, Youtube, Send } from 'lucide-react'
-import { useState } from 'react'
+import { Instagram, Linkedin, Youtube } from 'lucide-react'
 import logoDarkImg from '../../imports/mfd_logo_dark.png'
+import { BUSINESS_INFO } from '../constants/theme'
 
 const companyLinks = [
   { label: 'About Us', path: '/about' },
@@ -25,13 +25,6 @@ const legalLinks = [
 ]
 
 export function Footer() {
-  const [email, setEmail] = useState('')
-  const [subscribed, setSubscribed] = useState(false)
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email) { setSubscribed(true); setEmail('') }
-  }
 
   return (
     <footer style={{ background: '#1e4a4f', color: '#e0f0f2', paddingTop: 64 }}>
@@ -42,7 +35,7 @@ export function Footer() {
             <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', marginBottom: 20 }}>
               <img
                 src={logoDarkImg}
-                alt="MFD Thiru Logo"
+                alt="MFDthiru Logo"
                 style={{ height: 48, width: 'auto', objectFit: 'contain', display: 'block' }}
               />
             </Link>
@@ -50,15 +43,15 @@ export function Footer() {
               Your trusted partner for goal-oriented mutual fund investments. We help families across India build a better financial future.
             </p>
             <p style={{ fontSize: 12, lineHeight: 1.6, color: '#88BDA4', fontWeight: 600, marginBottom: 20 }}>
-              MFDThiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, AMFI Registered Mutual Fund Distributor (ARN 26890).
+              MFDthiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, AMFI Registered Mutual Fund Distributor (ARN 26890).
             </p>
             <div style={{ display: 'flex', gap: 12 }}>
               {[
-                { icon: <Instagram size={18} />, href: '#', label: 'Instagram' },
-                { icon: <Linkedin size={18} />, href: '#', label: 'LinkedIn' },
-                { icon: <Youtube size={18} />, href: '#', label: 'YouTube' },
+                { icon: <Instagram size={18} />, href: BUSINESS_INFO.socials.instagram, label: 'Instagram' },
+                { icon: <Linkedin size={18} />, href: BUSINESS_INFO.socials.linkedin, label: 'LinkedIn' },
+                { icon: <Youtube size={18} />, href: BUSINESS_INFO.socials.youtube, label: 'YouTube' },
               ].map(s => (
-                <a key={s.label} href={s.href} aria-label={s.label} style={{
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} style={{
                   width: 38, height: 38, borderRadius: 10, background: 'rgba(255,255,255,0.1)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a8c8cc',
                   textDecoration: 'none', transition: 'all 0.2s',
@@ -121,27 +114,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Stay Updated</h3>
-            {subscribed ? (
-              <p style={{ color: '#88BDA4', fontSize: 14 }}>✓ Thank you for subscribing!</p>
-            ) : (
-              <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: 8 }}>
-                <input
-                  type="email" value={email} onChange={e => setEmail(e.target.value)}
-                  placeholder="Your email" required
-                  style={{
-                    flex: 1, padding: '10px 14px', borderRadius: 10, border: '1px solid rgba(136,189,164,0.3)',
-                    background: 'rgba(255,255,255,0.08)', color: '#fff', fontSize: 14, outline: 'none',
-                  }}
-                />
-                <button type="submit" style={{
-                  padding: '10px 14px', borderRadius: 10, background: '#35858E', border: 'none',
-                  cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center',
-                }}>
-                  <Send size={16} />
-                </button>
-              </form>
-            )}
           </div>
         </div>
 
@@ -153,7 +125,7 @@ export function Footer() {
             </p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
-            <p style={{ fontSize: 13, color: '#6a9499' }}>© 2026 MFDThiru. All rights reserved.</p>
+            <p style={{ fontSize: 13, color: '#6a9499' }}>© 2026 MFDthiru. All rights reserved.</p>
             <p style={{ fontSize: 13, color: '#6a9499' }}>AMFI Registered Mutual Fund Distributor | ARN 26890</p>
           </div>
         </div>

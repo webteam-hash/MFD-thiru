@@ -23,8 +23,8 @@ export function InvestorGrievance() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
       <SEO
-        title="Investor Grievance Redressal | MFDThiru — J. C. Thirumurugan (ARN 26890)"
-        description="Grievance Redressal Mechanism and Investor Support for MFDThiru — AMFI Registered Mutual Fund Distributor ARN 26890."
+        title="Investor Grievance Redressal | MFDthiru — J. C. Thirumurugan (ARN 26890)"
+        description="Grievance Redressal Mechanism and Investor Support for MFDthiru — AMFI Registered Mutual Fund Distributor ARN 26890."
         canonical="/investor-grievance"
       />
       {/* Hero Header */}
@@ -41,7 +41,7 @@ export function InvestorGrievance() {
               Investor Grievance Redressal & Contact Information
             </h1>
             <p style={{ fontSize: 18, color: '#555D58', maxWidth: 760, margin: '0 auto 24px', lineHeight: 1.7 }}>
-              At MFDThiru, we are committed to providing prompt, transparent and efficient service to our investors.
+              At MFDthiru, we are committed to providing prompt, transparent and efficient service to our investors.
             </p>
             <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
               J. C. Thirumurugan &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor (ARN 26890)
@@ -77,11 +77,11 @@ export function InvestorGrievance() {
                   </div>
                   <div>
                     <div style={{ fontSize: 12, color: '#77827B', fontWeight: 700, letterSpacing: '0.5px' }}>BRAND NAME</div>
-                    <div style={{ fontSize: 17, fontWeight: 700, color: '#303733', marginTop: 4 }}>MFDThiru</div>
+                    <div style={{ fontSize: 17, fontWeight: 700, color: '#303733', marginTop: 4 }}>MFDthiru</div>
                   </div>
                   <div>
                     <div style={{ fontSize: 12, color: '#77827B', fontWeight: 700, letterSpacing: '0.5px' }}>EMAIL ADDRESS</div>
-                    <div style={{ fontSize: 17, fontWeight: 700, color: TEAL, marginTop: 4 }}>enquiry@wcms.in</div>
+                    <div style={{ fontSize: 17, fontWeight: 700, color: TEAL, marginTop: 4 }}>enquiry@mfdthiru.in</div>
                   </div>
                   <div>
                     <div style={{ fontSize: 12, color: '#77827B', fontWeight: 700, letterSpacing: '0.5px' }}>WEBSITE</div>
@@ -97,7 +97,7 @@ export function InvestorGrievance() {
                 <h2 style={{ fontSize: 24, fontWeight: 800, color: '#303733', marginBottom: 24 }}>Grievance Redressal Process</h2>
                 <div style={{ display: 'grid', gap: 18 }}>
                   {[
-                    { step: 1, text: 'Submit your query or grievance by email (enquiry@wcms.in) or through the Contact Us page.' },
+                    { step: 1, text: 'Submit your query or grievance by email (enquiry@mfdthiru.in) or through the Contact Us page.' },
                     { step: 2, text: 'We will acknowledge receipt of your communication as soon as reasonably practicable.' },
                     { step: 3, text: 'We will make every reasonable effort to resolve your query or coordinate with the relevant Asset Management Company (AMC), Registrar & Transfer Agent (RTA) or other service provider, wherever applicable.' },
                     { step: 4, text: 'If the matter requires intervention by the AMC or RTA, we will assist you in coordinating the resolution process.' }
@@ -120,7 +120,7 @@ export function InvestorGrievance() {
               <div style={{ background: 'rgba(230,242,221,0.45)', borderRadius: 18, padding: '28px 32px', border: '1px solid rgba(136,189,164,0.3)' }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 12 }}>Scope of Services & Operational Matters</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  MFDThiru acts solely as a Mutual Fund Distributor. Matters relating to scheme operations, NAV declaration, fund management, transaction execution and redemption processing are handled by the respective Asset Management Company and its authorised service providers.
+                  MFDthiru acts solely as a Mutual Fund Distributor. Matters relating to scheme operations, NAV declaration, fund management, transaction execution and redemption processing are handled by the respective Asset Management Company and its authorised service providers.
                 </p>
               </div>
             </FadeUp>

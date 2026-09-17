@@ -23,8 +23,8 @@ export function CalculatorPolicy() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
       <SEO
-        title="Calculator Policy & SEBI/AMFI Compliance Note | MFDThiru"
-        description="Regulatory position and compliance note for digital calculators and goal-based mutual fund investing tools by MFDThiru (ARN 26890)."
+        title="Calculator Policy & SEBI/AMFI Compliance Note | MFDthiru"
+        description="Regulatory position and compliance note for digital calculators and goal-based mutual fund investing tools by MFDthiru (ARN 26890)."
         canonical="/calculator-policy"
       />
       {/* Hero Header */}
@@ -41,7 +41,7 @@ export function CalculatorPolicy() {
               Regulatory Position on Calculators & Goal-Based Mutual Fund Investing
             </h1>
             <p style={{ fontSize: 18, color: '#555D58', maxWidth: 780, margin: '0 auto 24px', lineHeight: 1.7 }}>
-              SEBI and AMFI compliance guidance note for the MFDThiru website and digital tools.
+              SEBI and AMFI compliance guidance note for the MFDthiru website and digital tools.
             </p>
             <div style={{ display: 'inline-flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', fontSize: 13, color: TEAL, fontWeight: 700 }}>
               <span style={{ padding: '6px 16px', background: '#ffffff', borderRadius: 12, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
@@ -84,7 +84,7 @@ export function CalculatorPolicy() {
                   </div>
                 </div>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#2D3531', margin: 0, fontWeight: 500 }}>
-                  MFDThiru may provide educational calculators and may assist clients with goal-based SIP, lump-sum and flexible mutual fund investments. The activity must remain limited to mutual funds and incidental to distribution. MFDThiru must not offer detailed financial planning, holistic investment advice or public scheme-specific recommendations as these cross the permitted MFD boundary.
+                  MFDthiru may provide educational calculators and may assist clients with goal-based SIP, lump-sum and flexible mutual fund investments. The activity must remain limited to mutual funds and incidental to distribution. MFDthiru must not offer detailed financial planning, holistic investment advice or public scheme-specific recommendations as these cross the permitted MFD boundary.
                 </p>
                 <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid rgba(53,133,142,0.18)', fontSize: 13, color: '#555D58', fontStyle: 'italic' }}>
                   Purpose: Internal compliance guidance and website implementation reference. This note is an operational regulatory reference and not a formal legal opinion.
@@ -100,7 +100,7 @@ export function CalculatorPolicy() {
                   Purpose and Scope
                 </h2>
                 <p style={{ fontSize: 16, lineHeight: 1.8, color: '#4E5652', margin: 0 }}>
-                  This note explains the regulatory basis on which an AMFI-registered Mutual Fund Distributor (“MFD”) may provide calculators, goal-oriented illustrations and basic assistance with mutual fund investments without presenting itself as a SEBI-registered Investment Adviser (“RIA”). It also identifies the design, terminology, disclosure and operating controls recommended for the MFDThiru website.
+                  This note explains the regulatory basis on which an AMFI-registered Mutual Fund Distributor (“MFD”) may provide calculators, goal-oriented illustrations and basic assistance with mutual fund investments without presenting itself as a SEBI-registered Investment Adviser (“RIA”). It also identifies the design, terminology, disclosure and operating controls recommended for the MFDthiru website.
                 </p>
               </div>
             </FadeUp>
@@ -199,12 +199,12 @@ export function CalculatorPolicy() {
               </div>
             </FadeUp>
 
-            {/* Section 6: How MFDThiru Calculators Operate */}
+            {/* Section 6: How MFDthiru Calculators Operate */}
             <FadeUp delay={0.3}>
               <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
                 <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span style={{ width: 34, height: 34, borderRadius: '50%', background: `linear-gradient(135deg, ${TEAL}, ${MINT})`, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 800 }}>6</span>
-                  How MFDThiru Calculators Operate
+                  How MFDthiru Calculators Operate
                 </h2>
                 
                 <h3 style={{ fontSize: 17, fontWeight: 700, color: TEAL, marginBottom: 12 }}>6.1 Permitted Calculator Suite</h3>
@@ -233,7 +233,7 @@ export function CalculatorPolicy() {
                   7. Investor Risk-Profiling & Suitability Process
                 </h2>
                 <p style={{ fontSize: 16, lineHeight: 1.8, color: '#4E5652', marginBottom: 20 }}>
-                  A public calculator can remain anonymous and educational. If the next step involves a specific mutual fund recommendation, MFDThiru completes a mandatory 7-step process:
+                  A public calculator can remain anonymous and educational. If the next step involves a specific mutual fund recommendation, MFDthiru completes a mandatory 7-step process:
                 </p>
                 <div style={{ display: 'grid', gap: 12 }}>
                   {[

@@ -5,6 +5,7 @@ import { SectionBlob } from '../components/WatercolorBg'
 import { BackButton } from '../components/BackButton'
 import { SEO } from '../components/SEO'
 import { GoogleAdsEvents } from '../utils/gtag'
+import { BUSINESS_INFO } from '../constants/theme'
 
 const TEAL = '#35858E'
 const MINT = '#88BDA4'
@@ -39,14 +40,39 @@ export function Contact() {
     return e
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setLoading(true)
     // Fire Google Ads Lead Generation Event
     GoogleAdsEvents.leadSubmitted(form.interest || 'contact_form')
-    setTimeout(() => { setLoading(false); setSubmitted(true) }, 1000)
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    if (accessKey) {
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New MFDthiru Contact Enquiry from ${form.name}`,
+            from_name: form.name,
+            email: form.email,
+            phone: form.phone,
+            interest: form.interest,
+            message: form.message,
+          }),
+        })
+      } catch (err) {
+        console.warn('Contact form dispatch warning:', err)
+      }
+    } else {
+      await new Promise(r => setTimeout(r, 800))
+    }
+
+    setLoading(false)
+    setSubmitted(true)
   }
 
   const inputStyle = (field: string) => ({
@@ -58,7 +84,7 @@ export function Contact() {
   return (
     <div style={{ overflowX: 'hidden' }}>
       <SEO
-        title="Contact Us | MFDThiru — Mutual Fund Distributor Chennai"
+        title="Contact Us | MFDthiru — Mutual Fund Distributor Chennai"
         description="Get in touch with J. C. Thirumurugan (ARN 26890) for mutual fund consultations, SIP setup, retirement planning, and portfolio reviews in Chennai."
         canonical="/contact"
       />
@@ -173,8 +199,8 @@ export function Contact() {
                 {
                   icon: <Mail size={22} color={TEAL} />,
                   title: 'Email Address',
-                  content: 'enquiry@wcms.in',
-                  link: 'mailto:enquiry@wcms.in',
+                  content: 'enquiry@mfdthiru.in',
+                  link: 'mailto:enquiry@mfdthiru.in',
                   bg: '#E6EEC9',
                 },
                 {
@@ -204,10 +230,10 @@ export function Contact() {
                 <div style={{ fontSize: 12, fontWeight: 600, color: TEAL, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 14 }}>Follow Us</div>
                 <div style={{ display: 'flex', gap: 12 }}>
                   {[
-                    { icon: <Instagram size={20} />, href: '#', label: 'Instagram', color: '#E1306C' },
-                    { icon: <Linkedin size={20} />, href: '#', label: 'LinkedIn', color: '#0077B5' },
-                    { icon: <Youtube size={20} />, href: '#', label: 'YouTube', color: '#FF0000' },
-                    { icon: <MessageCircle size={20} />, href: 'https://wa.me/919940574602', label: 'WhatsApp', color: '#25D366' },
+                    { icon: <Instagram size={20} />, href: BUSINESS_INFO.socials.instagram, label: 'Instagram', color: '#E1306C' },
+                    { icon: <Linkedin size={20} />, href: BUSINESS_INFO.socials.linkedin, label: 'LinkedIn', color: '#0077B5' },
+                    { icon: <Youtube size={20} />, href: BUSINESS_INFO.socials.youtube, label: 'YouTube', color: '#FF0000' },
+                    { icon: <MessageCircle size={20} />, href: `https://wa.me/${BUSINESS_INFO.phoneRaw}?text=${BUSINESS_INFO.whatsappMessage}`, label: 'WhatsApp', color: '#25D366' },
                   ].map(s => (
                     <a key={s.label} href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer" style={{
                       width: 44, height: 44, borderRadius: 12, background: '#fff', display: 'flex', alignItems: 'center',
@@ -233,7 +259,7 @@ export function Contact() {
           <FadeUp>
             <div style={{ borderRadius: 20, overflow: 'hidden', height: 380, boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}>
               <iframe
-                title="MFDThiru Office - Nungambakkam, Chennai"
+                title="MFDthiru Office - Nungambakkam, Chennai"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.3936836866!2d80.2396!3d13.0604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266b5f8b7c409%3A0x0!2sNungambakkam%2C+Sterling+Road%2C+Chennai!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
                 width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
               />

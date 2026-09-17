@@ -9,8 +9,8 @@ interface SEOProps {
   schema?: object
 }
 
-const DEFAULT_TITLE = 'MFDThiru | AMFI Registered Mutual Fund Distributor (ARN 26890)'
-const DEFAULT_DESC = 'MFDThiru — AMFI-registered Mutual Fund Distributor (ARN 26890) led by J. C. Thirumurugan with 20+ years experience. SIP, Lump Sum, Retirement & Goal-Based Mutual Fund planning in Chennai.'
+const DEFAULT_TITLE = 'MFDthiru | AMFI Registered Mutual Fund Distributor (ARN 26890)'
+const DEFAULT_DESC = 'MFDthiru — AMFI-registered Mutual Fund Distributor (ARN 26890) led by J. C. Thirumurugan with 20+ years experience. SIP, Lump Sum, Retirement & Goal-Based Mutual Fund planning in Chennai.'
 const BASE_URL = 'https://mfdthiru.in'
 
 export function SEO({
@@ -25,7 +25,7 @@ export function SEO({
 
   useEffect(() => {
     // 1. Update Title
-    document.title = title.includes('MFDThiru') ? title : `${title} | MFDThiru`
+    document.title = title.includes('MFDthiru') ? title : `${title} | MFDthiru`
 
     // 2. Update or Create Meta Tags
     const metaTags: Array<{ name?: string; property?: string; content: string }> = [
@@ -34,7 +34,7 @@ export function SEO({
       { property: 'og:description', content: description },
       { property: 'og:type', content: type },
       { property: 'og:url', content: currentUrl },
-      { property: 'og:site_name', content: 'MFDThiru' },
+      { property: 'og:site_name', content: 'MFDthiru' },
       { property: 'og:image', content: `${BASE_URL}/logo.png` },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: title },
@@ -85,7 +85,7 @@ export function SEO({
 export const ORGANIZATION_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'FinancialService',
-  name: 'MFDThiru',
+  name: 'MFDthiru',
   legalName: 'J. C. Thirumurugan',
   description: 'AMFI Registered Mutual Fund Distributor (ARN 26890) offering personal mutual fund distribution, goal-based planning, and retirement corpus deployment.',
   url: BASE_URL,

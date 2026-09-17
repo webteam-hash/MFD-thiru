@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router'
 import { motion, useInView } from 'motion/react'
-import { Users, Award, CheckCircle, ShieldCheck, Sparkles } from 'lucide-react'
+import { Users, Award, CheckCircle, ShieldCheck, Sparkles, Download, FileText, ExternalLink } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
 import { BackButton } from '../components/BackButton'
 import { SEO } from '../components/SEO'
@@ -26,8 +26,8 @@ export function About() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#2B332F', fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
       <SEO
-        title="About Us | MFDThiru — J. C. Thirumurugan (ARN 26890)"
-        description="Learn about MFDThiru & founder J. C. Thirumurugan — AMFI-registered Mutual Fund Distributor (ARN 26890) with 20+ years experience serving 800+ families across 3 generations."
+        title="About Us | MFDthiru — J. C. Thirumurugan (ARN 26890)"
+        description="Learn about MFDthiru & founder J. C. Thirumurugan — AMFI-registered Mutual Fund Distributor (ARN 26890) with 20+ years experience serving 800+ families across 3 generations."
         canonical="/about"
       />
       
@@ -46,7 +46,7 @@ export function About() {
             <div style={{ textAlign: 'center', marginBottom: 56 }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 22px', borderRadius: 30, background: 'rgba(255,255,255,0.9)', border: '1px solid rgba(53,133,142,0.25)', boxShadow: '0 4px 16px rgba(53,133,142,0.06)', marginBottom: 18 }}>
                 <Sparkles size={16} color={TEAL} />
-                <span style={{ fontSize: 14, fontWeight: 800, color: TEAL, letterSpacing: '1.5px', textTransform: 'uppercase' }}>MFDTHIRU BRAND</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: TEAL, letterSpacing: '1.5px', textTransform: 'uppercase' }}>MFDthiru BRAND</span>
               </div>
               <h1 style={{ fontSize: 'clamp(42px, 6vw, 64px)', fontWeight: 900, color: '#232926', margin: 0, letterSpacing: '-1px', lineHeight: 1.15 }}>
                 About Us
@@ -73,11 +73,11 @@ export function About() {
                   flexDirection: 'column',
                 }}>
                   {/* Clean Image without text overlay */}
-                  <div style={{ height: 380, overflow: 'hidden', position: 'relative' }}>
+                  <div style={{ height: 400, overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
                     <img
                       src={thiruPortrait}
-                      alt="J. C. Thirumurugan - Founder MFDThiru"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%', display: 'block' }}
+                      alt="J. C. Thirumurugan - Founder MFDthiru"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
                     />
                   </div>
 
@@ -98,7 +98,7 @@ export function About() {
             <FadeUp delay={0.2}>
               <div>
                 <p style={{ fontSize: 'clamp(22px, 2.8vw, 28px)', color: '#262D2A', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
-                  MFDThiru is the mutual fund distribution brand of <strong>J. C. Thirumurugan</strong>, AMFI-registered Mutual Fund Distributor (ARN 26890), serving investors with personal care for over two decades.
+                  MFDthiru is the mutual fund distribution brand of <strong>J. C. Thirumurugan</strong>, AMFI-registered Mutual Fund Distributor (ARN 26890), serving investors with personal care for over two decades.
                 </p>
 
                 {/* Quick Stats Badges */}
@@ -143,7 +143,7 @@ export function About() {
               <div style={{ marginBottom: 36, borderBottom: '1px solid rgba(136,189,164,0.25)', paddingBottom: 28 }}>
                 <span style={{ fontSize: 13, fontWeight: 800, color: TEAL, letterSpacing: '1.5px', textTransform: 'uppercase' }}>ORGANIZATIONAL OVERVIEW</span>
                 <h2 style={{ fontSize: 'clamp(32px, 4.5vw, 42px)', fontWeight: 800, color: '#232926', marginTop: 6, marginBottom: 12 }}>
-                  MFDTHIRU: About Us
+                  MFDthiru: About Us
                 </h2>
                 <p style={{ fontSize: 20, fontWeight: 700, color: TEAL, margin: 0, lineHeight: 1.4 }}>
                   Personal relationships. Generational trust. Digital convenience.
@@ -154,7 +154,7 @@ export function About() {
               <div style={{ display: 'grid', gap: 24, fontSize: 'clamp(17px, 2.1vw, 19px)', color: '#3A4440', lineHeight: 1.88, fontWeight: 400 }}>
                 
                 <p style={{ margin: 0 }}>
-                  <strong>MFDThiru</strong> is the mutual fund distribution brand of <strong>J. C. Thirumurugan</strong>, AMFI-registered Mutual Fund Distributor (ARN 26890).
+                  <strong>MFDthiru</strong> is the mutual fund distribution brand of <strong>J. C. Thirumurugan</strong>, AMFI-registered Mutual Fund Distributor (ARN 26890).
                 </p>
 
                 <p style={{ margin: 0 }}>
@@ -162,7 +162,7 @@ export function About() {
                 </p>
 
                 <p style={{ margin: 0 }}>
-                  Today, MFDThiru serves <strong>over 800 clients across India and overseas</strong>. Several of these relationships extend across <strong>three generations of the same family</strong> (grandparents, parents, and children), reflecting the trust and confidence built through consistent service over the years.
+                  Today, MFDthiru serves <strong>over 800 clients across India and overseas</strong>. Several of these relationships extend across <strong>three generations of the same family</strong> (grandparents, parents, and children), reflecting the trust and confidence built through consistent service over the years.
                 </p>
 
                 <p style={{ margin: 0 }}>
@@ -170,11 +170,11 @@ export function About() {
                 </p>
 
                 <p style={{ margin: 0 }}>
-                  While Mr. Thirumurugan remains personally connected with clients, MFDThiru uses technology to deliver greater convenience through <strong>online onboarding, paperless transactions and easy access to portfolio reports</strong>.
+                  While Mr. Thirumurugan remains personally connected with clients, MFDthiru uses technology to deliver greater convenience through <strong>online onboarding, paperless transactions and easy access to portfolio reports</strong>.
                 </p>
 
                 <p style={{ margin: 0 }}>
-                  MFDThiru supports first-time investors, working professionals, families, retirees and NRIs, with a strong emphasis on accessibility, transparency and dependable ongoing service.
+                  MFDthiru supports first-time investors, working professionals, families, retirees and NRIs, with a strong emphasis on accessibility, transparency and dependable ongoing service.
                 </p>
 
               </div>
@@ -232,7 +232,125 @@ export function About() {
                 gap: 12
               }}>
                 <ShieldCheck size={22} color={TEAL} style={{ flexShrink: 0 }} />
-                <span><strong>Regulatory Notice:</strong> MFDThiru is an AMFI-registered Mutual Fund Distributor (ARN 26890) and not a SEBI-registered Investment Adviser.</span>
+                <span><strong>Regulatory Notice:</strong> MFDthiru is an AMFI-registered Mutual Fund Distributor (ARN 26890) and not a SEBI-registered Investment Adviser.</span>
+              </div>
+
+              {/* Founder's Note Download Box */}
+              <div style={{
+                marginTop: 36,
+                padding: '36px 40px',
+                background: 'linear-gradient(135deg, rgba(53,133,142,0.06) 0%, rgba(136,189,164,0.12) 100%)',
+                borderRadius: 24,
+                border: '1.5px solid rgba(53,133,142,0.25)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 20,
+                boxShadow: '0 8px 30px rgba(53,133,142,0.06)'
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 16 }}>
+                  <div>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '4px 14px', borderRadius: 20, background: 'rgba(53,133,142,0.12)', color: TEAL, fontSize: 12, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 10 }}>
+                      <FileText size={14} /> Founder's Reflection PDF
+                    </div>
+                    <h3 style={{ fontSize: 24, fontWeight: 800, color: '#232926', margin: '0 0 6px 0' }}>
+                      A Note From The Founder
+                    </h3>
+                    <p style={{ fontSize: 16, fontWeight: 600, color: TEAL, margin: 0, fontStyle: 'italic' }}>
+                      "What Two Decades with Investors Have Taught Me About Money"
+                    </p>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        try {
+                          const res = await fetch('/A_Note_From_The_Founder.pdf')
+                          if (!res.ok) throw new Error('Fetch failed')
+                          const blob = await res.blob()
+                          const blobUrl = URL.createObjectURL(new Blob([blob], { type: 'application/pdf' }))
+                          const link = document.createElement('a')
+                          link.href = blobUrl
+                          link.download = 'A_Note_From_The_Founder_MFDthiru.pdf'
+                          document.body.appendChild(link)
+                          link.click()
+                          document.body.removeChild(link)
+                          setTimeout(() => URL.revokeObjectURL(blobUrl), 10000)
+                        } catch {
+                          window.location.href = '/founders-note'
+                        }
+                      }}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 10,
+                        padding: '14px 28px',
+                        borderRadius: 14,
+                        background: TEAL,
+                        color: '#ffffff',
+                        fontSize: 15,
+                        fontWeight: 700,
+                        border: 'none',
+                        cursor: 'pointer',
+                        boxShadow: '0 6px 20px rgba(53,133,142,0.28)',
+                        transition: 'all 0.25s ease',
+                      }}
+                      onMouseEnter={e => {
+                        ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
+                        ;(e.currentTarget as HTMLElement).style.boxShadow = '0 10px 28px rgba(53,133,142,0.38)'
+                      }}
+                      onMouseLeave={e => {
+                        ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                        ;(e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(53,133,142,0.28)'
+                      }}
+                    >
+                      <Download size={18} />
+                      <span>Download PDF</span>
+                    </button>
+
+                    <Link
+                      to="/founders-note"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        padding: '14px 24px',
+                        borderRadius: 14,
+                        background: '#ffffff',
+                        color: TEAL,
+                        border: '1px solid rgba(53,133,142,0.35)',
+                        fontSize: 15,
+                        fontWeight: 700,
+                        textDecoration: 'none',
+                        boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
+                        transition: 'all 0.25s ease',
+                      }}
+                      onMouseEnter={e => {
+                        ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
+                        ;(e.currentTarget as HTMLElement).style.background = 'rgba(230,242,221,0.5)'
+                      }}
+                      onMouseLeave={e => {
+                        ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                        ;(e.currentTarget as HTMLElement).style.background = '#ffffff'
+                      }}
+                    >
+                      <ExternalLink size={16} />
+                      <span>Read Online</span>
+                    </Link>
+                  </div>
+                </div>
+
+                <div style={{
+                  padding: '16px 20px',
+                  borderRadius: 14,
+                  background: '#ffffff',
+                  border: '1px solid rgba(136,189,164,0.35)',
+                  fontSize: 14.5,
+                  color: '#4A554F',
+                  lineHeight: 1.6
+                }}>
+                  <strong style={{ color: '#232926' }}>Featured Insight:</strong> "Money Saved Today Is Wealth Created for Your Future. Most people know they need to save and invest — the real challenge is starting, staying disciplined, and making financial decisions at the right time." — <em>J. C. Thirumurugan</em>
+                </div>
               </div>
 
             </div>
@@ -442,7 +560,7 @@ export function About() {
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <p style={{ fontSize: 14, color: MINT, fontWeight: 800, letterSpacing: '1px', marginBottom: 10 }}>REGULATORY DISCLOSURE</p>
           <p style={{ fontSize: 15, lineHeight: 1.75, color: '#E0F0F2', margin: '0 0 14px 0', fontWeight: 400 }}>
-            MFDThiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor (ARN 26890). MFDThiru is not a SEBI-registered Investment Adviser.
+            MFDthiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor (ARN 26890). MFDthiru is not a SEBI-registered Investment Adviser.
           </p>
           <p style={{ fontSize: 13, color: '#A8C8CC', margin: 0, fontStyle: 'italic' }}>
             Mutual Fund investments are subject to market risks, read all scheme related documents carefully.

@@ -70,7 +70,7 @@ export function InvestorDetails() {
     return err
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length > 0) {
@@ -79,10 +79,32 @@ export function InvestorDetails() {
     }
     setLoading(true)
     GoogleAdsEvents.leadSubmitted('investor_details_form')
-    setTimeout(() => {
-      setLoading(false)
-      setSubmitted(true)
-    }, 800)
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    if (accessKey) {
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New Investor Details Lead: ${form.name} (${headingInfo.target})`,
+            from_name: form.name,
+            email: form.email,
+            phone: form.phone,
+            city: form.city,
+            requirement: headingInfo.target,
+          }),
+        })
+      } catch (err) {
+        console.warn('Investor details dispatch warning:', err)
+      }
+    } else {
+      await new Promise(r => setTimeout(r, 800))
+    }
+
+    setLoading(false)
+    setSubmitted(true)
   }
 
   const inputStyle = (field: string) => ({
@@ -102,7 +124,7 @@ export function InvestorDetails() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#2B332F', minHeight: '100vh' }}>
       <SEO
-        title="Get Started | Investor Details — MFDThiru (ARN 26890)"
+        title="Get Started | Investor Details — MFDthiru (ARN 26890)"
         description="Share your investment requirements with J. C. Thirumurugan, AMFI-Registered Mutual Fund Distributor (ARN 26890). Tailored mutual fund planning."
         canonical="/get-started"
       />
@@ -296,7 +318,7 @@ export function InvestorDetails() {
                     gap: 10
                   }}>
                     <ShieldCheck size={18} color={TEAL} style={{ flexShrink: 0 }} />
-                    <span>Your privacy is protected. MFDThiru is an AMFI-Registered Mutual Fund Distributor (ARN 26890).</span>
+                    <span>Your privacy is protected. MFDthiru is an AMFI-Registered Mutual Fund Distributor (ARN 26890).</span>
                   </div>
 
                 </form>

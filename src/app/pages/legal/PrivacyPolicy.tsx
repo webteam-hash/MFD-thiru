@@ -23,8 +23,8 @@ export function PrivacyPolicy() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
       <SEO
-        title="Privacy Policy | MFDThiru — J. C. Thirumurugan (ARN 26890)"
-        description="Privacy Policy and Data Protection guidelines for MFDThiru — AMFI Registered Mutual Fund Distributor ARN 26890."
+        title="Privacy Policy | MFDthiru — J. C. Thirumurugan (ARN 26890)"
+        description="Privacy Policy and Data Protection guidelines for MFDthiru — AMFI Registered Mutual Fund Distributor ARN 26890."
         canonical="/privacy-policy"
       />
       {/* Hero Header */}
@@ -41,10 +41,10 @@ export function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <p style={{ fontSize: 18, color: '#555D58', maxWidth: 760, margin: '0 auto 24px', lineHeight: 1.7 }}>
-              At MFDThiru, we value your privacy and are committed to protecting the confidentiality of your personal information.
+              At MFDthiru, we value your privacy and are committed to protecting the confidentiality of your personal information.
             </p>
             <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
-              MFDThiru &nbsp;|&nbsp; J. C. Thirumurugan (ARN 26890)
+              MFDthiru &nbsp;|&nbsp; J. C. Thirumurugan (ARN 26890)
             </div>
           </FadeUp>
         </div>
@@ -66,7 +66,7 @@ export function PrivacyPolicy() {
             <FadeUp delay={0.1}>
               <div style={{ borderBottom: '1px solid rgba(136,189,164,0.2)', paddingBottom: 28 }}>
                 <p style={{ fontSize: 17, lineHeight: 1.85, color: '#333D37', margin: 0 }}>
-                  MFDThiru is the brand under which mutual fund distribution services are offered by <strong>J. C. Thirumurugan</strong>, an AMFI Registered Mutual Fund Distributor (ARN 26890).
+                  MFDthiru is the brand under which mutual fund distribution services are offered by <strong>J. C. Thirumurugan</strong>, an AMFI Registered Mutual Fund Distributor (ARN 26890).
                 </p>
                 <p style={{ fontSize: 16, lineHeight: 1.8, color: '#555D58', marginTop: 14, marginBottom: 0 }}>
                   This Privacy Policy explains how we collect, use, store and protect the information you provide while accessing our website or availing our services.
@@ -144,7 +144,7 @@ export function PrivacyPolicy() {
               <div style={{ borderTop: '1px solid rgba(136,189,164,0.2)', paddingTop: 28 }}>
                 <h2 style={{ fontSize: 22, fontWeight: 800, color: TEAL, marginBottom: 16 }}>Third-Party Websites</h2>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  This website may contain links to third-party websites. MFDThiru and J. C. Thirumurugan are not responsible for their privacy practices or content.
+                  This website may contain links to third-party websites. MFDthiru and J. C. Thirumurugan are not responsible for their privacy practices or content.
                 </p>
               </div>
             </FadeUp>
@@ -176,12 +176,12 @@ export function PrivacyPolicy() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, fontSize: 15, color: '#333D37', marginBottom: 24 }}>
                   <div><strong>Distributor:</strong> J. C. Thirumurugan</div>
                   <div><strong>AMFI Registration:</strong> ARN 26890</div>
-                  <div><strong>Registered Business Name:</strong> MFDThiru / J. C. Thirumurugan</div>
-                  <div><strong>Email:</strong> <a href="mailto:enquiry@wcms.in" style={{ color: TEAL, textDecoration: 'none', fontWeight: 600 }}>enquiry@wcms.in</a></div>
+                  <div><strong>Registered Business Name:</strong> MFDthiru / J. C. Thirumurugan</div>
+                  <div><strong>Email:</strong> <a href="mailto:enquiry@mfdthiru.in" style={{ color: TEAL, textDecoration: 'none', fontWeight: 600 }}>enquiry@mfdthiru.in</a></div>
                 </div>
 
                 <div style={{ marginTop: 24, padding: '16px 20px', borderRadius: 12, background: 'rgba(230,242,221,0.5)', border: '1px solid rgba(136,189,164,0.3)', fontSize: 13.5, color: '#4E5652', lineHeight: 1.7 }}>
-                  <strong>Regulatory Disclosure:</strong> MFDThiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, an AMFI Registered Mutual Fund Distributor (ARN 26890). This website is intended solely to facilitate mutual fund distribution services and provide investor education. Nothing contained on this website shall be construed as investment advice, legal advice or a guarantee of returns. This Privacy Policy should be read together with our Disclaimer and Terms of Use.
+                  <strong>Regulatory Disclosure:</strong> MFDthiru is the brand name under which mutual fund distribution services are offered by J. C. Thirumurugan, an AMFI Registered Mutual Fund Distributor (ARN 26890). This website is intended solely to facilitate mutual fund distribution services and provide investor education. Nothing contained on this website shall be construed as investment advice, legal advice or a guarantee of returns. This Privacy Policy should be read together with our Disclaimer and Terms of Use.
                 </div>
               </div>
             </FadeUp>

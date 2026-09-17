@@ -32,7 +32,7 @@ export function CalculatorLayout({ title, subtitle, ctaText, ctaLink = '/contact
   return (
     <div style={{ overflowX: 'hidden' }}>
       <SEO
-        title={`${title} | MFDThiru Mutual Fund Calculators`}
+        title={`${title} | MFDthiru Mutual Fund Calculators`}
         description={`${subtitle} AMFI-registered Mutual Fund Distributor (ARN 26890) led by J. C. Thirumurugan.`}
       />
       {/* Hero */}

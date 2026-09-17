@@ -23,8 +23,8 @@ export function TermsOfUse() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
       <SEO
-        title="Terms of Use | MFDThiru — J. C. Thirumurugan (ARN 26890)"
-        description="Terms of Use and Conditions governing access to MFDThiru mutual fund distribution services."
+        title="Terms of Use | MFDthiru — J. C. Thirumurugan (ARN 26890)"
+        description="Terms of Use and Conditions governing access to MFDthiru mutual fund distribution services."
         canonical="/terms-of-use"
       />
       {/* Hero Header */}
@@ -41,10 +41,10 @@ export function TermsOfUse() {
               Terms of Use
             </h1>
             <p style={{ fontSize: 18, color: '#555D58', maxWidth: 760, margin: '0 auto 24px', lineHeight: 1.7 }}>
-              Terms and conditions governing your access and usage of the MFDThiru website and services.
+              Terms and conditions governing your access and usage of the MFDthiru website and services.
             </p>
             <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
-              MFDThiru &nbsp;|&nbsp; J. C. Thirumurugan (ARN 26890)
+              MFDthiru &nbsp;|&nbsp; J. C. Thirumurugan (ARN 26890)
             </div>
           </FadeUp>
         </div>
@@ -66,7 +66,7 @@ export function TermsOfUse() {
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>1. Brand Registration & Distributor Scope</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  MFDThiru is the brand name under which mutual fund distribution services are offered by <strong>J. C. Thirumurugan</strong>, AMFI Registered Mutual Fund Distributor (ARN 26890).
+                  MFDthiru is the brand name under which mutual fund distribution services are offered by <strong>J. C. Thirumurugan</strong>, AMFI Registered Mutual Fund Distributor (ARN 26890).
                 </p>
               </div>
             </FadeUp>
@@ -93,7 +93,7 @@ export function TermsOfUse() {
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>4. Intellectual Property Rights</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  All content, text, graphics, logos and other materials on this website are the property of MFDThiru or are used with appropriate permission. They may not be copied, reproduced or distributed without prior written consent.
+                  All content, text, graphics, logos and other materials on this website are the property of MFDthiru or are used with appropriate permission. They may not be copied, reproduced or distributed without prior written consent.
                 </p>
               </div>
             </FadeUp>
@@ -111,7 +111,7 @@ export function TermsOfUse() {
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>6. Limitation of Liability</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  While reasonable care has been taken to ensure the accuracy of the information on this website, J. C. Thirumurugan and MFDThiru shall not be liable for any direct or indirect loss arising from the use of this website or reliance on its contents.
+                  While reasonable care has been taken to ensure the accuracy of the information on this website, J. C. Thirumurugan and MFDthiru shall not be liable for any direct or indirect loss arising from the use of this website or reliance on its contents.
                 </p>
               </div>
             </FadeUp>

@@ -22,12 +22,12 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 const faqs = [
   {
-    q: 'What is MFDThiru?',
-    a: 'MFDThiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor (ARN 26890). We have been serving investors for more than two decades and currently support over 800 clients across India and overseas.',
+    q: 'What is MFDthiru?',
+    a: 'MFDthiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor (ARN 26890). We have been serving investors for more than two decades and currently support over 800 clients across India and overseas.',
   },
   {
-    q: 'Is MFDThiru a SEBI-registered Investment Adviser?',
-    a: 'No. MFDThiru is an AMFI-registered Mutual Fund Distributor and not a SEBI-registered Investment Adviser. We provide mutual fund distribution services and incidental mutual fund guidance based on the investor\'s goals, investment horizon and risk profile. We do not provide comprehensive financial planning or holistic investment advice.',
+    q: 'Is MFDthiru a SEBI-registered Investment Adviser?',
+    a: 'No. MFDthiru is an AMFI-registered Mutual Fund Distributor and not a SEBI-registered Investment Adviser. We provide mutual fund distribution services and incidental mutual fund guidance based on the investor\'s goals, investment horizon and risk profile. We do not provide comprehensive financial planning or holistic investment advice.',
   },
   {
     q: 'How can you help with children\'s education?',
@@ -74,11 +74,11 @@ const faqs = [
     a: 'Regular Plans are accessed through a mutual fund distributor and include distributor support and servicing. The distributor may receive commissions from the Asset Management Company. Direct Plans are purchased directly from the mutual fund without involving a distributor and generally have a lower expense ratio.',
   },
   {
-    q: 'Does MFDThiru receive a commission?',
-    a: 'Yes. For investments made through MFDThiru under Regular Plans, we may receive commissions, including trail commissions, from Asset Management Companies. Rates may vary across schemes and fund houses. Investors may request details of the applicable commission structure.',
+    q: 'Does MFDthiru receive a commission?',
+    a: 'Yes. For investments made through MFDthiru under Regular Plans, we may receive commissions, including trail commissions, from Asset Management Companies. Rates may vary across schemes and fund houses. Investors may request details of the applicable commission structure.',
   },
   {
-    q: 'Can NRIs invest through MFDThiru?',
+    q: 'Can NRIs invest through MFDthiru?',
     a: 'Eligible NRIs may invest in mutual funds, subject to applicable regulations, KYC requirements, tax provisions, banking arrangements and the acceptance policies of individual Asset Management Companies.',
   },
   {
@@ -86,12 +86,12 @@ const faqs = [
     a: 'Most open-ended mutual fund schemes permit redemption on business days. However, exit loads, applicable taxes, settlement timelines, lock-in periods and scheme-specific restrictions may apply. Investors should review the relevant scheme documents.',
   },
   {
-    q: 'Will MFDThiru guarantee the achievement of my financial goal?',
+    q: 'Will MFDthiru guarantee the achievement of my financial goal?',
     a: 'No. We assist investors in structuring mutual fund investments towards their stated goals, but cannot guarantee returns, target corpus or goal achievement. Outcomes depend on investment discipline, contribution levels, time horizon and market performance.',
   },
   {
     q: 'How can I get started?',
-    a: 'Contact MFDThiru to discuss your investment objective, time horizon and risk profile. After completing the required KYC and suitability process, you can make an informed choice from the curated mutual fund schemes presented to you.',
+    a: 'Contact MFDthiru to discuss your investment objective, time horizon and risk profile. After completing the required KYC and suitability process, you can make an informed choice from the curated mutual fund schemes presented to you.',
   },
 ]
 
@@ -184,7 +184,7 @@ export function FAQ() {
   return (
     <div style={{ overflowX: 'hidden' }}>
       <SEO
-        title="Frequently Asked Questions | MFDThiru"
+        title="Frequently Asked Questions | MFDthiru"
         description="Find answers to common questions about mutual fund distribution, ARN 26890 registration, online portfolio access, NRI investments, and goal-based planning."
         canonical="/faq"
       />
@@ -209,7 +209,7 @@ export function FAQ() {
                 Answers to common<br />questions
               </h1>
               <p style={{ fontSize: 18, color: '#555D58', lineHeight: 1.7, maxWidth: 520, margin: '0 auto' }}>
-                Everything you need to know about mutual fund investing with MFDThiru.
+                Everything you need to know about mutual fund investing with MFDthiru.
               </p>
             </FadeUp>
           </div>

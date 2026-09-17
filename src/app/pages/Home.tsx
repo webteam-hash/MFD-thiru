@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router'
-import { motion, useInView } from 'motion/react'
-import { ArrowRight, TrendingUp, Shield, Users, Target, Star, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react'
+import { motion, useInView, AnimatePresence } from 'motion/react'
+import { ArrowRight, TrendingUp, Shield, Users, Target, Star, ChevronLeft, ChevronRight, CheckCircle, BookOpen, Layers, HeartHandshake, RefreshCw, Award, Smartphone, UserCheck, Compass, ShieldAlert, X } from 'lucide-react'
 import { SectionBlob } from '../components/WatercolorBg'
 import { SEO, ORGANIZATION_SCHEMA } from '../components/SEO'
 import { SIPCalc } from './calculators/SIPCalc'
@@ -39,16 +39,48 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 }
 
 const testimonials = [
-  { name: 'Priya Sharma', type: 'SIP Investor', city: 'Chennai', text: 'MFDThiru helped me start my SIP journey at 24. Their guidance was clear, patient and genuinely focused on my goals. Five years later, I can see real results in my portfolio.' },
-  { name: 'Rajesh Kumar', type: 'Retirement Planner', city: 'Bangalore', text: "I was unsure about where to invest for retirement. The team at MFDThiru created a complete plan that actually makes sense for my family's lifestyle and timeline." },
-  { name: 'Anitha Nair', type: 'Education Goal Planner', city: 'Coimbatore', text: "Planning my daughter's education seemed overwhelming. MFDThiru broke it down beautifully and helped us start a goal-based SIP. Highly recommend them." },
-  { name: 'Vikram Mehta', type: 'Lump-Sum Investor', city: 'Mumbai', text: "I had a lump sum to invest after selling property. MFDThiru advised me on the best approach and I've seen consistent growth with their recommended funds." },
-  { name: 'Deepa Krishnan', type: 'Wealth Builder', city: 'Chennai', text: 'What I appreciate most is how they explain things in plain language. No jargon, no pressure. Just honest, thoughtful advice that has helped my family grow our wealth.' },
-  { name: 'Suresh Babu', type: 'First-time Investor', city: 'Madurai', text: 'I always thought investing was only for the rich. MFDThiru showed me how even ₹2,000 per month can build meaningful wealth over time. Truly life-changing guidance.' },
-  { name: 'Kavitha Rajan', type: 'Home Loan Prepayment Planner', city: 'Trichy', text: 'They helped me balance paying off my home loan faster while also building an investment corpus. A strategy I never would have thought of on my own.' },
-  { name: 'Arjun Venkatesh', type: 'NRI Investor', city: 'Singapore', text: 'Investing from abroad felt complicated, but MFDThiru made the entire process smooth and compliant. I can now track my India portfolio with complete confidence.' },
-  { name: 'Meenakshi Sundaram', type: 'Homemaker Investor', city: 'Chennai', text: 'As a homemaker, I wanted to start investing independently. MFDThiru helped me take that first step with clarity and confidence. Now I manage my own SIP portfolio.' },
-  { name: 'Dinesh Patel', type: 'Business Owner', city: 'Ahmedabad', text: 'Running a business means income fluctuates. MFDThiru helped me create a flexible investment strategy that works with variable cash flows. Excellent personalised service.' },
+  {
+    name: 'Anand',
+    type: 'Client Investor',
+    city: 'Chennai',
+    text: 'Nice approach with our clients. Reg investment any doubts explain very briefly about that immediately. I have great experience with Wcms.'
+  },
+  {
+    name: 'Dhamayanthi',
+    type: 'Long-term Client',
+    city: 'Chennai',
+    text: 'It has been our pleasure to see WCMS grow into a fine boutique investment firm. Really pleased with the way they offer customised financial and investment advice and facilitate in managing investment plans. We wish them the very best in all their future endeavours.'
+  },
+  {
+    name: 'Pavitra SV',
+    type: 'Director Internal Audit, BNP Paribas India Solutions Private Limited',
+    city: 'Chennai',
+    text: `Working with Mr. J.C. Thirumurgan since 2005 has been one of the best financial decisions of my life. Over the past two decades, he has transitioned from a trusted investment adviser to a true family mentor. Thanks to his strategic guidance, insightful market advice, and unwavering availability, I have been able to build a meaningful financial corpus that turned my hard-earned savings into long-term wealth.
+
+His impact on our family goes beyond just managing portfolio growth. Mr. Thirumurgan has guided me through pivotal career moves, supported my husband’s financial goals, and now manages the portfolio of our 18-year-old son. Because of his early planning and vision, my son is already set up for a comfortable retirement by age 45.
+
+Mr. Thirumurgan is a rare professional whose expertise, warmth, and integrity span generations, and our family looks forward to continuing this wonderful journey with him for many years to come.`
+  },
+  {
+    name: 'Danny Steffe',
+    type: 'Portfolio & Wealth Client',
+    city: 'Chennai',
+    text: 'Partnering with Mr. Thirumurugan and WCMS has been an exceptional experience. His deep market insight, prompt responsiveness, and transparent wealth management give us complete confidence in achieving our financial goals.'
+  },
+  {
+    name: 'Abinaya Satish',
+    type: 'SIP & Family Wealth Planner',
+    city: 'Coimbatore',
+    text: 'The team at MFDthiru / WCMS provides unmatched personal attention and financial clarity. They helped structure our family\'s goal-based investments seamlessly. Highly recommended for long-term wealth building.'
+  },
+  {
+    name: 'S Palanivel',
+    type: 'Client Investor',
+    city: 'Chennai',
+    text: `Sir Seen Very detailed subjectwise Explained the features in each types of investments. Very useful Really usable at any point of time from Mobile Excellent and knowledge driven Great God bless.
+
+Thanks and Regards`
+  },
 ]
 
 
@@ -66,8 +98,8 @@ export function Home() {
   return (
     <div style={{ overflowX: 'hidden' }}>
       <SEO
-        title="MFDThiru | AMFI Registered Mutual Fund Distributor (ARN 26890)"
-        description="MFDThiru — AMFI-registered Mutual Fund Distributor (ARN 26890) led by J. C. Thirumurugan with 20+ years experience. Goal-based Mutual Fund & Retirement Planning."
+        title="MFDthiru | AMFI Registered Mutual Fund Distributor (ARN 26890)"
+        description="MFDthiru — AMFI-registered Mutual Fund Distributor (ARN 26890) led by J. C. Thirumurugan with 20+ years experience. Goal-based Mutual Fund & Retirement Planning."
         canonical="/"
         schema={ORGANIZATION_SCHEMA}
       />
@@ -107,14 +139,15 @@ export function Home() {
               >
                 Start Investing <ArrowRight size={18} />
               </Link>
-              <Link to="/calculators/sip" style={{
+              <Link to="/why-mfd" style={{
                 padding: '14px 28px', borderRadius: 12, background: 'rgba(255,255,255,0.85)', color: TEAL,
                 border: `2px solid ${MINT}`, textDecoration: 'none', fontSize: 16, fontWeight: 600, transition: 'all 0.2s', backdropFilter: 'blur(4px)',
+                display: 'flex', alignItems: 'center', gap: 6,
               }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(230,242,221,0.9)' }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.85)' }}
               >
-                Explore Calculators
+                Why Invest Through MFD?
               </Link>
             </motion.div>
 
@@ -125,7 +158,6 @@ export function Home() {
                 ['20+', 'Years Experience'],
                 ['3 Gens', 'Family Trust'],
                 ['Goal-Based', 'Personalised Support'],
-                ['5★', 'Dedicated Support'],
               ].map(([num, label]) => (
                 <div key={label}>
                   <div style={{ fontSize: 28, fontWeight: 800, color: TEAL }}>{num}</div>
@@ -148,13 +180,13 @@ export function Home() {
               }}>
                 <img
                   src="https://images.unsplash.com/photo-1714974528703-e5ad41abc259?w=900&q=85"
-                  alt="Financial planning consultation with MFDThiru"
+                  alt="Financial planning consultation with MFDthiru"
                   style={{ width: '100%', height: 420, objectFit: 'cover', display: 'block' }}
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(101,146,135,0.08) 0%, transparent 50%, rgba(230,242,221,0.18) 100%)', pointerEvents: 'none' }} />
               </div>
 
-              {/* Floating popup card 1 — Smart Savings */}
+              {/* Floating popup card 1 */}
               <motion.div
                 className="hero-floating-card"
                 animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 3.4, ease: 'easeInOut' }}
@@ -165,16 +197,12 @@ export function Home() {
                   backdropFilter: 'blur(10px)', maxWidth: 260, zIndex: 2,
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: TEAL }} />
-                  <span style={{ fontSize: 11, color: '#7B827E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.4px' }}>Smart Savings</span>
-                </div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#303733', lineHeight: 1.4 }}>
                   “We Help You Save, Not Spend Without Purpose. Start Saving Today!”
                 </div>
               </motion.div>
 
-              {/* Floating popup card 2 — Goal Planning */}
+              {/* Floating popup card 2 */}
               <motion.div
                 className="hero-floating-card"
                 animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 0.8 }}
@@ -185,10 +213,6 @@ export function Home() {
                   backdropFilter: 'blur(10px)', maxWidth: 260, zIndex: 2,
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#22C55E' }} />
-                  <span style={{ fontSize: 11, color: '#7B827E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.4px' }}>Goal Planning</span>
-                </div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: TEAL, lineHeight: 1.4 }}>
                   “Your Investment Today Makes Tomorrow’s Goals Achievable. Start Today.”
                 </div>
@@ -197,11 +221,12 @@ export function Home() {
             
             {/* AMFI Registered Mutual Fund Distributor note under image */}
             <p style={{ fontSize: 14, color: '#555D58', marginTop: 32, textAlign: 'center', fontWeight: 500 }}>
-              MFDThiru is a brand of J. C. Thirumurugan | AMFI-Registered Mutual Fund Distributor | ARN-26890
+              MFDthiru is a brand of J. C. Thirumurugan | AMFI-Registered Mutual Fund Distributor | ARN-26890
             </p>
           </motion.div>
         </div>
       </section>
+
 
       {/* ══════════════════════════════
           INVESTMENT OPTIONS
@@ -413,7 +438,7 @@ export function Home() {
 
 
       {/* ══════════════════════════════
-          TESTIMONIALS — 10 cards
+          TESTIMONIALS
       ══════════════════════════════ */}
       <section style={{ padding: '80px 24px', background: 'rgba(255,255,255,0.48)', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-4%" y="15%" w={360} h={280} color="#88BDA4" op={0.30} blur={62} r="42% 58% 66% 34% / 60% 40% 58% 42%" />
@@ -424,7 +449,7 @@ export function Home() {
           <FadeUp>
             <div style={{ textAlign: 'center', marginBottom: 52 }}>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: '#303733', marginBottom: 12 }}>Loved by Families Across India</h2>
-              <p style={{ fontSize: 17, color: '#555D58' }}>Real stories from real investors who chose MFDThiru for their financial journey.</p>
+              <p style={{ fontSize: 17, color: '#555D58' }}>Real stories from real investors who chose MFDthiru for their financial journey.</p>
             </div>
           </FadeUp>
 
@@ -437,14 +462,14 @@ export function Home() {
               <div style={{ display: 'flex', justifyContent: 'center', gap: 4, marginBottom: 20 }}>
                 {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="#F59E0B" color="#F59E0B" />)}
               </div>
-              <p style={{ fontSize: 18, color: '#303733', lineHeight: 1.85, fontStyle: 'italic', marginBottom: 32, maxWidth: 700, margin: '0 auto 32px', position: 'relative', zIndex: 1 }}>
+              <p style={{ fontSize: 18, color: '#303733', lineHeight: 1.85, fontStyle: 'italic', marginBottom: 32, maxWidth: 780, margin: '0 auto 32px', position: 'relative', zIndex: 1, whiteSpace: 'pre-line', textAlign: 'left' }}>
                 "{testimonials[activeTestimonial].text}"
               </p>
               <div style={{ width: 52, height: 52, borderRadius: '50%', background: `linear-gradient(135deg, ${TEAL}, ${MINT})`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', color: '#fff', fontSize: 20, fontWeight: 700 }}>
                 {testimonials[activeTestimonial].name[0]}
               </div>
               <div style={{ fontWeight: 700, fontSize: 17, color: '#303733' }}>{testimonials[activeTestimonial].name}</div>
-              <div style={{ fontSize: 13, color: TEAL, marginTop: 3, fontWeight: 500 }}>{testimonials[activeTestimonial].type} · {testimonials[activeTestimonial].city}</div>
+              <div style={{ fontSize: 13, color: TEAL, marginTop: 3, fontWeight: 500 }}>{testimonials[activeTestimonial].type}{testimonials[activeTestimonial].city ? ` · ${testimonials[activeTestimonial].city}` : ''}</div>
             </div>
           </motion.div>
 
@@ -458,7 +483,7 @@ export function Home() {
               <ChevronLeft size={18} />
             </button>
 
-            <div style={{ display: 'flex', gap: 7 }}>
+            <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap', justifyContent: 'center', maxWidth: 360 }}>
               {testimonials.map((_, i) => (
                 <button key={i} onClick={() => setActiveTestimonial(i)} style={{
                   width: i === activeTestimonial ? 28 : 8, height: 8, borderRadius: 4, border: 'none', cursor: 'pointer',
@@ -507,6 +532,14 @@ export function Home() {
           </FadeUp>
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-grid { grid-template-columns: 1fr !important; }
+          .calc-grid { grid-template-columns: 1fr !important; }
+          .info-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
 
       <style>{`
         @media (max-width: 768px) {

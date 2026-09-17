@@ -86,7 +86,7 @@ export function Navbar() {
           <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <img
               src={logoImg}
-              alt="MFD Thiru Logo"
+              alt="MFDthiru Logo"
               style={{ height: 48, width: 'auto', objectFit: 'contain', display: 'block', transition: 'transform 0.2s' }}
             />
           </Link>
@@ -168,7 +168,7 @@ export function Navbar() {
                       lineHeight: 1.45,
                       color: '#555D58',
                     }}>
-                      MFDThiru provides these services as part of its mutual fund distribution activities. MFDThiru is the brand name of J. C. Thirumurugan, AMFI-Registered Mutual Fund Distributor (ARN-26890), and is not a SEBI-registered Investment Adviser.
+                      MFDthiru provides these services as part of its mutual fund distribution activities. MFDthiru is the brand name of J. C. Thirumurugan, AMFI-Registered Mutual Fund Distributor (ARN-26890), and is not a SEBI-registered Investment Adviser.
                     </div>
                   </motion.div>
                 )}
@@ -326,7 +326,7 @@ export function Navbar() {
                         lineHeight: 1.45,
                         color: '#555D58',
                       }}>
-                        MFDThiru provides these services as part of its mutual fund distribution activities. MFDThiru is the brand name of J. C. Thirumurugan, AMFI-Registered Mutual Fund Distributor (ARN-26890), and is not a SEBI-registered Investment Adviser.
+                        MFDthiru provides these services as part of its mutual fund distribution activities. MFDthiru is the brand name of J. C. Thirumurugan, AMFI-Registered Mutual Fund Distributor (ARN-26890), and is not a SEBI-registered Investment Adviser.
                       </div>
                     </motion.div>
                   )}
