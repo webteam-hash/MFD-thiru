@@ -91,7 +91,7 @@ export function EducationCalc({ embedded }: { embedded?: boolean } = {}) {
           <InputField label="Current Education Cost" value={currentCost} onChange={setCurrentCost} min={100000} max={5000000} step={50000} format={v => `₹${(v / 100000).toFixed(1)}L`} />
           <InputField label="Education Inflation Rate" value={eduInflation} onChange={setEduInflation} min={5} max={20} step={0.5} format={v => `${v}%`} />
           <InputField label="Existing Savings for Education" value={existingSavings} onChange={setExistingSavings} min={0} max={2000000} step={10000} format={v => `₹${v.toLocaleString('en-IN')}`} />
-          <InputField label="Expected Investment Return" value={expectedReturn} onChange={setExpectedReturn} min={6} max={20} step={0.5} format={v => `${v}%`} />
+          <InputField label="Assumed Annual Rate" value={expectedReturn} onChange={setExpectedReturn} min={6} max={20} step={0.5} format={v => `${v}%`} />
         </div>
         <div style={{ padding: '40px', background: 'rgba(250,253,249,0.75)' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#303733', marginBottom: 24 }}>Education Goal Summary</h2>

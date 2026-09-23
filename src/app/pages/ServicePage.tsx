@@ -70,14 +70,14 @@ export const servicesData: Record<string, ServiceDetail> = {
     id: 'prepare-for-retirement',
     number: '03',
     header: '3. PREPARE FOR RETIREMENT',
-    subtitle: 'Prepare today for the freedom to live tomorrow on your terms.',
+    subtitle: 'Prepare today to work towards greater financial independence in retirement.',
     intro:
       'One day, your regular salary may stop—but your living expenses will continue. Retirement could last for decades, while inflation steadily increases the cost of maintaining your lifestyle. The earlier you begin preparing, the more time you have to work towards building the required retirement corpus.',
     howWeHelp:
-      'MFDthiru helps you understand how mutual funds may participate in long-term retirement corpus creation, including systematic investing, inflation awareness and tracking your existing mutual fund holdings.',
+      'MFDthiru helps you understand how mutual funds may be used for long-term retirement corpus creation through systematic investing, inflation awareness and periodic review of your existing mutual fund holdings. The suitability of any mutual fund investment depends on your objectives, investment horizon and risk profile.',
     difference:
       'We encourage you to think beyond “How much have I saved?” and focus on “Am I consistently preparing for my retirement requirement?” We stay connected through your investment journey with information, portfolio access and human support.',
-    tagline: 'Prepare today for the freedom to live tomorrow on your terms.',
+    tagline: 'Prepare today to work towards greater financial independence in retirement.',
     ctaText: 'Explore Mutual Funds for Retirement',
     ctaPath: '/calculators/retirement',
     icon: Compass,
@@ -426,6 +426,44 @@ export function ServicePage({ path }: ServicePageProps) {
             >
               <span>{service.ctaText} →</span>
             </Link>
+          </div>
+        </motion.section>
+
+        {/* Consistent Service Page Disclosure Box (Req 8 & 17) */}
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          style={{ marginTop: 40 }}
+        >
+          {key === 'prepare-for-retirement' && (
+            <div
+              style={{
+                padding: '20px 24px',
+                borderRadius: 16,
+                background: '#E6F2DD',
+                border: `1.5px solid ${MINT}`,
+                marginBottom: 20,
+              }}
+            >
+              <p style={{ fontSize: 13.5, color: '#4E5652', lineHeight: 1.65, margin: 0 }}>
+                <strong>Retirement Disclosure:</strong> Retirement calculations and corpus illustrations are indicative and based on assumptions. They do not guarantee that the estimated corpus will be sufficient or that a retirement goal will be achieved. Actual outcomes depend on contributions, investment period, inflation, market performance, scheme expenses, taxation and withdrawals.
+              </p>
+            </div>
+          )}
+
+          <div
+            style={{
+              padding: '20px 24px',
+              borderRadius: 16,
+              background: 'rgba(255,255,255,0.92)',
+              border: '1px solid rgba(136,189,164,0.3)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.02)',
+            }}
+          >
+            <p style={{ fontSize: 13.5, color: '#555D58', lineHeight: 1.65, margin: 0 }}>
+              <strong>Notice:</strong> MFDthiru provides mutual fund distribution services and incidental assistance limited to mutual fund products distributed through MFDthiru. MFDthiru does not provide comprehensive financial planning, tax advice, legal advice or investment-advisory services.
+            </p>
           </div>
         </motion.section>
 

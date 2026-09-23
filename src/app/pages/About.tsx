@@ -415,7 +415,7 @@ export function About() {
                 <div style={{ display: 'grid', gap: 14 }}>
                   {[
                     'Goal-Aligned Investments: Tailor portfolios to life goals.',
-                    'Disciplined Investing: Promote SIP, STP & SWP strategies.',
+                    'Disciplined Mutual Fund Investing: Support suitable SIP, STP and SWP facilities based on the investor’s objectives, investment horizon and risk profile.',
                     'Digital Convenience: Enable instant 24/7 online portfolio access.',
                     'Dependable Support: Deliver personal service across generations.'
                   ].map((m, idx) => (
@@ -526,7 +526,12 @@ export function About() {
               { icon: '🏢', title: 'Business Owners', desc: 'Deploy periodic surplus capital with flexible investment options.' },
               { icon: '🎓', title: 'Parents', desc: 'Plan and build dedicated corpuses for children’s education.' },
               { icon: '🏖️', title: 'Retirement Builders', desc: 'Accumulate retirement wealth based on target timelines.' },
-              { icon: '👴', title: 'Retirees (FD to MF)', desc: 'Deploy corpuses for inflation-aware, regular cash flow via SWP.' },
+              {
+                icon: '👴',
+                title: 'Retirees and Retirement Investors',
+                desc: 'Evaluate suitable mutual fund options and structure periodic withdrawals from a retirement corpus, subject to the investor’s risk profile, liquidity needs and product suitability.',
+                disclosure: 'SWP withdrawals are made by redeeming mutual fund units and are not guaranteed income. Mutual funds and fixed deposits have different risk, return and liquidity characteristics.'
+              },
               { icon: '📈', title: 'Wealth Builders', desc: 'Diversified portfolios tailored for long-term growth.' },
               { icon: '🌍', title: 'NRIs & Overseas Clients', desc: 'Hassle-free India mutual fund investing with compliant KYC support.' },
             ].map((item, i) => (
@@ -537,6 +542,8 @@ export function About() {
                   padding: '24px 22px',
                   border: '1px solid rgba(136,189,164,0.28)',
                   height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
                   transition: 'all 0.25s',
                   boxShadow: '0 4px 16px rgba(0,0,0,0.02)'
                 }}
@@ -545,7 +552,12 @@ export function About() {
                 >
                   <div style={{ fontSize: 32, marginBottom: 12 }}>{item.icon}</div>
                   <h3 style={{ fontSize: 18, fontWeight: 800, color: '#232926', marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#555D58', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                  <p style={{ fontSize: 14, color: '#555D58', lineHeight: 1.6, margin: 0, marginBottom: item.disclosure ? 12 : 0 }}>{item.desc}</p>
+                  {item.disclosure && (
+                    <div style={{ marginTop: 'auto', paddingTop: 10, borderTop: '1px solid rgba(136,189,164,0.25)', fontSize: 12, color: '#555D58', lineHeight: 1.5 }}>
+                      <strong>Note:</strong> {item.disclosure}
+                    </div>
+                  )}
                 </div>
               </FadeUp>
             ))}

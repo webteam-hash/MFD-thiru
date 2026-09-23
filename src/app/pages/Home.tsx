@@ -49,13 +49,13 @@ const testimonials = [
     name: 'Dhamayanthi',
     type: 'Long-term Client',
     city: 'Chennai',
-    text: 'It has been our pleasure to see WCMS grow into a fine boutique investment firm. Really pleased with the way they offer customised financial and investment advice and facilitate in managing investment plans. We wish them the very best in all their future endeavours.'
+    text: 'It has been our pleasure to see WCMS grow into a fine boutique investment firm. Really pleased with the way they offer customised financial and mutual fund guidance and facilitate in managing investment plans. We wish them the very best in all their future endeavours.'
   },
   {
     name: 'Pavitra SV',
     type: 'Director Internal Audit, BNP Paribas India Solutions Private Limited',
     city: 'Chennai',
-    text: `Working with Mr. J.C. Thirumurgan since 2005 has been one of the best financial decisions of my life. Over the past two decades, he has transitioned from a trusted investment adviser to a true family mentor. Thanks to his strategic guidance, insightful market advice, and unwavering availability, I have been able to build a meaningful financial corpus that turned my hard-earned savings into long-term wealth.
+    text: `Working with Mr. J.C. Thirumurgan since 2005 has been one of the best financial decisions of my life. Over the past two decades, he has transitioned from a trusted financial guide to a true family mentor. Thanks to his strategic guidance, insightful market guidance, and unwavering availability, I have been able to build a meaningful financial corpus that turned my hard-earned savings into long-term wealth.
 
 His impact on our family goes beyond just managing portfolio growth. Mr. Thirumurgan has guided me through pivotal career moves, supported my husband’s financial goals, and now manages the portfolio of our 18-year-old son. Because of his early planning and vision, my son is already set up for a comfortable retirement by age 45.
 
@@ -124,7 +124,7 @@ export function Home() {
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }}
               style={{ fontSize: 17, color: '#555D58', lineHeight: 1.75, marginBottom: 36, maxWidth: 480 }}>
-              Helping individuals and family’s structure mutual fund investments around long-term goals, retirement corpus creation and inflation-adjusted retirement income.
+              Helping individuals and families structure mutual fund investments around long-term goals, retirement corpus creation and inflation-aware retirement withdrawals.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
@@ -239,7 +239,7 @@ export function Home() {
           <FadeUp>
             <div style={{ textAlign: 'center', marginBottom: 52 }}>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: '#303733', marginBottom: 12 }}>Investment Options for You</h2>
-              <p style={{ fontSize: 17, color: '#555D58', maxWidth: 640, margin: '0 auto' }}>Tailored mutual fund distribution solutions structured to help you build wealth, achieve key milestones, and secure your retirement.</p>
+              <p style={{ fontSize: 17, color: '#555D58', maxWidth: 640, margin: '0 auto' }}>Mutual fund distribution solutions structured to support long-term wealth creation, important financial goals and retirement preparation.</p>
             </div>
           </FadeUp>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 28 }}>
@@ -254,19 +254,20 @@ export function Home() {
               },
               {
                 title: 'Preparing for Retirement',
-                description: 'Building the required retirement corpus before retirement',
-                cta: 'Review My Existing Portfolio',
+                description: 'Building a retirement corpus through disciplined investing based on your expected needs, investment horizon and risk profile.',
+                cta: 'Discuss My Retirement Corpus',
                 route: '/get-started?option=Preparing for Retirement',
                 img: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80',
                 IconComp: Target,
               },
               {
                 title: 'Already Retired',
-                description: 'Structuring existing corpus to create inflation-adjusted cash flow',
-                cta: 'Plan My Retirement Cash Flow',
+                description: 'Structuring periodic withdrawals from an existing retirement corpus while considering inflation, liquidity needs and market risk.',
+                cta: 'Discuss My Retirement Withdrawal Plan',
                 route: '/get-started?option=Already Retired',
                 img: alreadyRetiredUserImg,
                 IconComp: Shield,
+                disclosure: 'Important: Periodic withdrawals through an SWP are made by redeeming mutual fund units. They are not guaranteed income or interest. The investment value may fluctuate, and the corpus may reduce or be depleted depending on market performance, withdrawal rate, scheme expenses and taxation.',
               },
             ].map((card, i) => {
               const Icon = card.IconComp
@@ -325,9 +326,17 @@ export function Home() {
                         </h3>
                       </div>
 
-                      <p style={{ fontSize: 15, color: '#555D58', lineHeight: 1.65, marginBottom: 28, flexGrow: 1 }}>
+                      <p style={{ fontSize: 15, color: '#555D58', lineHeight: 1.65, marginBottom: 20, flexGrow: 1 }}>
                         {card.description}
                       </p>
+
+                      {card.disclosure && (
+                        <div style={{ padding: '12px 14px', borderRadius: 10, background: '#F4FAF6', border: '1px solid rgba(136,189,164,0.35)', marginBottom: 20 }}>
+                          <p style={{ fontSize: 12, color: '#555D58', margin: 0, lineHeight: 1.55 }}>
+                            <strong style={{ color: TEAL }}>Important:</strong> Periodic withdrawals through an SWP are made by redeeming mutual fund units. They are not guaranteed income or interest. The investment value may fluctuate, and the corpus may reduce or be depleted depending on market performance, withdrawal rate, scheme expenses and taxation.
+                          </p>
+                        </div>
+                      )}
 
                       <div style={{ marginTop: 'auto' }}>
                         <div

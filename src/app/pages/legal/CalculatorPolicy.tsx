@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
-import { ShieldCheck, Info, FileText, CheckCircle2, AlertTriangle, Scale, ArrowRight, BookOpen, UserCheck, ShieldAlert } from 'lucide-react'
+import { Scale, ShieldAlert, Info, CheckCircle2 } from 'lucide-react'
 import { SectionBlob } from '../../components/WatercolorBg'
 import { LegalNav } from './LegalNav'
 import { SEO } from '../../components/SEO'
@@ -23,8 +23,8 @@ export function CalculatorPolicy() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
       <SEO
-        title="Calculator Policy & SEBI/AMFI Compliance Note | MFDthiru"
-        description="Regulatory position and compliance note for digital calculators and goal-based mutual fund investing tools by MFDthiru (ARN 26890)."
+        title="Calculator Policy | MFDthiru — J. C. Thirumurugan (ARN 26890)"
+        description="Calculator Policy, terms of usage, and mathematical illustration disclosure for MFDthiru — AMFI Registered Mutual Fund Distributor ARN 26890."
         canonical="/calculator-policy"
       />
       {/* Hero Header */}
@@ -35,21 +35,16 @@ export function CalculatorPolicy() {
         <div style={{ maxWidth: 960, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 2 }}>
           <FadeUp>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 16px', borderRadius: 20, background: LIGHT, color: TEAL, fontSize: 13, fontWeight: 700, marginBottom: 18 }}>
-              <Scale size={15} /> Regulatory Position & Compliance Note
+              <Scale size={15} /> Statutory Disclosure Policy
             </span>
-            <h1 style={{ fontSize: 'clamp(28px, 4.2vw, 46px)', fontWeight: 800, color: '#303733', marginBottom: 18, lineHeight: 1.25 }}>
-              Regulatory Position on Calculators & Goal-Based Mutual Fund Investing
+            <h1 style={{ fontSize: 'clamp(32px, 5vw, 50px)', fontWeight: 800, color: '#303733', marginBottom: 20, lineHeight: 1.2 }}>
+              Calculator Policy
             </h1>
-            <p style={{ fontSize: 18, color: '#555D58', maxWidth: 780, margin: '0 auto 24px', lineHeight: 1.7 }}>
-              SEBI and AMFI compliance guidance note for the MFDthiru website and digital tools.
+            <p style={{ fontSize: 18, color: '#555D58', maxWidth: 760, margin: '0 auto 24px', lineHeight: 1.7 }}>
+              Terms of usage and regulatory principles governing digital calculators and mathematical illustrations on MFDthiru.
             </p>
-            <div style={{ display: 'inline-flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', fontSize: 13, color: TEAL, fontWeight: 700 }}>
-              <span style={{ padding: '6px 16px', background: '#ffffff', borderRadius: 12, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-                ARN Holder: J. C. Thirumurugan | ARN 26890
-              </span>
-              <span style={{ padding: '6px 16px', background: '#ffffff', borderRadius: 12, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-                Updated: 22 July 2026
-              </span>
+            <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
+              J. C. Thirumurugan &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor (ARN 26890)
             </div>
           </FadeUp>
         </div>
@@ -62,242 +57,192 @@ export function CalculatorPolicy() {
 
         <div style={{ maxWidth: 1040, margin: '0 auto' }}>
           
-          {/* Sub Navigation */}
+          {/* Legal Navigation Sub-Bar */}
           <LegalNav />
 
-          <div style={{ display: 'grid', gap: 36 }}>
+          <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '44px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)', display: 'grid', gap: 28 }}>
             
-            {/* Executive Position Callout */}
+            <FadeUp delay={0.05}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Purpose of the Calculators</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  The calculators available on the MFDthiru website are provided solely for general education and mathematical illustration. They are intended to help users understand how factors such as investment amount, investment period, assumed rate of return, inflation and withdrawals may affect an indicative financial outcome.
+                </p>
+                <p style={{ fontSize: 15, fontWeight: 600, color: TEAL, margin: 0 }}>
+                  The calculators do not constitute financial planning, investment advice, tax advice or a recommendation to invest in any mutual fund scheme.
+                </p>
+              </div>
+            </FadeUp>
+
             <FadeUp delay={0.1}>
-              <div style={{
-                background: 'linear-gradient(135deg, rgba(230,242,221,0.85), rgba(255,255,255,0.95))',
-                borderRadius: 24, border: `2px solid ${MINT}`, padding: '36px 40px',
-                boxShadow: '0 8px 32px rgba(53,133,142,0.08)', backdropFilter: 'blur(10px)'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: 12, background: TEAL, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <ShieldCheck size={24} />
-                  </div>
-                  <div>
-                    <span style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: TEAL }}>Compliance Statement</span>
-                    <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', margin: 0 }}>EXECUTIVE POSITION</h2>
-                  </div>
-                </div>
-                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#2D3531', margin: 0, fontWeight: 500 }}>
-                  MFDthiru may provide educational calculators and may assist clients with goal-based SIP, lump-sum and flexible mutual fund investments. The activity must remain limited to mutual funds and incidental to distribution. MFDthiru must not offer detailed financial planning, holistic investment advice or public scheme-specific recommendations as these cross the permitted MFD boundary.
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>User Selected Inputs and Assumptions</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  Calculator results are generated using the information and assumptions entered or selected by the user. These may include:
                 </p>
-                <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid rgba(53,133,142,0.18)', fontSize: 13, color: '#555D58', fontStyle: 'italic' }}>
-                  Purpose: Internal compliance guidance and website implementation reference. This note is an operational regulatory reference and not a formal legal opinion.
-                </div>
-              </div>
-            </FadeUp>
-
-            {/* Section 1: Purpose & Scope */}
-            <FadeUp delay={0.12}>
-              <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <span style={{ width: 34, height: 34, borderRadius: '50%', background: `linear-gradient(135deg, ${TEAL}, ${MINT})`, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 800 }}>1</span>
-                  Purpose and Scope
-                </h2>
-                <p style={{ fontSize: 16, lineHeight: 1.8, color: '#4E5652', margin: 0 }}>
-                  This note explains the regulatory basis on which an AMFI-registered Mutual Fund Distributor (“MFD”) may provide calculators, goal-oriented illustrations and basic assistance with mutual fund investments without presenting itself as a SEBI-registered Investment Adviser (“RIA”). It also identifies the design, terminology, disclosure and operating controls recommended for the MFDthiru website.
+                <ul style={{ margin: '0 0 12px 0', paddingLeft: 20, fontSize: 15.5, color: '#444C47', lineHeight: 1.8 }}>
+                  <li>SIP or lump-sum investment amount and investment duration.</li>
+                  <li>Assumed annual rate of return and inflation rate.</li>
+                  <li>Target amount or periodic increase in investment.</li>
+                  <li>Withdrawal amount, frequency and expected retirement period.</li>
+                </ul>
+                <p style={{ fontSize: 15, color: '#555D58', margin: 0 }}>
+                  The assumed annual rate used in a calculator is solely for mathematical illustration. It does not represent the expected or assured return of any mutual fund scheme, category or investment strategy.
                 </p>
               </div>
             </FadeUp>
 
-            {/* Section 2: Regulatory Conclusion */}
             <FadeUp delay={0.15}>
-              <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <span style={{ width: 34, height: 34, borderRadius: '50%', background: `linear-gradient(135deg, ${TEAL}, ${MINT})`, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 800 }}>2</span>
-                  Regulatory Conclusion: Calculators Are Permitted With Boundaries
-                </h2>
-                <p style={{ fontSize: 16, lineHeight: 1.8, color: '#4E5652', marginBottom: 24 }}>
-                  SEBI and AMFI do not prohibit an MFD from using educational calculators or helping a client make a goal-based mutual fund investment. The controlling question is whether the activity remains basic, mutual-fund-only and incidental to distribution, or becomes detailed financial planning and holistic investment advice.
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Illustrative Results Only</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  All results displayed by the calculators are indicative mathematical estimates. They should not be interpreted as:
                 </p>
-                <div style={{ display: 'grid', gap: 14 }}>
-                  {[
-                    'Generic SIP, lump-sum, goal-value, retirement-corpus and flexible-contribution calculators may be offered as educational and illustrative tools.',
-                    'An MFD may assist a client with a specific goal-based SIP or lump-sum investment, provided the recommendation is restricted to mutual fund schemes.',
-                    'Where a mutual fund scheme is recommended, the MFD must assess the investor’s risk profile, investment need, objective, horizon and product suitability, and maintain appropriate records.',
-                    'An MFD may provide a curated list of suitable mutual fund schemes to help the client make a choice; this is incidental guidance connected with distribution.',
-                    'An MFD must not hold itself out as providing financial planning, holistic investment advice or advice covering securities beyond the permitted mutual fund distribution scope unless separately registered as an IA.'
-                  ].map((point, idx) => (
-                    <div key={idx} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', padding: '16px 20px', background: '#F8FDF9', borderRadius: 14, border: '1px solid rgba(136,189,164,0.2)' }}>
-                      <CheckCircle2 size={20} color={TEAL} style={{ marginTop: 2, flexShrink: 0 }} />
-                      <span style={{ fontSize: 15, color: '#333D37', lineHeight: 1.7, fontWeight: 500 }}>{point}</span>
-                    </div>
-                  ))}
-                </div>
+                <ul style={{ margin: '0 0 12px 0', paddingLeft: 20, fontSize: 15.5, color: '#444C47', lineHeight: 1.8 }}>
+                  <li>A guarantee or assurance of returns or a prediction of future performance.</li>
+                  <li>Confirmation that a financial goal will be achieved.</li>
+                  <li>A personalised investment recommendation or recommendation of a mutual fund scheme.</li>
+                  <li>A substitute for assessing an investor's financial position, risk profile, objectives or investment horizon.</li>
+                </ul>
+                <p style={{ fontSize: 15, fontWeight: 600, color: TEAL, margin: 0 }}>
+                  Actual investment results may be higher or lower than the calculated value and may also be negative.
+                </p>
               </div>
             </FadeUp>
 
-            {/* Section 3 & 4: What SEBI and AMFI Permit */}
             <FadeUp delay={0.2}>
-              <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 24 }}>3 & 4. SEBI and AMFI Express Regulatory Permissions</h2>
-                
-                <div style={{ display: 'grid', gap: 24 }}>
-                  <div style={{ background: '#F7FAF7', padding: '28px', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.2)' }}>
-                    <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 12 }}>What SEBI Permits (SEBI IA FAQs 16 & 19)</h3>
-                    <p style={{ fontSize: 15, lineHeight: 1.8, color: '#444C47', marginBottom: 14 }}>
-                      SEBI’s FAQs for Registered Investment Advisers clarify that an AMFI-registered mutual fund distributor is exempt from obtaining IA registration when the investment advice is incidental to the distributor’s primary activity. For an MFD, incidental activity means basic advice pertaining to mutual fund schemes and limited to mutual fund products distributed by the MFD.
-                    </p>
-                    <p style={{ fontSize: 14, lineHeight: 1.7, color: '#555D58', margin: 0, fontStyle: 'italic' }}>
-                      Exemption restriction: The exemption does not extend to advice on shares, debentures, bonds, derivatives, AIFs, REITs or InvITs.
-                    </p>
-                  </div>
-
-                  <div style={{ background: '#F7FAF7', padding: '28px', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.2)' }}>
-                    <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 12 }}>What AMFI Permits (AMFI MFD FAQs 1 to 5, 8 to 10 & Master Circular)</h3>
-                    <p style={{ fontSize: 15, lineHeight: 1.8, color: '#444C47', marginBottom: 14 }}>
-                      AMFI expressly permits recommending a curated list of mutual fund schemes based on risk profile and product suitability, providing basic incidental guidance, assisting with goal-based SIP or lump-sum investments (education, home, retirement), and conducting periodic portfolio reviews within the MFD scope.
-                    </p>
-                    <p style={{ fontSize: 14, lineHeight: 1.7, color: '#B9382C', margin: 0, fontWeight: 600 }}>
-                      Nomenclature constraint: MFDs who are not RIAs must not use titles such as “Financial Planning”, “Financial Planner”, “Investment Adviser”, “IFA”, or “Wealth Adviser”.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </FadeUp>
-
-            {/* Section 5: Permitted and Restricted Website Features Table */}
-            <FadeUp delay={0.25}>
-              <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <span style={{ width: 34, height: 34, borderRadius: '50%', background: `linear-gradient(135deg, ${TEAL}, ${MINT})`, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 800 }}>5</span>
-                  Permitted and Restricted Website Features
-                </h2>
-
-                <div style={{ overflowX: 'auto', borderRadius: 16, border: '1px solid rgba(136,189,164,0.22)' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-                    <thead>
-                      <tr style={{ background: `linear-gradient(135deg, ${TEAL}, #276269)`, color: '#ffffff' }}>
-                        <th style={{ padding: '16px 20px', fontSize: 15, fontWeight: 700, width: '20%' }}>Area</th>
-                        <th style={{ padding: '16px 20px', fontSize: 15, fontWeight: 700, width: '40%' }}>Permitted Approach</th>
-                        <th style={{ padding: '16px 20px', fontSize: 15, fontWeight: 700, width: '40%' }}>Restricted / Avoid</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {[
-                        ['Calculators', 'Generic mathematical illustrations based on user-entered amounts, dates, inflation and assumed returns.', 'Promising returns, presenting assumptions as expected scheme returns, or implying goals are guaranteed.'],
-                        ['Goal Support', 'Goal-based SIP, lump-sum or flexible mutual fund investing limited to mutual funds.', 'Comprehensive financial planning covering whole client finances or multi-product classes.'],
-                        ['Scheme Selection', 'Curated mutual fund list after risk profiling and suitability assessment.', 'Automatic scheme recommendation to anonymous visitors without risk profiling.'],
-                        ['Public Content', 'General investor education on mutual funds, concepts and market dynamics.', 'Public scheme-specific recommendations or performance claims designed to solicit investment.'],
-                        ['Terminology', '“Goal-Based Mutual Fund Investing”, “Investment Calculators”, “Mutual Fund Distribution”.', '“Financial Planning”, “Financial Planner”, “Investment Adviser”, “IFA”, “Wealth Adviser”.'],
-                        ['Product Scope', 'Mutual fund products within MFD distribution activity.', 'Advice on shares, derivatives, bonds, AIFs, REITs, InvITs or holistic asset allocation.']
-                      ].map(([area, permitted, restricted], idx) => (
-                        <tr key={idx} style={{ background: idx % 2 === 0 ? '#F8FDF9' : '#ffffff', borderBottom: '1px solid rgba(136,189,164,0.15)' }}>
-                          <td style={{ padding: '16px 20px', fontSize: 14, fontWeight: 700, color: TEAL }}>{area}</td>
-                          <td style={{ padding: '16px 20px', fontSize: 14, lineHeight: 1.7, color: '#333D37' }}>✓ {permitted}</td>
-                          <td style={{ padding: '16px 20px', fontSize: 14, lineHeight: 1.7, color: '#B9382C' }}>✕ {restricted}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </FadeUp>
-
-            {/* Section 6: How MFDthiru Calculators Operate */}
-            <FadeUp delay={0.3}>
-              <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <span style={{ width: 34, height: 34, borderRadius: '50%', background: `linear-gradient(135deg, ${TEAL}, ${MINT})`, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 800 }}>6</span>
-                  How MFDthiru Calculators Operate
-                </h2>
-                
-                <h3 style={{ fontSize: 17, fontWeight: 700, color: TEAL, marginBottom: 12 }}>6.1 Permitted Calculator Suite</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginBottom: 24 }}>
-                  {['SIP Calculator', 'Lump-Sum Calculator', 'Goal Value / Target Calculator', 'Education & Retirement Estimators', 'Flexible Investment Calculator'].map((calc, i) => (
-                    <div key={i} style={{ padding: '14px 18px', background: '#F8FDF9', borderRadius: 12, border: '1px solid rgba(136,189,164,0.2)', fontSize: 14, fontWeight: 600, color: '#333D37' }}>
-                      🧮 {calc}
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{ background: 'linear-gradient(135deg, #F4FBF7, rgba(230,242,221,0.5))', border: `1.5px dashed ${MINT}`, borderRadius: 18, padding: '24px 28px', marginBottom: 24 }}>
-                  <h4 style={{ fontSize: 16, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>CRITICAL DESIGN RULE FOR CALCULATORS</h4>
-                  <p style={{ fontSize: 15, lineHeight: 1.8, color: '#2C3530', margin: 0, fontWeight: 500 }}>
-                    “The calculator may calculate; it should not advise. It should not select or name a scheme, label an assumed return as 'expected', declare that the goal will be achieved, or convert an anonymous visitor's output into a personalised investment recommendation.”
-                  </p>
-                </div>
-              </div>
-            </FadeUp>
-
-            {/* Section 7: Scheme Recommendations & Risk Profiling Gate */}
-            <FadeUp delay={0.35}>
-              <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <UserCheck size={24} color={TEAL} />
-                  7. Investor Risk-Profiling & Suitability Process
-                </h2>
-                <p style={{ fontSize: 16, lineHeight: 1.8, color: '#4E5652', marginBottom: 20 }}>
-                  A public calculator can remain anonymous and educational. If the next step involves a specific mutual fund recommendation, MFDthiru completes a mandatory 7-step process:
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Mutual Fund Returns and Market Risk</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  Mutual fund returns are market-linked and are affected by several factors, including market movements, interest rates, inflation, credit events, liquidity, economic conditions, taxation, scheme expenses and the performance of the underlying securities.
                 </p>
-                <div style={{ display: 'grid', gap: 12 }}>
-                  {[
-                    '1. Collect relevant client information (goal, horizon, financial position, risk appetite).',
-                    '2. Complete and record the investor’s risk profile.',
-                    '3. Assess suitability and appropriateness of the mutual fund product.',
-                    '4. Provide a curated list or incidental recommendation restricted to mutual fund schemes.',
-                    '5. Disclose MFD status, ARN 26890 and Regular Plan commission structure.',
-                    '6. Record the recommendation, suitability basis and investor consent.',
-                    '7. Periodically review and update risk profile and client records.'
-                  ].map((step, idx) => (
-                    <div key={idx} style={{ padding: '14px 20px', background: '#F8FDF9', borderRadius: 12, border: '1px solid rgba(136,189,164,0.2)', fontSize: 14, fontWeight: 600, color: '#333D37' }}>
-                      {step}
-                    </div>
-                  ))}
-                </div>
+                <p style={{ fontSize: 15.5, color: '#444C47', margin: 0 }}>
+                  Past performance of a mutual fund, market index or asset category is not indicative of future performance. No assumed rate used in a calculator should be considered a representation of historical or future mutual fund returns.
+                </p>
               </div>
             </FadeUp>
 
-            {/* Section 8 & 9: Disclaimers & Implementation Controls */}
+            <FadeUp delay={0.25}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Costs, Taxes and Other Adjustments</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  Unless specifically stated, calculator outputs may not account for:
+                </p>
+                <ul style={{ margin: '0 0 12px 0', paddingLeft: 20, fontSize: 15.5, color: '#444C47', lineHeight: 1.8 }}>
+                  <li>Mutual fund expense ratios, exit loads, stamp duty or transaction charges.</li>
+                  <li>Securities Transaction Tax, capital-gains tax or changes in tax laws.</li>
+                  <li>Inflation unless entered separately, variations in investment dates or missed SIP instalments.</li>
+                  <li>Market fluctuations, changes in withdrawal dates and sequence-of-return risk.</li>
+                </ul>
+                <p style={{ fontSize: 15, color: '#555D58', margin: 0 }}>
+                  Accordingly, the actual value received by an investor may differ materially from the calculated amount.
+                </p>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.3}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>SIP and Lump Sum Calculations</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
+                  SIP and lump-sum calculators illustrate the possible future value of regular or one-time investments based on the inputs selected by the user. A SIP is only a method of investing periodically. It does not guarantee returns, protect against losses or ensure achievement of a financial goal.
+                </p>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.35}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Retirement and Goal Calculations</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
+                  Retirement, education and other goal-based calculators estimate a possible future requirement based on assumptions such as time horizon, inflation and assumed investment return. These calculations do not guarantee that the estimated corpus will be sufficient or that the goal will be achieved. Actual requirements may change because of inflation, personal circumstances, taxation, market performance and changes in the timing or cost of the goal.
+                </p>
+              </div>
+            </FadeUp>
+
             <FadeUp delay={0.4}>
-              <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 20 }}>8, 9 & 10. Calculator Disclaimer & Implementation Controls</h2>
-                
-                <div style={{ background: '#F8FDF9', padding: '24px 28px', borderRadius: 16, borderLeft: `6px solid ${TEAL}`, fontSize: 15, lineHeight: 1.85, color: '#333D37', marginBottom: 24, border: '1px solid rgba(136,189,164,0.2)' }}>
-                  <strong style={{ color: TEAL }}>DISPLAY BELOW EVERY CALCULATOR:</strong><br />
-                  “Illustration only: This calculator provides indicative mathematical results based on the inputs and assumptions selected by the user. It does not constitute financial planning or investment advice, recommend any mutual fund scheme, or guarantee any return or achievement of a financial goal. Actual results may vary. Mutual Fund investments are subject to market risks, read all scheme related documents carefully.”
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14 }}>
-                  {[
-                    ['Identity Display', 'Display "AMFI-registered MFD - ARN 26890" prominently on all pages.'],
-                    ['Calculator Separation', 'Keep generic calculations separate from client recommendations.'],
-                    ['No Auto Scheme Listing', 'Do not automatically name schemes based solely on calculator inputs.'],
-                    ['Commission Disclosure', 'Disclose Regular Plan commissions received from AMCs.'],
-                    ['Records Preservation', 'Preserve risk profiles, suitability assessments, and consent logs.']
-                  ].map(([title, desc], i) => (
-                    <div key={i} style={{ padding: '18px', background: 'rgba(230,242,221,0.35)', borderRadius: 14, border: '1px solid rgba(136,189,164,0.2)' }}>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: TEAL, marginBottom: 6 }}>{title}</div>
-                      <div style={{ fontSize: 13, color: '#555D58', lineHeight: 1.6 }}>{desc}</div>
-                    </div>
-                  ))}
-                </div>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>SWP and Cash Flow Calculations</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  A Systematic Withdrawal Plan allows an investor to withdraw money by periodically redeeming mutual fund units. SWP withdrawals are not interest payments or guaranteed income.
+                </p>
+                <p style={{ fontSize: 15.5, color: '#444C47', margin: 0 }}>
+                  The investment value may fluctuate and may be depleted depending on market performance, the withdrawal rate, scheme expenses, taxation and the duration of withdrawals. A calculator result should not be interpreted as assurance that a particular cash flow can be maintained for the selected period.
+                </p>
               </div>
             </FadeUp>
 
-            {/* Section 11 & 12: Regulatory References & Final Assessment */}
             <FadeUp delay={0.45}>
-              <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '40px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: 22, fontWeight: 800, color: '#303733', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <BookOpen size={24} color={TEAL} />
-                  11 & 12. Regulatory References & Compliance Assessment
-                </h2>
-                
-                <div style={{ fontSize: 14, lineHeight: 1.8, color: '#4E5652', display: 'grid', gap: 10, marginBottom: 20 }}>
-                  <div>1. <strong>SEBI, FAQs: Registered Investment Advisers (August 2025)</strong>: FAQs 16 & 19 on MFD exemption and incidental activity.</div>
-                  <div>2. <strong>AMFI, FAQs on Do’s & Don’ts for MFDs</strong>: FAQs 1 to 5 & 8 to 10 on incidental guidance, goal-based MF investments, risk profiling and advertising.</div>
-                  <div>3. <strong>AMFI, Guidance on MFD Nomenclature</strong>: on avoiding unregistered advisory terminology.</div>
-                  <div>4. <strong>AMFI, Master Circular for Mutual Fund Distributors (14 January 2026)</strong>: consolidated MFD conduct guidelines.</div>
-                </div>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>No Automatic Scheme Recommendation</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  The calculators do not automatically select, rank or recommend any mutual fund scheme. A calculator result is not converted into a personalised investment recommendation solely based on the figures entered by the user.
+                </p>
+                <p style={{ fontSize: 15.5, color: '#444C47', margin: 0 }}>
+                  If a user requests assistance with mutual fund selection, MFDthiru will separately consider relevant information such as the investor's objective, investment horizon, financial position, risk profile and product suitability.
+                </p>
+              </div>
+            </FadeUp>
 
-                <div style={{ background: `linear-gradient(135deg, ${TEAL}, #1e4a4f)`, color: '#ffffff', borderRadius: 16, padding: '24px 28px', textAlign: 'center', fontSize: 14, lineHeight: 1.7, fontWeight: 600 }}>
-                  Mutual Fund investments are subject to market risks. Read all scheme-related documents carefully before investing.
-                </div>
+            <FadeUp delay={0.5}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Mutual Fund Distribution Status</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  MFDthiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor - ARN 26890. MFDthiru provides mutual fund distribution services and incidental assistance limited to mutual fund products distributed through MFDthiru. MFDthiru is not a SEBI-registered Investment Adviser and does not provide comprehensive financial planning, legal advice or tax advice.
+                </p>
+                <p style={{ fontSize: 15.5, color: '#444C47', margin: 0 }}>
+                  Investments facilitated through MFDthiru are generally made under Regular Plans. MFDthiru may receive trail commission from Asset Management Companies on investments made under Regular Plans. Please refer to the Commission Disclosure page for further details.
+                </p>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.55}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Data and Privacy</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  Information entered into a calculator is used to generate the requested illustration. Where a user voluntarily submits personal or contact information to request assistance, it will be handled in accordance with MFDthiru's Privacy Policy.
+                </p>
+                <p style={{ fontSize: 15, fontWeight: 600, color: '#D32F2F', margin: 0 }}>
+                  Users should not enter passwords, OTPs, PINs, bank-account credentials or other confidential authentication information into any calculator.
+                </p>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.6}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>User Responsibility</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  Users should independently review the assumptions selected and determine whether the calculator output is relevant to their circumstances. Before investing, users should read the applicable Scheme Information Document, Key Information Memorandum and Statement of Additional Information and understand the scheme's objectives, risks, expenses and suitability.
+                </p>
+                <p style={{ fontSize: 15.5, color: '#444C47', margin: 0 }}>
+                  Independent professional advice may be obtained where legal, tax or comprehensive financial-planning assistance is required.
+                </p>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.65}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Limitation of Liability</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
+                  MFDthiru takes reasonable care in presenting calculator outputs but does not warrant that the calculations will be error-free, complete or suitable for every investor. To the extent permitted by applicable law, MFDthiru shall not be responsible for any investment decision, financial loss, missed opportunity or other consequence arising from reliance solely on a calculator result.
+                </p>
+              </div>
+            </FadeUp>
+
+            {/* Statutory Disclosure Banner */}
+            <FadeUp delay={0.7}>
+              <div style={{
+                background: `linear-gradient(135deg, ${TEAL}, #1e4a4f)`,
+                borderRadius: 18, padding: '28px 32px', color: '#ffffff', textAlign: 'left', marginTop: 12,
+                boxShadow: '0 8px 24px rgba(53,133,142,0.2)'
+              }}>
+                <p style={{ fontSize: 15, fontWeight: 700, margin: '0 0 8px 0', color: MINT }}>
+                  Important Disclosure
+                </p>
+                <p style={{ fontSize: 14.5, fontWeight: 500, margin: '0 0 10px 0', lineHeight: 1.7 }}>
+                  <strong>Illustration only:</strong> The calculators provide indicative mathematical results based on the inputs and assumptions selected by the user. They do not constitute financial planning or investment advice, recommend any mutual fund scheme, or guarantee any return or achievement of a financial goal. Actual results may vary.
+                </p>
+                <p style={{ fontSize: 14, fontWeight: 600, margin: 0, lineHeight: 1.65, color: '#e0f0f2' }}>
+                  Mutual Fund investments are subject to market risks; read all scheme-related documents carefully before investing.
+                </p>
               </div>
             </FadeUp>
 

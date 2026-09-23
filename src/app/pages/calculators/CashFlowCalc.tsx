@@ -93,7 +93,7 @@ export function CashFlowCalc({ embedded }: { embedded?: boolean } = {}) {
           <InputField label="Monthly Commitments (EMIs etc.)" value={commitments} onChange={setCommitments} min={0} max={200000} step={1000} format={v => `₹${v.toLocaleString('en-IN')}`} />
           <InputField label="Existing Investments" value={existingInvestments} onChange={setExistingInvestments} min={0} max={10000000} step={50000} format={v => `₹${v.toLocaleString('en-IN')}`} />
           <InputField label="Desired Monthly Savings" value={desiredSavings} onChange={setDesiredSavings} min={0} max={100000} step={1000} format={v => `₹${v.toLocaleString('en-IN')}`} />
-          <InputField label="Expected Return" value={expectedReturn} onChange={setExpectedReturn} min={6} max={20} step={0.5} format={v => `${v}%`} />
+          <InputField label="Assumed Annual Rate" value={expectedReturn} onChange={setExpectedReturn} min={6} max={20} step={0.5} format={v => `${v}%`} />
           <InputField label="Investment Period" value={years} onChange={setYears} min={1} max={30} step={1} format={v => `${v} yrs`} />
         </div>
         <div style={{ padding: '40px', background: 'rgba(250,253,249,0.75)' }}>

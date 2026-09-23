@@ -32,6 +32,7 @@ const Disclaimer = lazy(() => import('./pages/legal/Disclaimer').then(m => ({ de
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })))
 const InvestorGrievance = lazy(() => import('./pages/legal/InvestorGrievance').then(m => ({ default: m.InvestorGrievance })))
 const TermsOfUse = lazy(() => import('./pages/legal/TermsOfUse').then(m => ({ default: m.TermsOfUse })))
+const CommissionDisclosure = lazy(() => import('./pages/legal/CommissionDisclosure').then(m => ({ default: m.CommissionDisclosure })))
 
 export const router = createBrowserRouter([
   {
@@ -80,6 +81,7 @@ export const router = createBrowserRouter([
       { path: 'privacy-policy', Component: PrivacyPolicy },
       { path: 'investor-grievance', Component: InvestorGrievance },
       { path: 'terms-of-use', Component: TermsOfUse },
+      { path: 'commission-disclosure', Component: CommissionDisclosure },
 
       // Catch-all 404 route
       { path: '*', Component: NotFound },

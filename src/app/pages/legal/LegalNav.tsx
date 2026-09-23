@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router'
-import { ShieldAlert, Lock, FileCheck, Scale, Headphones } from 'lucide-react'
+import { ShieldAlert, Lock, FileCheck, Scale, Headphones, Coins } from 'lucide-react'
 import { BackButton } from '../../components/BackButton'
 import { SEO } from '../../components/SEO'
 
@@ -13,6 +13,7 @@ const navItems = [
   { label: 'Terms of Use', path: '/terms-of-use', icon: FileCheck },
   { label: 'Calculator Policy', path: '/calculator-policy', icon: Scale },
   { label: 'Investor Grievance', path: '/investor-grievance', icon: Headphones },
+  { label: 'Commission Disclosure', path: '/commission-disclosure', icon: Coins },
 ]
 
 export function LegalNav() {

@@ -99,7 +99,7 @@ export function FlexibleCalc({ embedded }: { embedded?: boolean } = {}) {
           <InputField label="Monthly Contribution" value={monthly} onChange={setMonthly} min={500} max={500000} step={500} format={v => `₹${v.toLocaleString('en-IN')}`} />
           <InputField label="Annual Increase in Contribution" value={annualIncrease} onChange={setAnnualIncrease} min={0} max={30} step={1} format={v => `${v}%`} />
           <InputField label="Investment Duration" value={years} onChange={setYears} min={1} max={40} step={1} format={v => `${v} yrs`} />
-          <InputField label="Expected Annual Return" value={rate} onChange={setRate} min={4} max={25} step={0.5} format={v => `${v}%`} />
+          <InputField label="Assumed Annual Rate" value={rate} onChange={setRate} min={4} max={25} step={0.5} format={v => `${v}%`} />
 
           <div style={{ marginTop: 16, padding: '16px', borderRadius: 12, background: '#E6EEC9' }}>
             <p style={{ fontSize: 13, color: '#555D58', margin: 0, lineHeight: 1.6 }}>

@@ -107,7 +107,7 @@ export function GoalBasedCalc({ embedded }: { embedded?: boolean } = {}) {
           <InputField label="Goal Timeline" value={timeline} onChange={setTimeline} min={1} max={30} step={1} format={v => `${v} yrs`} />
           <InputField label="Existing Savings" value={existingSavings} onChange={setExistingSavings} min={0} max={5000000} step={50000} format={v => `₹${v.toLocaleString('en-IN')}`} />
           <InputField label="Expected Inflation" value={inflation} onChange={setInflation} min={3} max={12} step={0.5} format={v => `${v}%`} />
-          <InputField label="Expected Return" value={expectedReturn} onChange={setExpectedReturn} min={6} max={20} step={0.5} format={v => `${v}%`} />
+          <InputField label="Assumed Annual Rate" value={expectedReturn} onChange={setExpectedReturn} min={6} max={20} step={0.5} format={v => `${v}%`} />
         </div>
         <div style={{ padding: '40px', background: 'rgba(250,253,249,0.75)' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#303733', marginBottom: 8 }}>

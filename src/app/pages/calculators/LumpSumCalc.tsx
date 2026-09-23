@@ -79,7 +79,7 @@ export function LumpSumCalc({ embedded }: { embedded?: boolean } = {}) {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#303733', marginBottom: 28 }}>Investment Details</h2>
           <InputField label="Investment Amount" value={amount} onChange={setAmount} min={10000} max={50000000} step={10000} format={v => v >= 10000000 ? `₹${(v / 10000000).toFixed(1)}Cr` : `₹${(v / 100000).toFixed(1)}L`} />
           <InputField label="Investment Duration" value={years} onChange={setYears} min={1} max={40} step={1} format={v => `${v} yrs`} />
-          <InputField label="Expected Annual Return" value={rate} onChange={setRate} min={4} max={25} step={0.5} format={v => `${v}%`} />
+          <InputField label="Assumed Annual Rate" value={rate} onChange={setRate} min={4} max={25} step={0.5} format={v => `${v}%`} />
 
           <div style={{ marginTop: 24, padding: '20px', borderRadius: 14, background: '#E6F2DD' }}>
             <div style={{ fontSize: 13, color: '#555D58', lineHeight: 1.6 }}>

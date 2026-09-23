@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
-import { ShieldAlert, Info, CheckCircle2, Scale } from 'lucide-react'
+import { Coins, Mail, Info, CheckCircle2 } from 'lucide-react'
 import { SectionBlob } from '../../components/WatercolorBg'
 import { LegalNav } from './LegalNav'
 import { SEO } from '../../components/SEO'
@@ -19,14 +19,15 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   )
 }
 
-export function Disclaimer() {
+export function CommissionDisclosure() {
   return (
     <div style={{ overflowX: 'hidden', background: '#FAFCFA', color: '#303733' }}>
       <SEO
-        title="Disclaimer | MFDthiru — J. C. Thirumurugan (ARN 26890)"
-        description="Statutory disclaimer and disclosure note for MFDthiru — AMFI Registered Mutual Fund Distributor ARN 26890."
-        canonical="/disclaimer"
+        title="Commission Disclosure | MFDthiru — J. C. Thirumurugan (ARN 26890)"
+        description="Commission Disclosure policy and trail commission details for MFDthiru — AMFI Registered Mutual Fund Distributor ARN 26890."
+        canonical="/commission-disclosure"
       />
+
       {/* Hero Header */}
       <section style={{ background: 'rgba(230,242,221,0.45)', padding: '72px 24px 56px', position: 'relative', overflow: 'hidden' }}>
         <SectionBlob x="-5%" y="-15%" w={400} h={320} color="#B1D3B9" op={0.45} blur={68} r="56% 44% 36% 64% / 50% 46% 54% 50%" />
@@ -35,16 +36,16 @@ export function Disclaimer() {
         <div style={{ maxWidth: 960, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 2 }}>
           <FadeUp>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 16px', borderRadius: 20, background: LIGHT, color: TEAL, fontSize: 13, fontWeight: 700, marginBottom: 18 }}>
-              <ShieldAlert size={15} /> Statutory Disclosure
+              <Coins size={15} /> Statutory Disclosure
             </span>
             <h1 style={{ fontSize: 'clamp(32px, 5vw, 50px)', fontWeight: 800, color: '#303733', marginBottom: 20, lineHeight: 1.2 }}>
-              Disclaimer
+              Commission Disclosure
             </h1>
             <p style={{ fontSize: 18, color: '#555D58', maxWidth: 760, margin: '0 auto 24px', lineHeight: 1.7 }}>
-              Important disclosures regarding website content, distribution services, and market risks.
+              Disclosure explaining how MFDthiru is compensated and considerations for mutual fund investors.
             </p>
             <div style={{ display: 'inline-block', padding: '8px 20px', background: 'rgba(255,255,255,0.9)', borderRadius: 14, fontSize: 14, color: TEAL, fontWeight: 700, border: '1px solid rgba(136,189,164,0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
-              J. C. Thirumurugan &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor (ARN 26890)
+              J. C. Thirumurugan &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor &nbsp;|&nbsp; ARN 26890
             </div>
           </FadeUp>
         </div>
@@ -62,69 +63,84 @@ export function Disclaimer() {
 
           <div style={{ background: '#ffffff', borderRadius: 24, border: '1px solid rgba(136,189,164,0.22)', padding: '44px', boxShadow: '0 6px 24px rgba(0,0,0,0.02)', display: 'grid', gap: 28 }}>
             
-            <FadeUp delay={0.1}>
+            <FadeUp delay={0.05}>
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>1. General Informational & Educational Purpose</h3>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Purpose</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  The information provided on this website is intended solely for general informational and educational purposes and should not be construed as investment, legal, tax or financial advice.
+                  This disclosure explains how MFDthiru is compensated when investors use its mutual fund distribution services and highlights the related considerations for investors.
+                </p>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.1}>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>How MFDthiru is Compensated</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  MFDthiru is the mutual fund distribution brand of <strong>J. C. Thirumurugan</strong>, AMFI-registered Mutual Fund Distributor, ARN 26890.
+                </p>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  Investments facilitated through MFDthiru are generally made under <strong>Regular Plans</strong> of mutual fund schemes. Regular Plans have a higher expense ratio than Direct Plans because they include distribution-related expenses.
+                </p>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
+                  For investments made under Regular Plans using ARN 26890, MFDthiru receives trail commission from the respective Asset Management Companies. <strong>No commission is collected directly from the investor.</strong> The commission is paid by the Asset Management Company and is included in the scheme's expense ratio.
                 </p>
               </div>
             </FadeUp>
 
             <FadeUp delay={0.15}>
-              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>2. Distributor Registration & AMC Partnerships</h3>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Variation in Commission and Conflict of Interest</h3>
+                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: '0 0 12px 0' }}>
+                  The commission rate may vary depending on the Asset Management Company, mutual fund category, scheme and applicable commission structure. This variation may create a potential conflict of interest.
+                </p>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  MFDthiru is an AMFI Registered Mutual Fund Distributor (ARN 26890) and facilitates the distribution of mutual fund products offered by various Asset Management Companies (AMCs). The information, illustrations and opinions presented on this website are based on sources believed to be reliable; however, no representation or warranty, express or implied, is made regarding their accuracy, completeness or suitability.
+                  MFDthiru is committed to considering the investor's financial objectives, risk profile, investment horizon and product suitability while facilitating mutual fund investments. <strong>Commission alone will not form the basis for suggesting any mutual fund scheme.</strong>
                 </p>
               </div>
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>3. Market Risks & Professional Advice</h3>
-                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  Mutual fund investments are subject to market risks. The value of investments may fluctuate, and past performance is not indicative of future results. Investors are advised to read all scheme-related documents carefully, evaluate their financial objectives, risk appetite and investment horizon, and seek independent professional advice where appropriate before making any investment decision.
-                </p>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 12 }}>Information Investors Should Review</h3>
+                <ul style={{ margin: 0, paddingLeft: 20, fontSize: 16, color: '#444C47', lineHeight: 1.85 }}>
+                  <li>The difference between Regular Plans and Direct Plans.</li>
+                  <li>The applicable expense ratio and other scheme-related costs.</li>
+                  <li>The Scheme Information Document, Key Information Memorandum and Statement of Additional Information.</li>
+                  <li>The scheme's investment objective, risk factors and suitability for the investor's needs.</li>
+                </ul>
               </div>
             </FadeUp>
 
             <FadeUp delay={0.25}>
-              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>4. No Assurance of Returns</h3>
+              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Commission Information</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  Nothing contained on this website should be interpreted as a guarantee, assurance or promise of returns. Investment decisions are solely the responsibility of the investor.
+                  Details of the commission received or receivable by MFDthiru across different Asset Management Companies and mutual fund categories are available upon request. Please write to <a href="mailto:enquiry@mfdthiru.in" style={{ color: TEAL, fontWeight: 700, textDecoration: 'underline' }}>enquiry@mfdthiru.in</a> for the applicable information.
                 </p>
               </div>
             </FadeUp>
 
             <FadeUp delay={0.3}>
-              <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${TEAL}`, border: '1px solid rgba(136,189,164,0.18)' }}>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>5. Limitation of Liability</h3>
-                <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  While every reasonable effort is made to keep the information on this website accurate and up to date, MFDthiru shall not be liable for any loss or damage arising directly or indirectly from the use of, or reliance on, the information, tools, calculators or materials available on this website.
-                </p>
-              </div>
-            </FadeUp>
-
-            <FadeUp delay={0.35}>
               <div style={{ padding: '24px 28px', background: '#F8FDF9', borderRadius: 18, borderLeft: `5px solid ${MINT}`, border: '1px solid rgba(136,189,164,0.18)' }}>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>6. User Acknowledgement</h3>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: TEAL, marginTop: 0, marginBottom: 10 }}>Regulatory Status</h3>
                 <p style={{ fontSize: 16, lineHeight: 1.85, color: '#444C47', margin: 0 }}>
-                  By accessing and using this website, you acknowledge that you have read, understood and agreed to this Disclaimer.
+                  MFDthiru is not a SEBI-registered Investment Adviser. Its services are limited to mutual fund distribution and incidental assistance related to the mutual fund products distributed through MFDthiru.
                 </p>
               </div>
             </FadeUp>
 
-            {/* Statutory Banner */}
-            <FadeUp delay={0.4}>
+            {/* Important Risk Disclosure Banner */}
+            <FadeUp delay={0.35}>
               <div style={{
                 background: `linear-gradient(135deg, ${TEAL}, #1e4a4f)`,
                 borderRadius: 18, padding: '28px 32px', color: '#ffffff', textAlign: 'left', marginTop: 12,
                 boxShadow: '0 8px 24px rgba(53,133,142,0.2)'
               }}>
+                <p style={{ fontSize: 15, fontWeight: 700, margin: '0 0 8px 0', color: MINT }}>
+                  Important Risk Disclosure
+                </p>
                 <p style={{ fontSize: 15, fontWeight: 500, margin: 0, lineHeight: 1.7 }}>
-                  <strong>Disclaimer:</strong> MFDthiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor – ARN 26890. MFDthiru is not a SEBI-registered Investment Adviser. Mutual Fund investments are subject to market risks; read all scheme-related documents carefully before investing. Past performance is not indicative of future returns. Mutual fund returns and achievement of financial goals are not guaranteed. Investments through MFDthiru are made under Regular Plans, under which MFDthiru may receive trail commission from Asset Management Companies.
+                  Mutual Fund investments are subject to market risks; read all scheme-related documents carefully before investing. Past performance is not indicative of future returns. Mutual fund returns and achievement of financial goals are not guaranteed.
                 </p>
               </div>
             </FadeUp>

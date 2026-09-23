@@ -81,10 +81,10 @@ export function SIPCalc({ embedded }: { embedded?: boolean } = {}) {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#303733', marginBottom: 28 }}>Investment Details</h2>
           <InputField label="Monthly SIP Amount" value={monthly} onChange={setMonthly} min={500} max={500000} step={500} format={v => `₹${v.toLocaleString('en-IN')}`} />
           <InputField label="Investment Duration" value={years} onChange={setYears} min={1} max={40} step={1} format={v => `${v} yrs`} />
-          <InputField label="Expected Annual Return" value={rate} onChange={setRate} min={4} max={30} step={0.5} format={v => `${v}%`} />
+          <InputField label="Assumed Annual Rate" value={rate} onChange={setRate} min={4} max={30} step={0.5} format={v => `${v}%`} />
           <div style={{ padding: '16px', borderRadius: 12, background: '#E6F2DD', marginTop: 8 }}>
             <p style={{ fontSize: 13, color: '#555D58', margin: 0, lineHeight: 1.6 }}>
-              💡 <strong>Note:</strong> Equity mutual funds have historically delivered 10-15% CAGR over long periods. Past performance does not guarantee future returns.
+              💡 <strong>Note:</strong> The assumed rate of return is selected by the user solely for mathematical illustration. It does not represent the expected return of any mutual fund scheme or category. Actual returns may vary and may also be negative.
             </p>
           </div>
         </div>

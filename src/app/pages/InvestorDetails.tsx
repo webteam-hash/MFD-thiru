@@ -80,27 +80,61 @@ export function InvestorDetails() {
     setLoading(true)
     GoogleAdsEvents.leadSubmitted('investor_details_form')
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
-    if (accessKey) {
-      try {
-        await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({
-            access_key: accessKey,
-            subject: `New Investor Details Lead: ${form.name} (${headingInfo.target})`,
-            from_name: form.name,
-            email: form.email,
-            phone: form.phone,
-            city: form.city,
-            requirement: headingInfo.target,
-          }),
-        })
-      } catch (err) {
-        console.warn('Investor details dispatch warning:', err)
+    try {
+      // First try local/Vercel backend serverless API endpoint
+      const apiRes = await fetch('/api/investor-details', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          city: form.city,
+          requirement: headingInfo.target,
+        }),
+      })
+
+      if (!apiRes.ok) {
+        // Fallback to direct client-side Web3Forms dispatch
+        const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+        if (accessKey) {
+          await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+              access_key: accessKey,
+              subject: `New Investor Details Lead: ${form.name} (${headingInfo.target})`,
+              from_name: form.name,
+              email: form.email,
+              phone: form.phone,
+              city: form.city,
+              requirement: headingInfo.target,
+            }),
+          })
+        }
       }
-    } else {
-      await new Promise(r => setTimeout(r, 800))
+    } catch (err) {
+      console.warn('Investor details dispatch warning:', err)
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+      if (accessKey) {
+        try {
+          await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+              access_key: accessKey,
+              subject: `New Investor Details Lead: ${form.name} (${headingInfo.target})`,
+              from_name: form.name,
+              email: form.email,
+              phone: form.phone,
+              city: form.city,
+              requirement: headingInfo.target,
+            }),
+          })
+        } catch (fallbackErr) {
+          console.warn('Fallback Web3Forms dispatch failed:', fallbackErr)
+        }
+      }
     }
 
     setLoading(false)

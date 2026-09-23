@@ -23,7 +23,7 @@ export function WhyMFD() {
       <SectionBlob x="10%" y="70%" w={400} h={320} color="#E6F2DD" op={0.75} blur={65} r="50% 50% 50% 50%" />
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px 80px', position: 'relative', zIndex: 1 }}>
-        
+
         {/* Standard Website Back Button */}
         <div style={{ marginBottom: 32 }}>
           <BackButton fallback="/" />
@@ -79,12 +79,12 @@ export function WhyMFD() {
                       transition: 'all 0.3s ease',
                     }}
                     onMouseEnter={e => {
-                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-5px)'
-                      ;(e.currentTarget as HTMLElement).style.boxShadow = '0 12px 32px rgba(53,133,142,0.15)'
+                      ; (e.currentTarget as HTMLElement).style.transform = 'translateY(-5px)'
+                        ; (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 32px rgba(53,133,142,0.15)'
                     }}
                     onMouseLeave={e => {
-                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
-                      ;(e.currentTarget as HTMLElement).style.boxShadow = '0 6px 24px rgba(53,133,142,0.06)'
+                      ; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                        ; (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 24px rgba(53,133,142,0.06)'
                     }}
                   >
                     <div
@@ -197,12 +197,12 @@ export function WhyMFD() {
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={e => {
-                    ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)'
-                    ;(e.currentTarget as HTMLElement).style.boxShadow = '0 14px 36px rgba(53,133,142,0.16)'
+                    ; (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)'
+                      ; (e.currentTarget as HTMLElement).style.boxShadow = '0 14px 36px rgba(53,133,142,0.16)'
                   }}
                   onMouseLeave={e => {
-                    ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
-                    ;(e.currentTarget as HTMLElement).style.boxShadow = '0 6px 24px rgba(53,133,142,0.07)'
+                    ; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                      ; (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 24px rgba(53,133,142,0.07)'
                   }}
                 >
                   <div

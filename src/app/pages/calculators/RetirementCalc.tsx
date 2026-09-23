@@ -77,13 +77,14 @@ export function RetirementCalc({ embedded }: { embedded?: boolean } = {}) {
     <CalculatorLayout
       embedded={embedded}
       title="Retirement Corpus Calculator"
-      subtitle="Estimate the corpus you may need to support a comfortable retirement and calculate how much to invest today."
-      ctaText="Plan for Retirement"
+      subtitle="Estimate the retirement corpus required to maintain your lifestyle and calculate the monthly SIP needed."
+      ctaText="Plan My Retirement SIP"
+      disclaimer="Retirement Disclosure: Retirement calculations and corpus illustrations are indicative and based on assumptions. They do not guarantee that the estimated corpus will be sufficient or that a retirement goal will be achieved. Actual outcomes depend on contributions, investment period, inflation, market performance, scheme expenses, taxation and withdrawals."
       howItWorks={[
-        'Enter your current age and target retirement age to determine your investment horizon.',
-        'Input your current monthly expenses to help estimate your future lifestyle cost.',
-        'Set expected inflation rate (typically 5-7% for India) to calculate future expense values.',
-        'The calculator estimates your required corpus and the monthly SIP needed to achieve it.',
+        'Enter your current age and planned retirement age to establish your accumulation timeline.',
+        'Provide your current monthly expenses to estimate post-retirement living costs (adjusted for inflation).',
+        'Set expected inflation and investment return rates based on long-term historical expectations.',
+        'The calculator computes your total required retirement corpus and necessary monthly SIP amount.',
       ]}
     >
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0 }} className="calc-inner">
@@ -93,7 +94,7 @@ export function RetirementCalc({ embedded }: { embedded?: boolean } = {}) {
           <InputField label="Retirement Age" value={retirementAge} onChange={setRetirementAge} min={45} max={70} step={1} format={v => `${v} yrs`} />
           <InputField label="Current Monthly Expenses" value={monthlyExpenses} onChange={setMonthlyExpenses} min={10000} max={500000} step={5000} format={v => `₹${v.toLocaleString('en-IN')}`} />
           <InputField label="Expected Inflation Rate" value={inflation} onChange={setInflation} min={3} max={12} step={0.5} format={v => `${v}%`} />
-          <InputField label="Expected Return on Investment" value={expectedReturn} onChange={setExpectedReturn} min={6} max={20} step={0.5} format={v => `${v}%`} />
+          <InputField label="Assumed Annual Rate" value={expectedReturn} onChange={setExpectedReturn} min={6} max={20} step={0.5} format={v => `${v}%`} />
           <InputField label="Life Expectancy" value={lifeExpectancy} onChange={setLifeExpectancy} min={70} max={100} step={1} format={v => `${v} yrs`} />
         </div>
         <div style={{ padding: '40px', background: 'rgba(250,253,249,0.75)' }}>

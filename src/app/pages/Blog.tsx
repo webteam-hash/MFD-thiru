@@ -243,7 +243,7 @@ const articles = [
     category: 'Retirement',
     date: 'July 5, 2026',
     img: 'https://images.unsplash.com/photo-1761839257647-df30867afd54?w=600&q=80',
-    excerpt: 'Retirement planning looks different at 30, 40, and 50. Learn what steps to take at each stage to ensure a comfortable retirement.',
+    excerpt: 'Retirement preparation changes at different life stages. Understand the steps that may help you progressively build a retirement corpus based on your needs, time horizon and risk profile.',
     content: [
       'In your 30s: Focus on aggressive growth. Allocate a major portion of your investments to equity mutual funds for maximum inflation-beating long-term growth.',
       'In your 40s: Consolidate and accelerate. Review your required retirement corpus, step up contributions, and start balancing with conservative hybrid funds.',
@@ -359,6 +359,14 @@ export function Blog() {
                   <p key={idx} style={{ margin: 0 }}>{paragraph}</p>
                 ))}
               </>
+            )}
+
+            {(article.id === 3 || article.category === 'Retirement') && (
+              <div style={{ marginTop: 16, padding: '20px 24px', borderRadius: 16, background: '#E6F2DD', border: `1.5px solid ${MINT}` }}>
+                <p style={{ fontSize: 13.5, color: '#4E5652', lineHeight: 1.65, margin: 0 }}>
+                  <strong>Retirement Disclosure:</strong> Retirement calculations and corpus illustrations are indicative and based on assumptions. They do not guarantee that the estimated corpus will be sufficient or that a retirement goal will be achieved. Actual outcomes depend on contributions, investment period, inflation, market performance, scheme expenses, taxation and withdrawals.
+                </p>
+              </div>
             )}
 
             <div style={{ marginTop: 24, padding: '28px 32px', background: 'rgba(230,242,221,0.5)', borderRadius: 20, border: `1px solid ${MINT}`, borderLeft: `6px solid ${TEAL}` }}>

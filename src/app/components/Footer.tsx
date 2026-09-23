@@ -5,6 +5,7 @@ import { BUSINESS_INFO } from '../constants/theme'
 
 const companyLinks = [
   { label: 'About Us', path: '/about' },
+  { label: 'Why Invest Through MFD?', path: '/why-mfd' },
   { label: 'Contact Us', path: '/contact' },
   { label: 'Blog', path: '/blog' },
 ]
@@ -22,6 +23,7 @@ const legalLinks = [
   { label: 'Terms of Use', path: '/terms-of-use' },
   { label: 'Calculator Policy', path: '/calculator-policy' },
   { label: 'Investor Grievance', path: '/investor-grievance' },
+  { label: 'Commission Disclosure', path: '/commission-disclosure' },
 ]
 
 export function Footer() {
@@ -120,8 +122,8 @@ export function Footer() {
         {/* Statutory Mutual Fund Risk Warning Banner */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 24, paddingBottom: 32 }}>
           <div style={{ background: 'rgba(0,0,0,0.2)', padding: '16px 20px', borderRadius: 12, borderLeft: '4px solid #88BDA4', marginBottom: 16 }}>
-            <p style={{ fontSize: 13, color: '#e0f0f2', lineHeight: 1.7, margin: 0, fontWeight: 600 }}>
-              Mutual Fund investments are subject to market risks. Read all scheme-related documents carefully before investing.
+            <p style={{ fontSize: 13, color: '#e0f0f2', lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
+              <strong>Disclaimer:</strong> MFDthiru is the mutual fund distribution brand of J. C. Thirumurugan, AMFI-registered Mutual Fund Distributor – ARN 26890. MFDthiru is not a SEBI-registered Investment Adviser. Mutual Fund investments are subject to market risks; read all scheme-related documents carefully before investing. Past performance is not indicative of future returns. Mutual fund returns and achievement of financial goals are not guaranteed. Investments through MFDthiru are made under Regular Plans, under which MFDthiru may receive trail commission from Asset Management Companies.
             </p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
