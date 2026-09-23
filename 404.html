@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MFDThiru | Loading...</title>
+    <script>
+      // Hostinger Single Page Application (SPA) Fallback Redirect
+      // If Hostinger serves this 404 page for a direct subroute, redirect to main index.html
+      (function() {
+        var path = window.location.pathname + window.location.search + window.location.hash;
+        window.location.replace('/' + (path.startsWith('/') ? path.substring(1) : path));
+      })();
+    </script>
+  </head>
+  <body>
+    <div style="display: flex; height: 100vh; align-items: center; justify-content: center; font-family: sans-serif; color: #35858E;">
+      <p>Redirecting to MFDThiru...</p>
+    </div>
+  </body>
+</html>
