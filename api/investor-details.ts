@@ -19,7 +19,7 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ success: false, error: 'Full name, email, contact number, and city are required' })
     }
 
-    const accessKey = process.env.WEB3FORMS_ACCESS_KEY || process.env.VITE_WEB3FORMS_ACCESS_KEY
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY || process.env.VITE_WEB3FORMS_ACCESS_KEY || '49478990'
 
     if (accessKey) {
       const response = await fetch('https://api.web3forms.com/submit', {
