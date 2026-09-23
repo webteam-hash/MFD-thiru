@@ -2,13 +2,10 @@
 node_modules/
 .pnpm-store/
 
-# Build Output
-dist/
-dist-ssr/
-
 # IDE & OS Files
 .DS_Store
 *.local
 *.log
 .vscode/
 .idea/
+
